@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Сайт-помощник</title>
+	<link rel="icon" href="img/icon.png">
+	<style>
+		body {
+			background-color: rgb(237, 246, 255);
+			background-size: cover;
+			background-position: center;
+		}
+		#content {
+			position: absolute;
+			display: flex;
+			flex-direction: column;
+			min-height: 100vh;
+		}
+		.button {
+			position: absolute;
+			cursor: pointer;
+			text-align: center;
+			font-size: max(8px, 2vw);
+			height: 2.8%;
+			border-width: max(1px, 0.2vw);
+		}
+		#admin {
+			left:10.2%; 
+			top:23%;
+			background-color: rgba(255, 144, 144, 1.3);
+			border-radius: max(8px, 1vw);
+			width: 16%;
+		}
+		#manager {
+			left:9.2%; 
+			top:36.6%; 
+			background-color: rgba(144, 255, 177, 1.3);
+			border-radius: max(8px, 1vw);
+			width: 11%;
+		}
+		#tech {
+			left:20.6%; 
+			top:53.4%; 
+			background-color: rgba(255, 196, 144, 1.3);
+			border-radius: max(8px, 1vw);
+			width: 14.5%;
+		}
+		#programmer {
+			left:70.6%; 
+			top:20%; 
+			background-color: rgba(144, 216, 255, 1.3);
+			border-radius: max(8px, 1vw);
+			width: 14%;
+		}
+		#designer {
+			left:72.6%; 
+			top:36.6%; 
+			background-color: rgba(255, 144, 225, 1.3);
+			border-radius: max(8px, 1vw);
+			width: 10.5%;
+		}
+		#tester {
+			left:72%; 
+			top:50%; 
+			background-color: rgba(144, 255, 229, 1.3);
+			border-radius: max(8px, 1vw);
+			width: 13.5%;
+		}
+		#mainbtn {
+			left:39.5%; 
+			top:40%; 
+			background-color: rgba(122, 140, 255, 1.3);
+			border-radius: max(8px, 1vw);
+			width: 20%;
+			height: 5%;
+		}
+		#admin:hover {
+			background-color: #fff;
+			transition: 0.3s;
+		}
+		#manager:hover {
+			background-color: #fff;
+			transition: 0.3s;
+		}
+		#tech:hover {
+			background-color: #fff;
+			transition: 0.3s;
+		}
+		#programmer:hover {
+			background-color: #fff;
+			transition: 0.3s;
+		}
+		#designer:hover {
+			background-color: #fff;
+			transition: 0.3s;
+		}
+		#tester:hover {
+			background-color: #fff;
+			transition: 0.3s;
+		}
+		#mainbtn:hover {
+			background-color: #fff;
+			transition: 0.3s;
+		}
+		#faqbtn {
+			left:89.5%; 
+			top:7.8%;
+			padding-bottom: -15%;
+			font-size: max(8px, 1vw);
+			height: 1.3%;
+			width: 2%;
+			border-radius: max(8px, 1vw);
+			color: rgba(0, 0, 0, 0.8);
+			background-color: rgba(255, 255, 255, 0.2);
+		}
+		#faq.show{
+			text-align: center;
+			font-size: max(8px, 1vw);
+			background-color: rgb(191, 249, 255);
+			border-style: solid;
+			border-radius: max(8px, 0.8vw);
+			border-color: black;
+			border-width: max(1px, 0.1vw);
+			margin-left: 66%;
+			margin-right: 4%;
+			top: 9%;
+			margin-bottom: -15%;
+			background-clip: border-box;
+			text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+			font-family: Arial, Helvetica, sans-serif;
+			padding-top: 0.25%;
+			padding-bottom: 0.25%;
+			padding-right: 0.25%;
+			padding-left: 0.25%;
+			color: #000;
+			box-sizing:content-box;
+		}
+		.hidden {
+			position: absolute;
+			font-size: max(8px, 1.5vw);
+			color: rgba(0,0,0,0);
+			background-color: rgba(0,0,0,0.0);
+			background-clip: content-box;
+			transition: height 0.5s ease-out;
+			box-sizing: content-box;
+			pointer-events: none;
+		}
+		.show {
+			position: absolute;
+			font-size: max(8px, 1.5vw);
+      		color: rgb(238, 238, 238);
+      		background-color: rgba(0, 0, 0, 0.8);
+			background-clip: content-box;
+			transition: height 0.5s ease-out;
+			box-sizing: content-box;
+			pointer-events: auto;
+			border-style: solid;
+			border-color: black;
+			border-width: max(1px, 0.1vw);
+		}
+		.hidden a:link, a:visited, a:hover, a:active{
+			color: rgba(0,0,0,0)
+		}
+		.show a:link{
+			color: aquamarine;
+		}
+		.show a:visited{
+			color:lightpink;
+		}
+		.show a:active{
+			color:azure;
+		}
+		.show a:hover{
+			color:azure;
+			text-decoration: underline;
+		}
+		#dash{
+			text-align: center;
+			font-size: max(8px, 2vw);
+			background-size: 100%;
+			background-clip: text;
+			-webkit-background-clip: text;
+    		-moz-background-clip: text;
+    		-webkit-text-fill-color: transparent; 
+    		-moz-text-fill-color: transparent;
+			background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+		}
+	</style>
+</head>
+<body>
+	<div id="content">
+		<h1 style="
+		text-align:center;
+		font-size: max(16px, 5vw);
+		font-family: Lucida Console;
+		">Помощник изучения английского</h1>
+		<p style="
+		text-align: center;
+		font-size: max(8px, 1.5vw);
+		margin-left: 8%;
+		margin-right: 8%;
+		background-clip: border-box;
+		text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+		font-family: Arial, Helvetica, sans-serif;
+		margin-top: -3%;
+		padding-bottom: 0.5%;
+		">Этот сайт содержит ссылки на источники, пользуясь которыми можно подтянуть свой англисйкий, попробуйте!</p>
+		<button id="faqbtn" class="button" onclick="toggleVisibility('faq')">?</button>
+		<p id="faq" class="hidden">Выберите специальность и нажмите, чтобы увидеть список</p>
+		<img draggable="false" style="
+		min-width: 100vh;
+		min-height: 100vh;
+		margin-top: 6%;
+		width: 100%;
+		height: width/16*9;" src="img/map_nodes.png">
+		<p style="margin-left:11.8%; max-width:15%; margin-top: 29.4%;" class="hidden" id="para1">Полезные ресурсы: <br>
+		<a href="https://www.hse.ru/en/edu/courses/492549729" target="_blank">Курсы</a>
+		<br>
+		<a href="https://www.englishlive.ef.com/ru-ru/" target="_blank">English Live</a>
+		<br>
+		<a href="https://www.memrise.com/" target="_blank">Memrise</a>
+		</p>
+		<p style="margin-left:8.4%; max-width:15%; margin-top:44.9%;" class="hidden" id="para2">Полезные ресурсы: <br>
+		<a href="https://www.coursera.org/" target="_blank">Coursera</a>
+		<br>
+		<a href="https://www.memrise.com/" target="_blank">Memrise</a>
+		<br>
+		<a href="https://www.englishcentral.com/business" target="_blank">English Central</a>
+		</p>
+		<p style="margin-left:20.8%; max-width:15%; margin-top:64%;" class="hidden" id="para3">Полезные ресурсы: <br>
+		<a href="https://www.duolingo.com/" target="_blank">Duolingo</a>
+		<br>
+		<a href="http://www.bbc.co.uk/learningenglish/" target="_blank">BBC Learning English*</a>
+		<br>
+		<a href="https://www.lingoda.com/" target="_blank">Lingoda</a>
+		</p>
+		<p style="margin-left:70%; max-width:15%; margin-top:26%;" class="hidden" id="para4">Полезные ресурсы: <br>
+		<a href="https://www.ted.com/talks?language=en" target="_blank">TED Talks</a>
+		<br>
+		<a href="https://quizlet.com/" target="_blank">Quizlet</a>
+		<br>
+		<a href="https://www.ego4u.com/" target="_blank">English Grammar Online</a>
+		<br>
+		<a href="https://www.school-xyz.com/" target="_blank">XYZ school</a>
+		<br>
+		<a href="https://ru.hexlet.io/" target="_blank">Hexlet</a>
+		</p>
+		<p style="margin-left:71.2%; max-width:15%; margin-top:44.9%;" class="hidden" id="para5">Полезные ресурсы: <br>
+		<a href="https://www.canva.com/designschool/" target="_blank">Canva Design School*</a>
+		<br>
+		<a href="https://vt.tiktok.com/ZS83W7QR5/" target="_blank">Игры для дизайнера</a>
+		<br>
+		<a href="https://www.skillshare.com/" target="_blank">Skillshare</a>
+		<br>
+		<a href="https://www.behance.net/" target="_blank">Behance</a>
+		</p>
+		<p style="margin-left:71.2%; max-width:15%; margin-top:60.1%;" class="hidden" id="para6">Полезные ресурсы: <br>
+		<a href="https://www.gameindustrycareerguide.com/video-game-development-terms-glossary/" target="_blank">Glossary of Game Development Terms</a>
+		<br>
+		<a href="https://www.udemy.com/" target="_blank">Udemy</a>
+		<br>
+		<a href="https://www.codecademy.com/" target="_blank">Codecademy</a>
+		<br>
+		<a href="https://www.ministryoftesting.com/" target="_blank">Ministry of Testing</a>
+		</p>
+		<p style="margin-left:39.6%; max-width:20%; margin-top:51.3%;" class="hidden" id="para8">Полезные советы: <br>
+		• Мотивируйте себя<br>
+		• Начните с самой распространенной лексики<br>
+		• Регулярно повторяйте слова<br>
+		• Пользуйтесь стикерами<br>
+		• Просматривайте кино на английском<br>
+		• Практикуйте английский у себя в голове<br>
+		• Заведите англоязычных друзей
+		</p>
+		<p style="margin-left:42%; max-width:15%; margin-top:31.4%;" class="hidden combined" id="para7">
+		<a href="https://tetrika-school.ru/" target="_blank">Тетрика</a>
+		<br>
+		<a href="https://skyeng.ru/" target="_blank">Skyeng</a>
+		<br>
+		<a href="https://englex.ru/" target="_blank">Englex</a>
+		<br>
+		<a href="https://practicum.yandex.ru/english/" target="_blank">Яндекс Практикум Английский</a>
+		<br>
+		<a href="https://practicum.yandex.ru/catalog/programming/" target="_blank">Яндекс Практикум Программирование</a>
+		<br>
+		Полезные ресурсы: 
+		</p>
+		<button id="admin" class="button" onclick="toggleVisibility('para1')">Администратор</button>
+		<button id="manager" class="button" onclick="toggleVisibility('para2')">Менеджер</button>
+		<button id="tech" class="button" onclick="toggleVisibility('para3')">Техподдержка</button>
+		<button id="programmer" class="button" onclick="toggleVisibility('para4')">Программист</button>
+		<button id="designer" class="button" onclick="toggleVisibility('para5')">Дизайнер</button>
+		<button id="tester" class="button" onclick="toggleVisibility('para6')">Тестировщик</button>
+		<button id="mainbtn" class="button" onclick="toggleVisibility('para7', 'para8')">Изучить английский язык</button>
+		<p id="dash">----------------------------------------------------------------------------------------------------------------------------------------------------</p>		
+		<h2 style="
+		font-size: max(8px, 1.5vw);
+		padding-left: 5%;
+		font-family: Arial, Helvetica, sans-serif;
+		text-shadow: 2px 2px 3px rgba(0,0,0,0.15);
+		">
+			Часто используемый сленг программистами, и в целом в сфере IT <br>
+		</h2>
+		<p style="
+		font-size: max(2px, 1vw);
+		font-family: Lucida Console;
+		padding-left: 2%;
+		background-color: rgba(207, 220, 225, 0.5);
+		color: rgb(9, 56, 54);
+		border-radius: max(8px, 1vw);
+		text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+		line-height: 1.4;
+		">
+			<br>
+			<b>Айдишник</b> — id, идентификатор.<br>
+			<b>Альфа</b> — этап разработки программного обеспечения, на котором разработчики добавляют в программу новые функции, а тестировщики испытывают программу. Это внутренний или непубличный этап.<br>
+			<b>Баг</b> — от англ. Bug — жучок, клоп. Ошибка в программе.<br>
+			<b>Бета</b> — бета-версия, приложение на стадии публичного тестирования.<br>
+			<b>Бот</b> — сокращение от «робот». Ботом называют программу, которая автоматизирует интерфейс. Пример — автоответчик в чате.<br>
+			<b>Бэкенд</b> — от англ. Back-end. Программно-аппаратная или серверная часть приложения. <br>
+			<b>Ворнинг</b> — от англ. Warning — предупреждение. Предупреждающее сообщение в интерфейсе.<br>
+			<b>Гит</b> — система контроля версий Git или сервис GitHub. <br>
+			<b>Залить</b> — загрузить. Например, «залить файлы на сервер».<br>
+			<b>Итерация</b> — повторение, версия. «Мы сделали несколько итераций» — мы повторили шаг несколько раз.<br>
+			<b>Костыль</b> — код, который нужен, чтобы исправить несовершенство ранее написанного кода. <br>
+			<b>Легаси</b> — от англ. Legacy. Устаревший код, который не обновляется, но используется. Или код, который разработчик получил от предыдущих разработчиков.<br>
+			<b>Локалка</b> — локальный. Например, локальный сервер или сеть. <br>
+			<b>Ридми</b> — файл Readme, в котором содержится информация о программе.<br>
+			<b>Свитчнуть</b>, свичнуть — переключить. От английского switch.<br>
+			<b>Софт</b> — от англ. Software — программное обеспечение. <br>
+			<b>Тимлид</b> — от английского Team Lead — руководитель команды. Координатор группы программистов.<br> 
+			<b>Фидбек</b> — от англ. Feedback — обратная связь.<br>
+			<b>Фиксить</b>, пофиксить — от англ. Fix. Чинить, починить, исправить.<br>
+			<b>Фича</b> — функция, возможность. От англ. Feature. <br>
+			<b>Фреймворк</b> — от англ. Framework — каркас. Инструмент разработки, набор типовых шаблонных решений, упрощающих работу программиста.<br>
+			<b>Фронтенд</b> — от англ. Front-end — клиентская часть приложения. <br>
+			<b>Юзать</b> — от английского To use — использовать. <br>
+			<b>Ява</b> — язык программирования Java.<br>
+		</p>
+		<h2 style="
+		font-size: max(8px, 1.5vw);
+		padding-left: 5%;
+		font-family: Arial, Helvetica, sans-serif;
+		text-shadow: 2px 2px 3px rgba(0,0,0,0.15);
+		">
+			Книги для изучения английского для IT <br>
+		</h2>
+		<h3>
+			Английский язык для ИТ-направлений. English for Information Technology
+		</h3>
+	</div>
+	<script>
+		function toggleVisibility(...ids) {
+			for (let id of ids) {
+				var element = document.getElementById(id);
+				if (element.classList.contains("show")) 
+				{
+					element.classList.remove("show");
+					element.classList.add("hidden");
+				} 
+				else {
+					element.classList.remove("hidden");
+					element.classList.add("show");
+				}
+			}
+		}
+	</script>
+</body>
+</html>
