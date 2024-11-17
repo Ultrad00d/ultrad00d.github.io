@@ -7,6 +7,12 @@
     .title {
         display: none;
     }
+    .page-tutor{
+        font-family:'Courier New', Courier, monospace;
+        font-size:1.5rem !important;
+        text-align: center;
+        color:rgba(170, 170, 170, 0.4);
+    }
     main {
         grid-template-columns:none;
         grid-template-rows: 8vh 92vh;
@@ -21,20 +27,22 @@
     }
     .page-selector fieldset {
         width:100vw;
-        height:7vh;
+        height:8vh;
         display:grid !important;
         grid-auto-flow:column;
         grid-auto-columns:max-content;
         align-items:center;
-        gap: 1vw;
+        gap: 3vw;
         overflow-x:auto !important;
         overflow-y:hidden;
     }
     .pageRadio {
         width:fit-content;
         display:inline-block;
-        height: 4vh !important;
-        padding: 0 2vw !important;
+        height: 6vh !important;
+        padding: 1vw 10vw !important;
+        border-radius: 64px !important;
+        font-size: 1rem !important;
     }
     .page-container {
         width:100vw !important;
@@ -52,7 +60,7 @@
         width: 94vw !important;
     }
     .content code {
-        font-size: 20px !important;
+        font-size: 14px !important;
     }
     .help {
         font-size:1.2rem !important;
@@ -64,6 +72,7 @@
     }
     .content img {
         width: 94vw !important;
+        border-radius: 8px !important;
     }
 }
 
@@ -130,7 +139,6 @@ main{
 .hljs-number {
     color: #f78c6c !important;
 }
-
 .desc {
     width:max-content;
     font-size: 2.2rem;
@@ -155,6 +163,11 @@ code, .img {
     align-items:center;
     width:100%;
     height:100%;
+}
+.tutor-container.visible {
+    flex-direction:column;
+    color:peru;
+    text-align: center;
 }
 .page-tutor{
     font-family:'Courier New', Courier, monospace;
@@ -245,4 +258,21 @@ code, .img {
 }
 .active:active{
     background-color: rgba(0,0,0,0.25);
+}
+.task-text {
+    background-color:rgba(0,0,0,0.4);
+    padding: max(10px, 1vw);
+    width:90%;
+    border-radius:8px;
+}
+table, th, td {
+    border: 1px solid;
+    text-align: center;
+    margin: 2vw 1vw;
+}
+th, td {
+    padding: max(10px, 1vw);
+}
+table {
+    border-collapse: collapse;
 }
