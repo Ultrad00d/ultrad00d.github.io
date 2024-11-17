@@ -45,10 +45,25 @@
             <div class="page-frame">
                 <div class="tutor-container visible" id="tutorContainer">
                     <p class="page-tutor">Выберите страницу с Номером задания</p>
+                    <noscript>
+                        ⚠ Для работы страницы необходим JavaScript, но он выключён ⚠
+                    </noscript>
                 </div>
                 <div class="content" id="content2">
                     <p class="desc">Шаблон на одну функцию</p>
-                    <img src="assets/ex2/1.jpg" alt="Условие задачи" class="img">
+                    <div class="task-text">
+                        Логическая функция F задаётся выражением: <br>
+                        <i>(х &and; &not; y) &or; (x &equiv; z) &or; w</i>, <br>
+                        Ниже представлен фрагмент таблицы истинности функции <i>F</i>. Определите, какому столбцу таблицы истинности функции <i>F</i> соответствует каждая переменная <i>w</i>, <i>x</i>, <i>y</i>, <i>z</i>.
+                        <div class="table-wrap">
+                            <table>
+                                <tr> <th>?</th><th>?</th><th>?</th><th>?</th><th><i>F</i></th> </tr>
+                                <tr> <td>0</td><td> </td><td>1</td><td> </td><td>0</td> </tr>
+                                <tr> <td> </td><td>1</td><td>1</td><td>0</td><td>0</td> </tr>
+                            </table>
+                        </div>
+                        Укажите, какому столбцу соответствует каждая из переменных.
+                    </div>
                     <pre><code class="python">from itertools import product, permutations
         
 def f(x,y,z,w):
@@ -66,7 +81,9 @@ for x1, x2, x3, x4 in product([0,1], repeat=4):
                 print(*p)</code></pre></div>
                 <div class="content" id="content13">
                     <p class="desc">Пройтись по маскам</p>
-                    <img src="assets/ex13/1.jpg" alt="Условие задачи" class="img">
+                    <div class="task-text">
+                        &emsp;&emsp;Для узла с IP-адресом 117.191.37.84 адрес сети равен 117.191.37.80. Чему равно наименьшее возможное зачение последнего (самого правого) байта маски? Ответ запишите в виде десятичного числа.
+                    </div>
                     <pre><code class="python">from ipaddress import *
 
 for x in range(33):
@@ -74,7 +91,9 @@ for x in range(33):
     if str(net.network_address) == '192.168.24.0':
         print(net.netmask)</code></pre>
                     <p class="desc">Пройтись по узлам сети</p>
-                    <img src="assets/ex13/2.jpg" alt="Условие задачи" class="img">
+                    <div class="task-text">
+                        &emsp;&emsp;В терминологии сетей TCP/IP маской сети называют двоичное число, которое показывает, какая часть IР-адреса узла сети относится к адресу сети, а какая — к адресу узла в этой сети. Адрес сети получается в результате применения поразрядной конъюнкции к заданному адресу узла и его маске. Сеть задана IР-адресом 112.160.0.0 и сетевой маской 255.240.0.0. <br>&emsp;&emsp;Сколько в этой сети для которых количество единиц в двоичной записи IР-адреса не кратно 5? <br>&emsp;&emsp;В ответе укажите только число.
+                    </div>
                     <pre><code class="python">from ipaddress import *
 net = ip_network('112.160.0.0/255.240.0.0', 0)
 count = 0
@@ -87,7 +106,9 @@ print(count)</code></pre>
                     <p class="desc">
                         При любых переменных
                     </p>
-                    <img src="assets/ex15/1.jpg" alt="Условие задачи" class="img">
+                    <div class="task-text">
+                        Для какого наименьшего целого неотрицательного числа А выражение <br>(3m + 4п > 63) &or; ((m &leq; А) &and; (n &lt; А)) <br>тождественно истинно при любых целых неотрицательных m и n?
+                    </div>
                     <pre><code class="python">def f(m, n, a):
     return (3 * m + 4 * n > 63) or ((m <= a) and (n < a))
 
@@ -97,7 +118,9 @@ print(min(A for A in range(0,200) if all(f(m, n, A) == 1 for n in range(200) for
                     </p>
                     <br>
                     <p class="desc">На числовой прямой даны два отрезка</p>
-                    <img src="assets/ex15/2.jpg" alt="Условие задачи" class="img">
+                    <div class="task-text">
+                        &emsp;&emsp;На числовой прямой даны два отрезка: <i>P</i> = [1, 39] и Q = [23, 58]. Какова наибольшая возможная длина интервала <i>A</i>, что логическое выражение<br> <i>((x &isin; P) &rarr; &not;(x &isin; Q)) &rarr; &not;(x &isin; A)</i><br>тождественно истинно, то есть принмает значение при любом значении переменной <i>x</i>.
+                    </div>
                     <pre><code class="python">for x in [k * 0.25 for k in range(-1000, 1000)]:
     P = 1 <= x <= 39
     Q = 23 <= x <= 58
@@ -113,7 +136,10 @@ print(min(A for A in range(0,200) if all(f(m, n, A) == 1 for n in range(200) for
                     </p>
                     <br>
                     <p class="desc">Обозначим поразрядную конъюнкцию</p>
-                    <img src="assets/ex15/3.jpg" alt="Условие задачи" class="img">
+                    <div class="task-text">
+                        &emsp;&emsp;Обозначим через <i>m&n</i> поразрядную конъюнкцию неотрицательных целых чисел <i>m</i> и <i>n</i>. Так, например, <i>14&5</i> = <i>1110<sub>2</sub>&0101<sub>2</sub></i> = 0100<sub>2</sub> = 4. Для какого наименьшего натурального числа <i>A</i> формула <br> <i>x&57 = 0 &or; (x&23 = 0 &rarr; &not;(x&A = 0))</i><br>
+истинна при всех натуральных значениях переменной <i>x</i>?
+                    </div>
                     <pre><code class="python">def f(x, a):
     return (x & 57) == 0 or ((x & 23 == 0) <= (not ((x & a) == 0)))
 print(min(a for a in range(1, 200) if all(f(x, a) for x in range(1, 2000))))</code></pre>
@@ -123,7 +149,9 @@ print(min(a for a in range(1, 200) if all(f(x, a) for x in range(1, 2000))))</co
                     </p>
                     <br>
                     <p class="desc">Обозначим через ДЕЛ утверждение</p>
-                    <img src="assets/ex15/4.jpg" alt="Условие задачи" class="img">
+                    <div class="task-text">
+                        &emsp;&emsp;Обозначим через ДЕЛ(x, y) утверждение &laquo;натуральное число x делится без остатка на натуральное число y&raquo;. Для какого наибольшего натурального числа A логическое выражение <br><i>(&not;ДЕЛ(x,7) &and; ДЕЛ(x,13)) &rarr;(x&gt;A&minus;40)</i><br> истинно (т.е. принимает значение 1) при любом натуральном значении переменной <i>х</i>?
+                    </div>
                     <pre><code class="python">def d(x, a): return x % a == 0
         
 def f(x, a):
