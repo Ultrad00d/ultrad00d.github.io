@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шаблоны для ЕГЭ</title>
+    <link rel="stylesheet" href="code/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</head>
+<body>
+    <main>
+        <div class="page-selector">
+            <p class="title">Шаблончики для ЕГЭ по Информатике</p>
+            <fieldset id="pageFieldset">
+                <label class="pageRadio">
+                    <span class="page-item" id="span-page2">Номер 2</span>
+                    <input type="radio" id="2" name="pageNumber" value="2" />
+                </label>
+                <label class="pageRadio">
+                    <span class="page-item" id="span-page13">Номер 13</span>
+                    <input type="radio" id="13" name="pageNumber" value="13" />
+                </label>
+                <label class="pageRadio">
+                    <span class="page-item" id="span-page15">Номер 15</span>
+                    <input type="radio" id="15" name="pageNumber" value="15" />
+                </label>
+                <label class="pageRadio">
+                    <span class="page-item" id="span-page19">Номера 19-21</span>
+                    <input type="radio" id="19" name="pageNumber" value="19" />
+                </label>
+                <label class="pageRadio">
+                    <span class="page-item" id="span-page23">Номер 23</span>
+                    <input type="radio" id="23" name="pageNumber" value="23" />
+                </label>
+                <label class="pageRadio">
+                    <span class="page-item" id="span-page25">Номер 25</span>
+                    <input type="radio" id="25" name="pageNumber" value="25" />
+                </label>
+            </fieldset>
+        </div>
+        <div class="page-container">
+            <div class="page-frame">
+                <div class="tutor-container visible" id="tutorContainer">
+                    <p class="page-tutor">Выберите страницу с Номером задания</p>
+                </div>
+                <div class="content" id="content2">
+                    <p class="desc">Шаблон на одну функцию</p>
+                    <img src="assets/ex2/1.jpg" alt="Условие задачи" class="img">
+                    <pre><code class="python">from itertools import product, permutations
+        
+def f(x,y,z,w):
+    return (x and (not y)) or (x == z) or w
+
+for x1, x2, x3, x4 in product([0,1], repeat=4):
+    t=(
+    (0,0,x1,1,0),
+    (0,x2,1,x3,0),
+    (x4,1,1,0,0)
+    )
+    if len(t) == len(set(t)):
+        for p in permutations('xyzw', r=4):
+            if all(f(**dict(zip(p, line))) == line[-1] for line in t):
+                print(*p)</code></pre></div>
+                <div class="content" id="content13">
+                    <p class="desc">Пройтись по маскам</p>
+                    <img src="assets/ex13/1.jpg" alt="Условие задачи" class="img">
+                    <pre><code class="python">from ipaddress import *
+
+for x in range(33):
+    net = ip_network(f'192.168.32.48/{x}', 0)
+    if str(net.network_address) == '192.168.24.0':
+        print(net.netmask)</code></pre>
+                    <p class="desc">Пройтись по узлам сети</p>
+                    <img src="assets/ex13/2.jpg" alt="Условие задачи" class="img">
+                    <pre><code class="python">from ipaddress import *
+net = ip_network('112.160.0.0/255.240.0.0', 0)
+count = 0
+for ip in net:
+    if f'{ip:b}'.count('1') % 5 != 0:
+        count += 1
+print(count)</code></pre>
+                </div>
+                <div class="content" id="content15">
+                    <p class="desc">
+                        При любых переменных
+                    </p>
+                    <img src="assets/ex15/1.jpg" alt="Условие задачи" class="img">
+                    <pre><code class="python">def f(m, n, a):
+    return (3 * m + 4 * n > 63) or ((m <= a) and (n < a))
+
+print(min(A for A in range(0,200) if all(f(m, n, A) == 1 for n in range(200) for m in range(200))))</code></pre>
+                    <p class="help">
+                        print(min(..)) если ищем минимальное или max(), если ищем максимальное.
+                    </p>
+                    <br>
+                    <p class="desc">На числовой прямой даны два отрезка</p>
+                    <img src="assets/ex15/2.jpg" alt="Условие задачи" class="img">
+                    <pre><code class="python">for x in [k * 0.25 for k in range(-1000, 1000)]:
+    P = 1 <= x <= 39
+    Q = 23 <= x <= 58
+    A = 1
+    f = (P <= (not Q)) <= (not A)
+    if f != 0:
+        print(x)</code></pre>
+                    <p class="help">
+                        A = 1 если ищем <u>наибольшее</u>, = 0 если наименьшее.<br>
+                        f != 0 если <u>ложь</u>, != 1 если истина
+                        Если обрыв, то это ответ.
+                        Если разрыв, то объединение двух отрезков в один.
+                    </p>
+                    <br>
+                    <p class="desc">Обозначим поразрядную конъюнкцию</p>
+                    <img src="assets/ex15/3.jpg" alt="Условие задачи" class="img">
+                    <pre><code class="python">def f(x, a):
+    return (x & 57) == 0 or ((x & 23 == 0) <= (not ((x & a) == 0)))
+print(min(a for a in range(1, 200) if all(f(x, a) for x in range(1, 2000))))</code></pre>
+                    <p class="help">
+                        Все действия над числами записать в скобки!<br>
+                        range(0 или 1, 200) в зависимости от искомого числа - натурального или неотрицательного
+                    </p>
+                    <br>
+                    <p class="desc">Обозначим через ДЕЛ утверждение</p>
+                    <img src="assets/ex15/4.jpg" alt="Условие задачи" class="img">
+                    <pre><code class="python">def d(x, a): return x % a == 0
+        
+def f(x, a):
+    return ((not d(x, 7)) and d(x, 13)) <= (x > (a - 40))
+
+print(max(A for A in range(1,200) if all(f(x, A) == 1 for x in range(1, 200))))</code></pre>
+                </div>
+                <div class="content" id="content19">
+                    <p class="help">
+                        Первая часть кода не меняется от задания 19 до 21, <u>КРОМЕ</u> тех случаев, когда в 19м кто-то выигрывает после <u>неудачного</u> хода противника. В таком случае пишем в последнем return .. else any(h), считаем 19й и потом обратно меняем, запоминая значение.
+                    </p>
+                    <p class="desc">Простая основа</p>
+                    <img src="assets/ex19/1-0.jpg" alt="Условие задачи" class="img">
+                    <pre><code class="python">def f(s, m):
+    if s >= 33: return m % 2 == 0
+    if m == 0: return 0
+    h = [f(s + 1, m - 1), f(s + 3, m - 1), f(s * 2, m - 1)]
+    return any(h) if (m - 1) % 2 == 0 else all(h)</code></pre>
+                    <p class="help">
+                        Меняются только строки 2 и 4 - во второй строке число и направление, в четвертой возможные шаги.
+                    </p>
+                    <p class="desc">Решение 19, 20, 21</p>
+                    <img src="assets/ex19/1-1.jpg" alt="Условие задачи" class="img">
+                    <pre><code class="python">print('19)', [s for s in range(1, 33) if f(s, 2)])</code></pre>
+                    <p class="help">
+                        В range() пишем возможные в задачи s. Далее в зависимости от того, кто должен закончить игру, пишем для него if (..). Если кто-то должен не закончить игру на каком-то ходе, то not if (..). <br>
+                        Для каждого номера прописываем свое решение через отдельные print().
+                    </p>
+                    <p class="desc">Усложнённая основа</p>
+                    <img src="assets/ex19/2-0.jpg" alt="Условие задачи" class="img">
+                    <pre><code class="python">def f(s, m):
+    if s >= 96: return m % 2 == 0
+    if m == 0: return 0
+    h = [f(s + 1, m - 1)]
+    if s % 2 == 0:
+        h.append(f(s * 1.5, m - 1))
+    elif s % 3 == 0:
+        h.append(f(s + s / 3, m - 1))
+    else:
+        h.append(f(s * 2, m - 1))
+    return any(h) if (m - 1) % 2 == 0 else all(h)</code></pre>
+                </div>
+                <div class="content" id="content23">
+                    <p class="desc">Обычное возрастание аргумента</p>
+                    <img src="assets/ex23/1.jpg" alt="Условие задачи" class="img">
+                    <pre><code class="python">def f(x, end):
+    if x > end: return 0
+    if x == end: return 1
+    return f(x + 1, end) + f(x * 2, end)
+print(f(2,22))</code></pre>
+                    <p class="desc">Содержит число + не содержит число</p>
+                    <img src="assets/ex23/2.jpg" alt="Условие задачи" class="img">
+                    <pre><code class="python">def f(x, end):
+    if x > end: return 0
+    if x == end: return 1
+    if x == 8: return 0
+    return f(x + 1, end) + f(x + 2, end) + f(x * 2, end)
+
+print(f(3, 14) * f(14, 18))</code></pre>
+                    <p class="help">
+                        Содержит число в тракетории значит, что мы идем до этого числа, а потом до конечного. <br>
+                        Не содержит число значит, что если мы встретим это число, то путей дальше нет, вернем 0.
+                    </p>
+                    <p class="desc">Содержит 2 числа</p>
+                    <img src="assets/ex23/3.jpg" alt="Условие задачи" class="img">
+                    <pre><code class="python">def f(x, end):
+    if x > end: return 0
+    if x == end: return 1
+    return f(x + 1, end) + f(x + 2, end) + f(x * 3, end)
+
+print(f(2, 8) * f(8, 10) * f(10, 12))</code></pre>
+                    <p class="desc">Не содержит двух команд</p>
+                    <img src="assets/ex23/4.jpg" alt="Условие задачи" class="img">
+                    <pre><code class="python">def f(x, end, c):
+    if x > end + 1: return 0
+    if x == end: return 1
+    
+    return f(x + 3, end, 2) + f(x * 2, end, 3) + (f(x - 1, end, 1) if c != 1 else 0)
+
+print(f(4, 14, 0))</code></pre>
+                    <p class="help">
+                        При каждом шаге рекурсии запоминаем команду, чтобы проверить её позже.
+                    </p>
+                </div>
+                <div class="content" id="content25">
+                    <p class="desc">Шаблон на простой номер</p>
+                    <img src="assets/ex25/1.jpg" alt="Условие задачи" class="img">
+                    <pre><code class="python">from fnmatch import fnmatch
+        
+for x in range(1917, 10 ** 10 + 1, 1917):
+    if fnmatch(str(x), '3?12?14*5'):
+        print(x, x // 1917)</code></pre>
+                    <p class="help">
+                        range() и шаг по числу, которому должно быть кратно конечное число
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="code/active.js"></script>
+</body>
+</html>
