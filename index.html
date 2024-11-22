@@ -20,6 +20,10 @@
                     <input type="radio" id="2" name="pageNumber" value="2" />
                 </label>
                 <label class="pageRadio">
+                    <span class="page-item" id="span-page9">Номер 9</span>
+                    <input type="radio" id="9" name="pageNumber" value="9" />
+                </label>
+                <label class="pageRadio">
                     <span class="page-item" id="span-page13">Номер 13</span>
                     <input type="radio" id="13" name="pageNumber" value="13" />
                 </label>
@@ -79,6 +83,63 @@ for x1, x2, x3, x4 in product([0,1], repeat=4):
         for p in permutations('xyzw', r=4):
             if all(f(**dict(zip(p, line))) == line[-1] for line in t):
                 print(*p)</code></pre></div>
+                <div class="content" id="content9">
+                    <p class="help">
+                        Первый шаг к выполнению задания - скопировать таблицу из экселя в блокнот через <kbd>Ctrl</kbd> + <kbd>C</kbd> <br>
+                        Для удобства назовем файл с цифрами <i>file.txt</i><br>
+                        Теперь, для перебора по всем строкам используем:
+                    </p>
+                    <pre><code class="python">for line in open('file.txt'):
+    a = [int(x) for x in line.split()]</code></pre>
+                    <p class="desc">Найдите количество строк</p>
+                    <div class="task-text">
+                        &emsp;&emsp;Откройте файл электронной таблицы, содержащей в каждой строке пять натуральных чисел.<br>
+                        &emsp;&emsp;Определите количество строк таблицы, содержащих числа, для которых выполнены оба условия:<br>
+                        &emsp;&emsp;— каждое число в строке встречается по одному разу,<br>
+                        &emsp;&emsp;— утроенная сумма максимального и минимального значений не превышает удвоенной суммы оставшихся чисел.<br>
+                        &emsp;&emsp;В ответе запишите только число.<br>
+                    </div>
+                    <pre><code class="python">count=0
+for line in open('file.txt'):
+    a = [int(x) for x in line.split()]
+    p1 = [x for x in a if a.count(x) == 1]
+    if len(p1) == len(a):
+        if 3 * (max(a) + min(a)) <= 2 * (sum(a) - max(a) - min(a)):
+            count+=1
+print(count)</code></pre>
+                    <div class="task-text">
+                        &emsp;&emsp;Откройте файл электронной таблицы, содержащей в каждой строке шесть натуральных чисел.<br>
+                        &emsp;&emsp;Определите количество строк таблицы, для чисел которых одновременно выполнены все следующие условия:<br>
+                        &emsp;&emsp;— в строке есть повторяющиеся числа;<br>
+                        &emsp;&emsp;— максимальное число в строке не повторяется;<br>
+                        &emsp;&emsp;— сумма всех повторяющихся чисел в строке меньше максимального числа этой строки. При подсчёте суммы повторяющихся чисел каждое число учитывается столько раз, сколько оно встречается.<br>
+                        &emsp;&emsp;В ответе запишите число — количество строк, удовлетворяющих заданным условиям.<br>
+                    </div>
+                    <pre><code class="python">count=0
+for line in open('file.txt'):
+    a = [int(x) for x in line.split()]
+    p1 = [x for x in a if a.count(x) > 1]
+    if len(p1) > 0 and a.count(max(a)) == 1 and sum(p1) < max(a):
+        count+=1
+print(count)</code></pre>
+                    <p class="desc">Ячейки в других строках таблицы</p>
+                    <div class="task-text">
+                        &emsp;&emsp;В каждой строке электронной таблицы записаны шесть натуральных чисел.<br>
+                        &emsp;&emsp;Назовём ячейку таблицы хорошей, если для неё выполняются следующие условия:<br>
+                        &emsp;&emsp;— число в данной ячейке не встречается в других ячейках этой же строки;<br>
+                        &emsp;&emsp;— число в данной ячейке ровно 50 раз встречается в других строках таблицы.<br>
+                        &emsp;&emsp;Определите количество строк таблицы, содержащих хотя бы одну хорошую ячейку.<br>
+                    </div>
+                    <pre><code class="python">all_numbers = [int(a) for b in open('file.txt') for a in b.split()]
+count= 0
+for line in open('file.txt'):
+    a = [int(x) for x in line.split()]
+    p1 = [x for x in a if a.count(x) == 1]
+    for i in p1:
+        if all_numbers.count(i) == 50:
+            count+=1
+print(count)</code></pre>
+                </div>
                 <div class="content" id="content13">
                     <p class="desc">Пройтись по маскам</p>
                     <div class="task-text">
