@@ -209,7 +209,6 @@ code, .img {
 .visible {
     display: flex;
 }
-
 .page-selector fieldset{
     width:100%;
     border:none;
@@ -245,13 +244,14 @@ code, .img {
     box-shadow:none;
 }
 .page-item{
+    position:relative;
     user-select:none;
     transition: background-color 0.3s ease;
 }
 
 .active {
     background-color: rgba(255,255,255,0.5);
-    text-shadow: rgba(0,0,0,0.4) 3px 3px;
+    text-shadow: rgba(0,0,0,0.7) 0.2vw 0.25vh 0.3vw;
 }
 .active:hover {
     background-color: rgba(255,255,255,0.35);
