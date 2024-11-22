@@ -20,6 +20,10 @@
                     <input type="radio" id="2" name="pageNumber" value="2" />
                 </label>
                 <label class="pageRadio">
+                    <span class="page-item" id="span-page6">Номер 6</span>
+                    <input type="radio" id="6" name="pageNumber" value="6" />
+                </label>
+                <label class="pageRadio">
                     <span class="page-item" id="span-page9">Номер 9</span>
                     <input type="radio" id="9" name="pageNumber" value="9" />
                 </label>
@@ -83,6 +87,82 @@ for x1, x2, x3, x4 in product([0,1], repeat=4):
         for p in permutations('xyzw', r=4):
             if all(f(**dict(zip(p, line))) == line[-1] for line in t):
                 print(*p)</code></pre></div>
+                <div class="content" id="content6">
+                    <p class="desc">База номера 6</p>
+                    <pre><code class="python">from turtle import *
+
+screensize(3000, 3000)
+tracer(0)
+m = 20 # &lt;-- масштаб
+left(90)
+# задание исполнителю
+pu()
+for x in range(-60, 60):
+    for y in range(-60,60):
+        goto(x * m, y * m)
+        dot(5)
+done()</code></pre>
+                    <p class="desc">Исполнитель Черепаха</p>
+                    <div class="task-text">
+                        &emsp;&emsp;Исполнитель Черепаха действует на плоскости с декартовой системой координат. В начальный момент Черепаха находится в начале координат, её голова направлена вдоль положительного направления оси ординат, хвост опущен. <br>
+                        &emsp;&emsp;Запись Повтори k [Команда1 Команда2 … КомандаS] означает, что последовательность из S команд повторится k раз.<br>
+                        &emsp;&emsp;Черепахе был дан для исполнения следующий алгоритм: Повтори 7 [Вперёд 10 Направо 120].<br>
+                        &emsp;&emsp;Определите, сколько точек с целочисленными координатами будут находиться внутри области, ограниченной линией, заданной данным алгоритмом. Точки на линии учитывать не следует.
+                    </div>
+                    <pre><code class="python">from turtle import *
+
+screensize(3000, 3000)
+tracer(0)
+m = 40
+left(90)
+
+for _ in range(7):
+    fd(10 * m)
+    rt(120)
+
+pu()
+for x in range(-60, 60):
+    for y in range(-60, 60):
+        goto(x * m, y * m)
+        dot(5)
+done()</code></pre>
+                    <p class="help">
+                        Изменяйте m для изменения масштаба картинки
+                    </p>
+                    <p class="desc">Исполнитель Цапля</p>
+                    <div class="task-text">
+                        &emsp;&emsp;Исполнитель Цапля действует на плоскости с декартовой системой координат. В начальный момент Цапля находится в начале координат, её клюв направлен вдоль положительного направления оси ординат, клюв опущен.<br>
+                        &emsp;&emsp;Цапле был дан для исполнения следующий алгоритм:<br>
+                        &emsp;&emsp;Повтори 5 [Дуга 5, 0, 5, 180 Дуга 5, 5, 0, 180 Дуга 5, 0, -5, 180 Дуга 5, -5, 0, 180].<br>
+                        &emsp;&emsp;Определите, сколько точек с целочисленными координатами будут находиться внутри области, ограниченной линией, заданной данным алгоритмом. Точки на линии учитывать не следует.
+                    </div>
+                    <pre><code class="python">from turtle import *
+
+screensize(3000, 3000)
+tracer(0)
+m = 40
+left(90)
+
+for _ in range(5):
+    circle(5 * m, 180)
+    rt(90)
+    circle(5 * m, 180)
+    rt(90)
+    circle(5 * m, 180)
+    rt(90)
+    circle(5 * m, 180)
+    rt(90)
+
+pu()
+for x in range(-60, 60):
+    for y in range(-60, 60):
+        goto(x * m, y * m)
+        dot(5)
+done()</code></pre>
+                    <p class="help">
+                        От функции <i>Дуга 5, 0, 5, 180</i> нас интересует только первое и последнее числа.
+                    </p>
+                </div>
                 <div class="content" id="content9">
                     <p class="help">
                         Первый шаг к выполнению задания - скопировать таблицу из экселя в блокнот через <kbd>Ctrl</kbd> + <kbd>C</kbd> <br>
