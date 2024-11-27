@@ -266,7 +266,7 @@ code, .img {
     padding: max(10px, 1vw);
     width:90%;
     border-radius:8px;
-    text-indent: 2em each-line;
+    text-indent: 2em each-line !important;
 }
 .desc a, .desc a:link {
     color:aliceblue;
