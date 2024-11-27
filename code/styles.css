@@ -266,6 +266,19 @@ code, .img {
     padding: max(10px, 1vw);
     width:90%;
     border-radius:8px;
+    text-indent: 2em each-line;
+}
+.desc a, .desc a:link {
+    color:aliceblue;
+}
+.desc a:visited, .desc a:focus {
+    color:#c792ea;
+}
+.desc a:hover {
+    color:rgb(141, 91, 173);
+}
+.desc a:active {
+    color:rgba(141, 91, 173, 0.5);
 }
 table, th, td {
     border: 1px solid;
