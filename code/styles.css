@@ -3,6 +3,18 @@
     src: url(assets/misc/Pacifico-Regular.ttf);
 }
 
+@supports (text-indent: each-line) {
+    .task-text {
+        text-indent: 2em each-line !important;
+    }
+}
+
+@supports not (text-indent: each-line) {
+    .task-text {
+        text-indent: 2em !important;
+    }
+}
+
 @media (max-width: 1100px) {
     .title {
         display: none;
@@ -266,6 +278,7 @@ code, .img {
     padding: max(10px, 1vw);
     width:90%;
     border-radius:8px;
+    font-size:inherit;
     text-indent: 2em each-line !important;
 }
 .desc a, .desc a:link {
