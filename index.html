@@ -14,52 +14,58 @@
     <main>
         <div class="page-selector">
             <p class="title">Шаблончики для ЕГЭ по Информатике</p>
-            <fieldset id="pageFieldset">
-                <label class="pageRadio">
-                    <span class="page-item" id="span-page2">Номер 2</span>
-                    <input type="radio" id="2" name="pageNumber" value="2" />
-                </label>
-                <label class="pageRadio">
-                    <span class="page-item" id="span-page6">Номер 6</span>
-                    <input type="radio" id="6" name="pageNumber" value="6" />
-                </label>
-                <label class="pageRadio">
-                    <span class="page-item" id="span-page9">Номер 9</span>
-                    <input type="radio" id="9" name="pageNumber" value="9" />
-                </label>
-                <label class="pageRadio">
-                    <span class="page-item" id="span-page12">Номер 12</span>
-                    <input type="radio" id="12" name="pageNumber" value="12" />
-                </label>
-                <label class="pageRadio">
-                    <span class="page-item" id="span-page13">Номер 13</span>
-                    <input type="radio" id="13" name="pageNumber" value="13" />
-                </label>
-                <label class="pageRadio">
-                    <span class="page-item" id="span-page14">Номер 14</span>
-                    <input type="radio" id="14" name="pageNumber" value="14" />
-                </label>
-                <label class="pageRadio">
-                    <span class="page-item" id="span-page15">Номер 15</span>
-                    <input type="radio" id="15" name="pageNumber" value="15" />
-                </label>
-                <label class="pageRadio">
-                    <span class="page-item" id="span-page16">Номер 16</span>
-                    <input type="radio" id="16" name="pageNumber" value="16" />
-                </label>
-                <label class="pageRadio">
-                    <span class="page-item" id="span-page19">Номера 19-21</span>
-                    <input type="radio" id="19" name="pageNumber" value="19" />
-                </label>
-                <label class="pageRadio">
-                    <span class="page-item" id="span-page23">Номер 23</span>
-                    <input type="radio" id="23" name="pageNumber" value="23" />
-                </label>
-                <label class="pageRadio">
-                    <span class="page-item" id="span-page25">Номер 25</span>
-                    <input type="radio" id="25" name="pageNumber" value="25" />
-                </label>
-            </fieldset>
+            <div class="pages-container">
+                <fieldset id="pageFieldset">
+                    <label class="pageRadio">
+                        <span class="page-item" id="span-page2">Номер 2</span>
+                        <input type="radio" id="2" name="pageNumber" value="2" />
+                    </label>
+                    <label class="pageRadio">
+                        <span class="page-item" id="span-page6">Номер 6</span>
+                        <input type="radio" id="6" name="pageNumber" value="6" />
+                    </label>
+                    <label class="pageRadio">
+                        <span class="page-item" id="span-page9">Номер 9</span>
+                        <input type="radio" id="9" name="pageNumber" value="9" />
+                    </label>
+                    <label class="pageRadio">
+                        <span class="page-item" id="span-page12">Номер 12</span>
+                        <input type="radio" id="12" name="pageNumber" value="12" />
+                    </label>
+                    <label class="pageRadio">
+                        <span class="page-item" id="span-page13">Номер 13</span>
+                        <input type="radio" id="13" name="pageNumber" value="13" />
+                    </label>
+                    <label class="pageRadio">
+                        <span class="page-item" id="span-page14">Номер 14</span>
+                        <input type="radio" id="14" name="pageNumber" value="14" />
+                    </label>
+                    <label class="pageRadio">
+                        <span class="page-item" id="span-page15">Номер 15</span>
+                        <input type="radio" id="15" name="pageNumber" value="15" />
+                    </label>
+                    <label class="pageRadio">
+                        <span class="page-item" id="span-page16">Номер 16</span>
+                        <input type="radio" id="16" name="pageNumber" value="16" />
+                    </label>
+                    <label class="pageRadio">
+                        <span class="page-item" id="span-page19">Номера 19-21</span>
+                        <input type="radio" id="19" name="pageNumber" value="19" />
+                    </label>
+                    <label class="pageRadio">
+                        <span class="page-item" id="span-page23">Номер 23</span>
+                        <input type="radio" id="23" name="pageNumber" value="23" />
+                    </label>
+                    <label class="pageRadio">
+                        <span class="page-item" id="span-page24">Номер 24</span>
+                        <input type="radio" id="24" name="pageNumber" value="24" />
+                    </label>
+                    <label class="pageRadio">
+                        <span class="page-item" id="span-page25">Номер 25</span>
+                        <input type="radio" id="25" name="pageNumber" value="25" />
+                    </label>
+                </fieldset>
+            </div>
         </div>
         <div class="page-container">
             <div class="page-frame">
@@ -68,6 +74,10 @@
                     <noscript>
                         ⚠ Для работы страницы необходим JavaScript, но он выключён ⚠
                     </noscript>
+                    
+                    <div class="version">
+                        <p id="headerAuthor">by <a href="https://github.com/Ultrad00d/ultrad00d.github.io">Ultrad00d</a></p> v0.61
+                    </div>
                 </div>
                 <div class="content" id="content2">
                     <p class="desc">Шаблон на одну функцию</p>
@@ -99,6 +109,9 @@ for x1, x2, x3, x4 in product([0,1], repeat=4):
         for p in permutations('xyzw', r=4):
             if all(f(**dict(zip(p, line))) == line[-1] for line in t):
                 print(*p)</code></pre>
+                    <p class="help">
+                        Для второй функции просто добавьте еще одно if высказывание после первого.
+                    </p>
                 </div>
                 <div class="content" id="content6">
                     <p class="desc">База номера 6</p>
@@ -318,7 +331,7 @@ print(count)</code></pre>
                 <div class="content" id="content14">
                     <p class="desc">Значение выражения записали в системе счисления</p>
                     <div class="task-text">
-                        Значение выражения 7 &times; 7<sup>2103</sup> - 6 &times; 7<sup>1270</sup> + 3 &times; 7<sup>57</sup> - 98 записали в системе счисления с основанием 7. Найдите сумму цифр получившегося числа и запишите её в ответе в десятичной системе счисления.
+                        Значение выражения 7 &times; 7<sup>2104</sup> - 6 &times; 7<sup>1270</sup> + 3 &times; 7<sup>57</sup> - 98 записали в системе счисления с основанием 7. Найдите сумму цифр получившегося числа и запишите её в ответе в десятичной системе счисления.
                     </div>
                     <pre><code class="python">n = 7 ** 2104 - 6 * 7 ** 1270 + 3 * 7 ** 57 - 98
 
@@ -535,6 +548,97 @@ print(f(4, 14, 0))</code></pre>
                         При каждом шаге рекурсии запоминаем команду, чтобы проверить её позже.
                     </p>
                 </div>
+                <div class="content" id="content24">
+                    <p class="help">
+                        Есть 4 метода решения номера 24: разбиением строки, динамическим подсчетом, двумя указателями и подсчет "руками".<br>
+                        Каждый способ уникален, каждый способ решает свою задачу лучше другого.
+                    </p>
+                    <p class="desc">Метод разбиения строки</p>
+                    <div class="task-text">
+                        В file.txt находится цепочка из символов латинского алфавита А, В, С. Найдите длину самой длинной подцепочки, состоящей из символов В.
+                    </div>
+                    <pre><code class="python">s = open('file.txt').readline()
+s = s.replace('A', ' ').replace('C', ' ')
+print(max(len(i) for i in s.split()))</code></pre>
+                    <p class="desc">Метод динамического подсчета</p>
+                    <div class="task-text">
+                        В file.txt находится цепочка из символов латинского алфавита A, B, C, D, E, F. Найдите длину самой длинной подцепочки, состоящей из символов A, C, D, F (в произвольном порядке).
+                    </div>
+                    <pre><code class="python">s = open('file.txt').readline()
+s = s.replace('B', ' ').replace('E', ' ')
+print(max(len(i) for i in s.split()))</code></pre>
+                    <div class="task-text">
+                        Текстовый файл file.txt содержит только заглавные буквы латинского алфавита (ABC..Z). Определите максимальное количество идущих подряд символов, среди которых нет сочетания символов KEGE.
+                    </div>
+                    <pre><code class="python">s = open('file.txt')
+s = s.replace('KEGE', 'KEG EGE')
+print(max(len(i) for i in s.split()))</code></pre>
+                    <p class="help">
+                        Если символы одинаковые нужно разбирать их, пока они есть в строке:
+                    </p>
+                    <pre><code class="python">while 'PP' in s: s = s.replace('PP', 'P P')</code></pre>
+                    <p class="help">
+                        Если даны пары символов, которые должны идти подряд, то их можно заменить на один символ, чтобы легче искать, а остальное заменить на пробелы.
+                    </p>
+                    <pre><code class="python">s = s.replace('AB', '*')</code></pre>
+                    <div class="task-text">
+                        Текстовый файл file.txt содержит строку из символов А, В, С и цифр 1, 2, З, всего не более чем 10<sup>6</sup> символов. Определите максимальное количество идущих подряд троек символов вида «буква + цифра + цифра».
+                    </div>
+                    <pre><code class="python">s = open('file.txt')
+s = s.replace('B', 'A').replace('C', 'A').replace('2', '1').replace('3', '1')
+s = s.replace('A11', '*').replace('A', ' ').replace('1', ' ')
+print(max(len(i) for i in s.split()))</code></pre>
+                    <div class="task-text">Текстовый файл состоит из символов A, B, C, D и E. Определите максимальное количество идущих подряд символов, среди которых символ A встречается не более 3 раз.
+                    </div>
+                    <pre><code class="python">s = open('file.txt')
+s = s.split('A')
+m = 0
+for i in range(len(s) - 1):
+    c = s[i] + 'A' + s[i + 1] + 'A' + s[i + 2] + 'A' + s[i + 3]
+    m = max(m, len(c))
+print(m)</code></pre>
+                    <p class="desc" id="Метод_динамического_подсчета">Метод динамического подсчета</p>
+                    <div class="task-text">
+                        В file.txt находится цепочка из символов латинского алфавита A, B, C, D, E, F. Найдите длину самой длинной подцепочки, состоящей из символов A, C, D, F (в произвольном порядке).
+                    </div>
+                    <pre><code class="python">s = open('file.txt').readline()
+m = [0]*len(s)
+
+for i in range(1, len(s)):
+    if s[i] in 'ACDF':
+        m[i] = m[i - 1] + 1
+print(max(m))</code></pre>
+                    <div class="task-text">
+                        Текстовый файл file.txt состоит не более чем из 10<sup>6</sup> символов. Определите максимальное количество идущих подряд символов, среди которых каждые два соседних различны.
+                    </div>
+                    <pre><code class="python">s = open('file.txt').readline()
+m = [1]*len(s)
+
+for i in range(1, len(s)):
+    if s[i] != s[i - 1]:
+        m[i] = m[i - 1] + 1
+print(max(m))</code></pre>
+                    <div class="task-text">
+                        Текстовый файл состоит не более чем из 10<sup>6</sup> симолов арабских цифр (0, 1, .., 9). Определите максимальное количество идущих подряд цифр, расположенных в строгом возрастающем порядке.
+                    </div>
+                    <pre><code class="python">s = open('file.txt').readline()
+m = [1]*len(s)
+
+for i in range(1, len(s)):
+    if s[i] > s[i - 1]:
+        m[i] = m[i - 1] + 1
+print(max(m))</code></pre>
+                    <p class="help">Запись s[i] > s[i - 1] верна в учет таблицы кодировки символов ascii:</p>
+                    <img src="assets/misc/ascii.png" alt="Таблица ascii" class="img ascii">
+                    <div class="desc">Метод двух указателей</div>
+                    ...
+                    <p class="desc">Считаем "руками"</p>
+                    <div class="task-text">В текстовом файле file.txt находится цепочка из символов латинского алфавита A, B, C, D, E. Найдите максимальную длину цепочки вида EABEABEABE... (состоящей из фрагментов EAB, последний фрагмент может быть неполным).</div>
+                    <pre><code class="python">s = open('file.txt').readline()
+print('EAB' * 17 in s)
+#False</code></pre>
+                    <p class="help">Можно увеличивать число, пока True, или уменьшать, пока False. На границе будет лежать наше число. Добавьте к нему проверку на остаточные элементы и посчитайте его длину.</p>
+                </div>
                 <div class="content" id="content25">
                     <p class="desc">Шаблон на простой номер</p>
                     <div class="task-text">
@@ -542,7 +646,7 @@ print(f(4, 14, 0))</code></pre>
                         — символ «?» означает ровно одну произвольную цифру;<br>
                         — символ «*» означает любую последовательность цифр произвольной длины; в том числе «*» может задавать и пустую последовательность.<br>
                         Например, маске 123*4?5 соответствуют числа 123405 и 12300405.<br>
-                        Среди натуральных чисел, не превышающих 1010, найдите все числа, соответствующие маске 3?12?14*5, делящиеся на 1917 без остатка. В ответе запишите в первом столбце таблицы все найденные числа в порядке возрастания, а во втором столбце — соответствующие им результаты деления этих чисел на 1917.<br>
+                        Среди натуральных чисел, не превышающих 10<sup>10</sup>, найдите все числа, соответствующие маске <b>3?12?14*5</b>, делящиеся на 1917 без остатка. В ответе запишите в первом столбце таблицы все найденные числа в порядке возрастания, а во втором столбце — соответствующие им результаты деления этих чисел на 1917.<br>
                     </div>
                     <pre><code class="python">from fnmatch import fnmatch
         
