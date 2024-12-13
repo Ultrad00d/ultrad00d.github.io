@@ -90,7 +90,7 @@
     .content {
         position:static !important;
         padding-left: 2vw !important;
-        /* padding-bottom:8vh !important; */
+        padding-bottom:8vh !important;
     }
     .content pre {
         width: 94vw !important;
@@ -121,6 +121,9 @@
     #headerAuthor a{
         font-size:1rem !important;
         margin-left:0.5rem !important;
+    }
+    #headerAuthor:after {
+        top: 150% !important;
     }
 }
 
@@ -392,7 +395,7 @@ table {
     content: '';
     position: absolute;
     left: 0;
-    top: 150%;
+    top: 100%;
     width: 100%;
     height: 1px;
     background: linear-gradient(
