@@ -261,11 +261,21 @@ code, .img {
 }
 .content img {
     width:80%;
+    display:inline-block;
 }
 .img.ascii {
     width:40%;
     padding:0.4vw;
     background-color:#000;
+}
+.img.cluster, .img.clusters {
+    width:30%;
+    margin:0;
+    margin-bottom:-6px;
+    filter: invert(1) brightness(1.2) contrast(0.8);
+}
+.clusters.A, .clusters.B{
+    height:40vh;
 }
 .content pre {
     width: 100%;
