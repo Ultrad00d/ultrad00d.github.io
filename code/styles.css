@@ -86,11 +86,13 @@
         min-height:100% !important;
         width: 100%;
         position:static !important;
+        justify-content:start !important;
     }
     .content {
         position:static !important;
         padding-left: 2vw !important;
         padding-bottom:8vh !important;
+        min-height:84vh !important;
     }
     .content pre {
         width: 94vw !important;
@@ -103,8 +105,8 @@
         width: 90vw !important;
     }
     .desc {
-        font-size: 1.6em !important;
-        width: 95vw !important;
+        font-size: 1.5em !important;
+        width: 88vw !important;
         padding-right:0 !important;
     }
     .content .img {
@@ -112,10 +114,10 @@
         border-radius: 8px !important;
     }
     .show-link{
-        width: 30px !important;
-        height: 30px !important;
+        width: 20px !important;
+        height: 20px !important;
         top:20%;
-        right:10px !important;
+        right:-24px !important;
     }
     .version {
         flex-direction:column-reverse;
@@ -217,6 +219,7 @@ main{
     padding-right:32px;
     margin:2vh 0;
     position:relative;
+    hyphens: auto;
 }
 .desc:has(.show-link:hover) {
     animation: breathing 2s infinite alternate ease-in-out;
@@ -235,6 +238,7 @@ main{
     width:80%;
     padding:0.25vw 2vw;
     font-size: 1.3rem;
+    hyphens: auto;
 }
 code, .img {
     border-radius: 12px;
@@ -377,6 +381,7 @@ code, .img {
     border-radius:8px;
     font-size:inherit;
     text-indent: 2em each-line !important;
+    hyphens: auto;
 }
 .desc a, .desc a:link {
     color:aliceblue;
