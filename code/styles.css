@@ -105,10 +105,17 @@
     .desc {
         font-size: 1.6em !important;
         width: 95vw !important;
+        padding-right:0 !important;
     }
-    .content img {
+    .content .img {
         width: 94vw !important;
         border-radius: 8px !important;
+    }
+    .show-link{
+        width: 30px !important;
+        height: 30px !important;
+        top:20%;
+        right:10px !important;
     }
     .version {
         flex-direction:column-reverse;
@@ -207,7 +214,21 @@ main{
     font-size: 2.2rem;
     padding:0.25vw;
     padding-bottom:0;
+    padding-right:32px;
     margin:2vh 0;
+    position:relative;
+}
+.desc:has(.show-link:hover) {
+    animation: breathing 2s infinite alternate ease-in-out;
+    color:aliceblue;
+}
+@keyframes breathing {
+    0% {
+        color: aliceblue;
+    }
+    100% {
+        color: #c792ea;
+    }
 }
 .help {
     background-color: rgba(255,255,255,0.1);
@@ -259,7 +280,7 @@ code, .img {
     width: 100%;
     transition: max-height 0.2s ease-out;
 }
-.content img {
+.content .img {
     width:80%;
     display:inline-block;
 }
@@ -426,4 +447,12 @@ table {
 @keyframes glowing {
     from {background-position: 0 0;}
     to {background-position: 600% 0;}
+}
+.show-link{
+    position:absolute;
+    width: 20px;
+    height: 20px;
+    filter:invert(1);
+    top:20%;
+    right:0;
 }
