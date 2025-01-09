@@ -16,63 +16,67 @@
             <p class="title">Шаблончики для ЕГЭ по Информатике</p>
             <div class="pages-container">
                 <fieldset id="pageFieldset">
-                    <label class="pageRadio">
+                    <label class="pageRadio python">
                         <span class="page-item" id="span-page1">Номер 1</span>
                         <input type="radio" id="1" name="pageNumber" value="1" />
                     </label>
-                    <label class="pageRadio">
+                    <label class="pageRadio python">
                         <span class="page-item" id="span-page2">Номер 2</span>
                         <input type="radio" id="2" name="pageNumber" value="2" />
                     </label>
-                    <label class="pageRadio">
+                    <label class="pageRadio python">
                         <span class="page-item" id="span-page6">Номер 6</span>
                         <input type="radio" id="6" name="pageNumber" value="6" />
                     </label>
-                    <label class="pageRadio">
+                    <label class="pageRadio python">
                         <span class="page-item" id="span-page9">Номер 9</span>
                         <input type="radio" id="9" name="pageNumber" value="9" />
                     </label>
-                    <label class="pageRadio">
+                    <label class="pageRadio python">
                         <span class="page-item" id="span-page12">Номер 12</span>
                         <input type="radio" id="12" name="pageNumber" value="12" />
                     </label>
-                    <label class="pageRadio">
+                    <label class="pageRadio python">
                         <span class="page-item" id="span-page13">Номер 13</span>
                         <input type="radio" id="13" name="pageNumber" value="13" />
                     </label>
-                    <label class="pageRadio">
+                    <label class="pageRadio python">
                         <span class="page-item" id="span-page14">Номер 14</span>
                         <input type="radio" id="14" name="pageNumber" value="14" />
                     </label>
-                    <label class="pageRadio">
+                    <label class="pageRadio python">
                         <span class="page-item" id="span-page15">Номер 15</span>
                         <input type="radio" id="15" name="pageNumber" value="15" />
                     </label>
-                    <label class="pageRadio">
+                    <label class="pageRadio python">
                         <span class="page-item" id="span-page16">Номер 16</span>
                         <input type="radio" id="16" name="pageNumber" value="16" />
                     </label>
-                    <label class="pageRadio">
+                    <label class="pageRadio python">
                         <span class="page-item" id="span-page17">Номер 17</span>
                         <input type="radio" id="17" name="pageNumber" value="17" />
                     </label>
-                    <label class="pageRadio">
+                    <label class="pageRadio excel">
+                        <span class="page-item" id="span-page18">Номер 18</span>
+                        <input type="radio" id="18" name="pageNumber" value="18" />
+                    </label>
+                    <label class="pageRadio python">
                         <span class="page-item" id="span-page19">Номера 19-21</span>
                         <input type="radio" id="19" name="pageNumber" value="19" />
                     </label>
-                    <label class="pageRadio">
+                    <label class="pageRadio python">
                         <span class="page-item" id="span-page23">Номер 23</span>
                         <input type="radio" id="23" name="pageNumber" value="23" />
                     </label>
-                    <label class="pageRadio">
+                    <label class="pageRadio python">
                         <span class="page-item" id="span-page24">Номер 24</span>
                         <input type="radio" id="24" name="pageNumber" value="24" />
                     </label>
-                    <label class="pageRadio">
+                    <label class="pageRadio python">
                         <span class="page-item" id="span-page25">Номер 25</span>
                         <input type="radio" id="25" name="pageNumber" value="25" />
                     </label>
-                    <label class="pageRadio">
+                    <label class="pageRadio python excel">
                         <span class="page-item" id="span-page27">Номер 27</span>
                         <input type="radio" id="27" name="pageNumber" value="27" />
                     </label>
@@ -88,7 +92,7 @@
                     </noscript>
                     
                     <div class="version">
-                        <p id="headerAuthor">by <a href="https://github.com/Ultrad00d/ultrad00d.github.io">Ultrad00d</a></p> v0.81
+                        <p id="headerAuthor">by <a href="https://github.com/Ultrad00d/ultrad00d.github.io">Ultrad00d</a></p> v0.9
                     </div>
                 </div>
                 <div class="content" id="content1">
@@ -330,20 +334,20 @@ for n in range(3, 10_001):
 print(max(res))</code></pre>
                 </div>
                 <div class="content" id="content13">
-                    <p class="desc">Пройтись по маскам <a href="https://youtu.be/lCVRqbo6mck&t=1693"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                    <p class="desc">Найдите маску <a href="https://youtu.be/lCVRqbo6mck&t=1693"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
                     <div class="task-text">
-                        Для узла с IP-адресом 117.191.37.84 адрес сети равен 117.191.37.80. Чему равно наименьшее возможное зачение последнего (самого правого) байта маски? Ответ запишите в виде десятичного числа.
+                        Для узла с IP-адресом 145.192.94.230 адрес сети равен 145.192.80.0. Чему равен третий слева байт маски? Ответ запиимте в виде десятичного числа.
                     </div>
                     <pre><code class="python">from ipaddress import *
 
 for x in range(33):
-    net = ip_network(f'192.168.32.48/{x}', 0)
-    if str(net.network_address) == '192.168.24.0':
+    net = ip_network(f'145.192.94.230/{x}', 0)
+    if str(net.network_address) == '145.192.80.0':
         print(net.netmask)</code></pre>
-                    <p class="desc">Пройтись по узлам сети <a href="https://youtu.be/lCVRqbo6mck&t=1280"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                    <p class="desc">Найдите узлы сети <a href="https://youtu.be/lCVRqbo6mck&t=1280"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
                     <div class="task-text">
                         В терминологии сетей TCP/IP маской сети называют двоичное число, которое показывает, какая часть IР-адреса узла сети относится к адресу сети, а какая — к адресу узла в этой сети. Адрес сети получается в результате применения поразрядной конъюнкции к заданному адресу узла и его маске. Сеть задана IР-адресом 112.160.0.0 и сетевой маской 255.240.0.0. <br>
-                        Сколько в этой сети для которых количество единиц в двоичной записи IР-адреса не кратно 5? <br>
+                        Сколько в этой сети узлов, для которых количество единиц в двоичной записи IР-адреса не кратно 5? <br>
                         В ответе укажите только число.
                     </div>
                     <pre><code class="python">from ipaddress import *
@@ -505,6 +509,23 @@ for i in range(len(s) + 1):
         m = min(m, abs(sum(a) - (2*i + 3)))
 print(counter, m)</code></pre>
                 </div>
+                <div class="content" id="content18">
+                    <p class="help">
+                        Задание выполняется исключительно в Excel.<br>
+                        Перед выполнением задания обязательно прочтите как движется робот! Направление по-умолчанию сверху-вправо, но иногда его меняют.
+                    </p>
+                    <p class="desc">Робот-сборщик монет <a href="https://youtu.be/MWR7D1PUoY0&t=120s"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                    <div class="task-text">Квадрат разлинован на N &times; N клеток (1 &gt; N &gt; 30). Исполнитель Робот может перемещаться по клеткам, выполняя за одно перемещение одну из двух команд: вправо или вниз. По команде вправо Робот перемещается в соседнюю правую клетку, по команде вниз – в соседнюю нижнюю. Квадрат ограничен внешними стенами. Между соседними клетками квадрата также могут быть внутренние стены. Сквозь стену Робот пройти не может.<br>
+                        Перед каждым запуском Робота в каждой клетке квадрата лежит монета достоинством от 1 до 100. Посетив клетку, Робот забирает монету с собой; это также относится к начальной и конечной клеткам маршрута Робота.<br>
+                        В «угловых» клетках поля – тех, которые справа и снизу ограничены стенами, Робот не может продолжать движение, поэтому накопленная сумма считается итоговой. Таких конечных клеток на поле может быть несколько, включая правую нижнюю клетку поля. При разных запусках итоговые накопленные суммы могут различаться.<br>
+                        Определите максимальную и минимальную денежные суммы, среди всех возможных итоговых сумм, которые может собрать Робот, пройдя из левой верхней клетки в конечную клетку маршрута.<br>
+                        В ответе укажите два числа - сначала максимальную сумму, затем минимальную.<br>
+                        Исходные данные представляют собой электронную таблицу размером N &times; N, каждая ячейка которой соответствует клетке квадрата. Внутренние и внешние стены обозначены утолщёнными линиями.
+                    </div>
+                    <p class="help">
+                        Будет дописано в v0.91
+                    </p>
+                </div>
                 <div class="content" id="content19">
                     <p class="help">
                         Первая часть кода не меняется от задания 19 до 21, <u>КРОМЕ</u> тех случаев, когда в 19м кто-то выигрывает после <u>неудачного</u> хода противника. В таком случае пишем в последнем return .. else any(h), считаем 19й и потом обратно меняем, запоминая значение.
@@ -628,7 +649,7 @@ print(f(4, 14, 0))</code></pre>
                         Есть 4 метода решения номера 24: разбиением строки, динамическим подсчетом, двумя указателями и подсчет "руками".<br>
                         Каждый способ уникален, каждый способ решает свою задачу лучше другого.
                     </p>
-                    <p class="desc">Метод разбиения строки</p>
+                    <p class="desc">Метод разбиения строки <a href="https://youtu.be/3brn26Ad-ek&t=317"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
                     <div class="task-text">
                         В file.txt находится цепочка из символов латинского алфавита А, В, С. Найдите длину самой длинной подцепочки, состоящей из символов В.
                     </div>
@@ -673,7 +694,7 @@ for i in range(len(s) - 1):
     # c = 'А'.join(s[i:i+4])
     m = max(m, len(c))
 print(m)</code></pre>
-                    <p class="desc" id="Метод_динамического_подсчета">Метод динамического подсчета</p>
+                    <p class="desc">Метод динамического подсчета <a href="https://youtu.be/sRxnrC9b5Ww&t=70"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
                     <div class="task-text">
                         В file.txt находится цепочка из символов латинского алфавита A, B, C, D, E, F. Найдите длину самой длинной подцепочки, состоящей из символов A, C, D, F (в произвольном порядке).
                     </div>
@@ -706,9 +727,11 @@ for i in range(1, len(s)):
 print(max(m))</code></pre>
                     <p class="help">Запись s[i] > s[i - 1] верна в силу таблицы кодировки символов ascii:</p>
                     <img src="assets/task/24/ascii.png" alt="Таблица ascii" class="img ascii">
-                    <div class="desc">Метод двух указателей</div>
-                    ...
-                    <p class="desc">Считаем "руками"</p>
+                    <div class="desc">Метод двух указателей  <a href="https://youtu.be/lx7FFGuoCjc&t=160"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></div>
+                    <p class="help">
+                        Будет дописано в v0.91
+                    </p>
+                    <p class="desc">Считаем "руками" <a href="https://youtu.be/sRxnrC9b5Ww&t=4968"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
                     <div class="task-text">В текстовом файле file.txt находится цепочка из символов латинского алфавита A, B, C, D, E. Найдите максимальную длину цепочки вида EABEABEABE... (состоящей из фрагментов EAB, последний фрагмент может быть неполным).</div>
                     <pre><code class="python">s = open('file.txt').readline()
 print('EAB' * 17 in s)
@@ -716,25 +739,26 @@ print('EAB' * 17 in s)
                     <p class="help">Можно увеличивать число, пока True, или уменьшать, пока False. На границе будет лежать наше число. Добавьте к нему проверку на остаточные элементы и посчитайте его длину.</p>
                 </div>
                 <div class="content" id="content25">
-                    <p class="desc">Шаблон на простой номер</p>
+                    <p class="desc">Шаблон на простой номер <a href="https://youtu.be/LwgnaNR2gHk&t=416s"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
                     <div class="task-text">
                         Назовём маской числа последовательность цифр, в которой также могут встречаться следующие символы:<br>
-                        — символ «?» означает ровно одну произвольную цифру;<br>
-                        — символ «*» означает любую последовательность цифр произвольной длины; в том числе «*» может задавать и пустую последовательность.<br>
-                        Например, маске 123*4?5 соответствуют числа 123405 и 12300405.<br>
-                        Среди натуральных чисел, не превышающих 10<sup>10</sup>, найдите все числа, соответствующие маске <b>3?12?14*5</b>, делящиеся на 1917 без остатка. В ответе запишите в первом столбце таблицы все найденные числа в порядке возрастания, а во втором столбце — соответствующие им результаты деления этих чисел на 1917.<br>
+                        – символ «?» означает ровно одну произвольную цифру;<br>
+                        – символ «*» означает любую последовательность цифр произвольной длины; в том числе «*» может задавать и пустую последовательность.<br>
+                        Например, маске <i>123*4?5</i> соответствуют числа 123405 и 12300405.<br>
+                        Среди натуральных чисел, не превышающих 10<sup>10</sup>, найдите все числа, соответствующие маске <i>1?2157*4</i>, делящиеся на 2024 без остатка.<br>
+                        В ответе запишите в первом столбце таблицы все найденные числа в порядке возрастания, а во втором столбце – соответствующие им результаты деления этих чисел на 2024.<br>
                     </div>
                     <pre><code class="python">from fnmatch import fnmatch
         
-for x in range(1917, 10 ** 10 + 1, 1917):
-    if fnmatch(str(x), '3?12?14*5'):
-        print(x, x // 1917)</code></pre>
+for x in range(2024, 10 ** 10 + 1, 2024):
+    if fnmatch(str(x), '1?2157*4'):
+        print(x, x // 2024)</code></pre>
                     <p class="help">
                         range() и шаг по числу, которому должно быть кратно конечное число
                     </p>
                 </div>
                 <div class="content" id="content27">
-                    <div class="desc">Кластеры</div>
+                    <div class="desc">Кластеры <a href="https://youtu.be/JN6HRU8S9kI&t=398"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></div>
                     <div class="task-text">Учёный решил провести кластеризацию некоторого множества звёзд по их расположению на карте звёздного неба. Кластер звёзд - это набор звёзд (точек) на графике, лежащий внутри прямоугольника высотой H и шириной W. Каждая звезда обязательно принадлежит только одному из кластеров.<br>
                         Истинный центр кластера, или центроид, - это одна из звёзд на графике, сумма расстояний от которой до всех остальных звёзд кластера минимальна.<br>
                         Под расстоянием понимается расстояние Евклида между двумя точками A(x1,y1) и B(x2,y2) на плоскости, которое вычисляется по формуле: d(A,B)= ((x2-x1)<sup>2</sup> + (y2-y1)<sup>2</sup>)<sup>0.5</sup><br>
