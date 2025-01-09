@@ -2,20 +2,16 @@
     font-family:Cursive;
     src: url(assets/misc/Pacifico-Regular.ttf);
 }
-
-@supports (text-indent: each-line) {
-    .task-text {
-        text-indent: 2em each-line !important;
-    }
-}
-
 @supports not (text-indent: each-line) {
     .task-text {
-        text-indent: 2em !important;
+        text-indent: 2em;
     }
 }
 
 @media (max-width: 1100px) {
+    .task-text {
+        text-indent: 1.3em each-line !important;
+    }
     body {
         width:100vw;
     }
@@ -66,12 +62,30 @@
     .pageRadio {
         width:fit-content;
         display:inline-block;
-        height: 6vh !important;
+        height: 4vh !important;
         padding: 1vw 10vw !important;
         border-radius: 64px !important;
         font-size: 1rem !important;
         margin-bottom:0 !important;
     }
+    .pageRadio.python, .pageRadio.excel {
+        padding-right: 15vw !important;
+    }
+    .pageRadio.excel.python {
+        padding-right: 25vw !important;
+    }
+
+    .pageRadio.excel::after, .pageRadio.python::before {
+        right: 12px !important;
+    }
+    
+    .pageRadio.excel.python::after {
+        right: 10px !important;
+    }
+    .pageRadio.excel.python::before {
+        right: 50px !important;
+    }
+
     .page-container {
         width:100vw !important;
         margin:0 !important;
@@ -102,7 +116,8 @@
     }
     .help {
         font-size:1.2rem !important;
-        width: 90vw !important;
+        width: 83vw !important;
+        padding-left: 32px !important;
     }
     .desc {
         font-size: 1.5em !important;
@@ -134,7 +149,36 @@
     #headerAuthor:after {
         top: 150% !important;
     }
+    .task-text .img {
+        margin-top: 2vh !important;
+        margin-left:-5vw !important;
+        width:84vw !important;
+    }
+    .clusters{
+        margin-bottom:6px !important;
+    }
 }
+@media (max-width: 850px) {
+    .pageRadio {
+        height: 4.5vh !important;
+    }
+}
+@media (max-width: 700px) {
+    .pageRadio {
+        height: 5vh !important;
+    }
+}
+@media (max-width: 540px) {
+    .pageRadio {
+        height: 5.5vh !important;
+    }
+}
+@media (max-width: 440px) {
+    .pageRadio {
+        height: 6vh !important;
+    }
+}
+
 
 html, body {
     margin:0;
@@ -225,6 +269,13 @@ main{
     animation: breathing 2s infinite alternate ease-in-out;
     color:aliceblue;
 }
+.show-link {
+    transition:rotate 0.3s, transform 0.3s;
+}
+.show-link:hover {
+    rotate:45deg;
+    transform: scale(0.9);
+}
 @keyframes breathing {
     0% {
         color: aliceblue;
@@ -237,11 +288,38 @@ main{
     background-color: rgba(255,255,255,0.1);
     width:80%;
     padding:0.25vw 2vw;
+    padding-left:2.5vw;
     font-size: 1.3rem;
     hyphens: auto;
+    position:relative;
+    border-radius:8px;
 }
 code, .img {
     border-radius: 12px;
+    z-index:1;
+}
+.help::after{
+    top:50%;
+    left:5px;
+    position: absolute;
+    content:'\1F50D';
+    user-select:none;
+    transform:translateY(-50%)
+}
+code {
+    position:relative;
+    overflow-y:hidden;
+}
+code::after{
+    top:25%;
+    right:5px;
+    position: absolute;
+    content:'#';
+    color: rgba(64, 64, 88, 0.15);
+    font-size:16rem;
+    user-select:none;
+    transform:translateY(-50%);
+    mix-blend-mode:lighten ;
 }
 .tutor-container{
     position:absolute;
@@ -347,6 +425,7 @@ code, .img {
     font-weight:600;
     font-size: 1.2rem;
     border-radius: 8px;
+    position:relative;
 }
 .pageRadio input{
     display:none;
@@ -364,6 +443,36 @@ code, .img {
     user-select:none;
     transition: background-color 0.3s ease;
 }
+
+.pageRadio::after, .pageRadio::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    filter: drop-shadow(4px 4px 3px rgba(0,0,0,0.3));
+}
+
+.pageRadio.excel::after {
+    background-image: url(../assets/misc/excel_logo.png);
+    right: 10px;
+}
+.pageRadio.python::before {
+    background-image: url(../assets/misc/python_logo.png);
+    right: 10px;
+}
+
+.pageRadio.excel.python::after {
+    right: 10px;
+}
+.pageRadio.excel.python::before {
+    right: 50px;
+}
+
 .active {
     background-color: rgba(255,255,255,0.5);
     text-shadow: rgba(0,0,0,0.7) 0.2vw 0.25vh 0.3vw;
@@ -380,7 +489,7 @@ code, .img {
     width:90%;
     border-radius:8px;
     font-size:inherit;
-    text-indent: 2em each-line !important;
+    text-indent: 2em each-line;
     hyphens: auto;
 }
 .desc a, .desc a:link {
