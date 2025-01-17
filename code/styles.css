@@ -2,183 +2,10 @@
     font-family:Cursive;
     src: url(assets/misc/Pacifico-Regular.ttf);
 }
-@supports not (text-indent: each-line) {
-    .task-text {
-        text-indent: 2em;
-    }
-}
 
-@media (max-width: 1100px) {
-    .task-text {
-        text-indent: 1.3em each-line !important;
-    }
-    body {
-        width:100vw;
-    }
-    .title {
-        display: none;
-    }
-    .tutor-container {
-        position:static !important;
-        min-height:92vh !important;
-    }
-    .page-tutor{
-        font-family:'Courier New', Courier, monospace;
-        font-size:1.5rem !important;
-        text-align: center;
-        color:rgba(170, 170, 170, 0.4);
-        position:absolute;
-        top:45%;
-        transform: translateY(-50%);
-    }
-    main {
-        display:flex !important;
-        flex-direction:column;
-        position:relative;
-    }
-    .page-selector{
-        width:100vw;
-        height:8vh;
-        padding: 0 !important;
-        overflow-x:auto !important;
-        overflow-y:hidden !important;
-        position:fixed;
-        background-color: #565665;
-        top:0;
-        z-index:3;
-    }
-    .page-selector fieldset {
-        width:100vw;
-        height:8vh;
-        padding:0 2vw !important;
-        display:grid !important;
-        grid-auto-flow:column;
-        grid-auto-columns:max-content;
-        align-items:center;
-        gap: 3vw;
-        overflow-x:auto !important;
-        overflow-y:hidden;
-    }
-    .pageRadio {
-        width:fit-content;
-        display:inline-block;
-        height: 4vh !important;
-        padding: 1vw 10vw !important;
-        border-radius: 64px !important;
-        font-size: 1rem !important;
-        margin-bottom:0 !important;
-    }
-    .pageRadio.python, .pageRadio.excel {
-        padding-right: 15vw !important;
-    }
-    .pageRadio.excel.python {
-        padding-right: 25vw !important;
-    }
-
-    .pageRadio.excel::after, .pageRadio.python::before {
-        right: 12px !important;
-    }
-    
-    .pageRadio.excel.python::after {
-        right: 10px !important;
-    }
-    .pageRadio.excel.python::before {
-        right: 50px !important;
-    }
-
-    .page-container {
-        width:100vw !important;
-        margin:0 !important;
-        margin-top:8vh!important;
-        position:absolute !important;
-        display:flex!important;
-        justify-content:center!important;
-        align-items:center!important;
-    }
-    .page-frame {
-        border-radius: 0 !important;
-        min-height:100% !important;
-        width: 100%;
-        position:static !important;
-        justify-content:start !important;
-    }
-    .content {
-        position:static !important;
-        padding-left: 2vw !important;
-        padding-bottom:8vh !important;
-        min-height:84vh !important;
-    }
-    .content pre {
-        width: 94vw !important;
-    }
-    .content code {
-        font-size: 14px !important;
-    }
-    .help {
-        font-size:1.2rem !important;
-        width: 83vw !important;
-        padding-left: 32px !important;
-    }
-    .desc {
-        font-size: 1.5em !important;
-        width: 88vw !important;
-        padding-right:0 !important;
-    }
-    .content .img {
-        width: 94vw !important;
-        border-radius: 8px !important;
-    }
-    .show-link{
-        width: 20px !important;
-        height: 20px !important;
-        top:20%;
-        right:-24px !important;
-    }
-    .version {
-        flex-direction:column-reverse;
-        font-size:1.2rem !important;
-        line-height:0.5rem;
-    }
-    #headerAuthor{
-        font-size:0.6rem !important;
-    }
-    #headerAuthor a{
-        font-size:1rem !important;
-        margin-left:0.5rem !important;
-    }
-    #headerAuthor:after {
-        top: 150% !important;
-    }
-    .task-text .img {
-        margin-top: 2vh !important;
-        margin-left:-5vw !important;
-        width:84vw !important;
-    }
-    .clusters{
-        margin-bottom:6px !important;
-    }
+:root{
+    --task-text-padding: max(10px, 1vw);
 }
-@media (max-width: 850px) {
-    .pageRadio {
-        height: 4.5vh !important;
-    }
-}
-@media (max-width: 700px) {
-    .pageRadio {
-        height: 5vh !important;
-    }
-}
-@media (max-width: 540px) {
-    .pageRadio {
-        height: 5.5vh !important;
-    }
-}
-@media (max-width: 440px) {
-    .pageRadio {
-        height: 6vh !important;
-    }
-}
-
 
 html, body {
     margin:0;
@@ -319,7 +146,8 @@ code::after{
     font-size:16rem;
     user-select:none;
     transform:translateY(-50%);
-    mix-blend-mode:lighten ;
+    mix-blend-mode:lighten;
+    line-height:1px;
 }
 .tutor-container{
     position:absolute;
@@ -359,7 +187,6 @@ code::after{
     z-index:2;
     padding-left: 18px;
     font-size:1.2rem;
-    width: 100%;
     transition: max-height 0.2s ease-out;
 }
 .content .img {
@@ -397,7 +224,6 @@ code::after{
 }
 .content.visible {
     display: inline-block;
-    width:fit-content;
 }
 .visible {
     display: flex;
@@ -485,7 +311,7 @@ code::after{
 }
 .task-text {
     background-color:rgba(0,0,0,0.4);
-    padding: max(10px, 1vw);
+    padding: var(--task-text-padding);
     width:90%;
     border-radius:8px;
     font-size:inherit;
@@ -569,4 +395,235 @@ table {
     filter:invert(1);
     top:20%;
     right:0;
+}
+
+.collapsible-button {
+    background-color: rgba(255,255,255,0.1);
+    color: white;
+    cursor: pointer;
+    padding: 1rem;
+    padding-left:2.5rem;
+    width: 95%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 2.4em;
+    font-family:'Times New Roman', Times, serif;
+    line-height:0.8em;
+    border-radius: 12px 12px 0 0;
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out, transform 0.5s ease-out, width 0.5s ease-out, padding-left 0.5s ease-out, background-color 0.2s, text-shadow 0.2s;
+}
+.collapsible-button:hover {
+    background-color: rgba(255,255,255,0.25);
+    text-shadow:4px 4px rgba(0,0,0,0.5);
+}
+.collapsible-content {
+    border: 2px solid #434353;
+    width: calc(95% - 4px - 2em);
+    max-height: calc(2.2rem + 4vh);
+    padding:0 1em;
+    margin-bottom:1em;
+    border-radius:0 0 12px 12px;
+    overflow: hidden;
+    transition-property: max-height, padding, transform, width, padding-left;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+}
+
+@supports not (text-indent: each-line) {
+    .task-text {
+        text-indent: 2em;
+    }
+}
+
+@media (max-width: 1100px) {
+    body {
+        width: 100vw;
+    }
+    .title {
+        display: none;
+    }
+    .tutor-container {
+        position: static;
+        min-height: 92vh;
+    }
+    .page-tutor{
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1.5rem;
+        text-align: center;
+        color: rgba(170, 170, 170, 0.4);
+        position: absolute;
+        top: 45%;
+        transform: translateY(-50%);
+    }
+    main {
+        display:flex;
+        flex-direction:column;
+        position:relative;
+    }
+    .page-selector{
+        width: 100vw;
+        height: 8vh;
+        padding: 0;
+        overflow-x: auto;
+        overflow-y: hidden;
+        position: fixed;
+        background-color: #565665;
+        top: 0;
+        z-index: 3;
+    }
+    .page-selector fieldset {
+        width: 100vw;
+        height: 8vh;
+        padding: 0 2vw;
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: max-content;
+        align-items: center;
+        gap: 3vw;
+        overflow-x: auto;
+        overflow-y: hidden;
+    }
+    .pageRadio {
+        width: fit-content;
+        height: 4vh;
+        padding: 1vw 10vw;
+        border-radius: 64px;
+        font-size: 1rem;
+        margin-bottom: 0;
+    }
+    .pageRadio.python, .pageRadio.excel {
+        padding-right: calc(10vw + 20px);
+    }
+    .pageRadio.excel.python {
+        padding-right: calc(10vw + 65px);
+    }
+
+    .pageRadio.excel::after, .pageRadio.python::before {
+        right: 16px;
+    }
+    
+    .pageRadio.excel.python::after {
+        right: 16px;
+    }
+    .pageRadio.excel.python::before {
+        right: 55px;
+    }
+
+    .page-container {
+        width: 100%;
+        margin: 0;
+        margin-top: 8vh;
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .page-frame {
+        border-radius: 0;
+        min-height: 100%;
+        width: 100%;
+        position: static;
+        justify-content: start;
+        overflow-x:hidden;
+    }
+    .content {
+        justify-content:center;
+        position: static;
+        padding: 8vh 2vw;
+        padding-top: 0;
+        min-height: 84vh;
+        width:calc(100% - 4vw);
+    }
+    .content pre {
+        width: 94vw;
+    }
+    .content code {
+        font-size: 14px;
+    }
+    .help {
+        font-size: 1.2rem;
+        width: calc(100% - 32px - 20px);
+        padding-left: 32px;
+        padding-right:20px;
+    }
+    .desc {
+        font-size: 1.5em;
+        width: calc(100% - 2vw - 20px);
+        padding-left: 0.1em;
+        padding-right: 0;
+    }
+    .task-text {
+        text-indent: 1.3em each-line;
+        width: calc(100% - 2 * var(--task-text-padding));
+    }
+    .content .img {
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom:2vw;
+    }
+    .show-link{
+        width: 20px;
+        height: 20px;
+        top: 20%;
+        right: -24px;
+    }
+    .version {
+        flex-direction: column-reverse;
+        font-size: 1.2rem;
+        line-height: 0.5rem;
+    }
+    #headerAuthor{
+        font-size: 0.6rem;
+    }
+    #headerAuthor a{
+        font-size: 1rem;
+        margin-left: 0.5rem;
+    }
+    #headerAuthor:after {
+        top: 150%;
+    }
+    .task-text .img {
+        margin-top: 2vh;
+        margin-left: -16px;
+        width: calc(100% - 20px);
+    }
+    .clusters{
+        margin-bottom: 6px;
+    }
+    .collapsible-button {
+        width: 100%;
+        font-size: 1.7em;
+    }
+    .collapsible-content{
+        width: calc(100% - 4px - 2em);
+    }
+    .collapsible-button.collapsible-open {
+        width:100%;
+    }
+    .collapsible-content.collapsible-open{
+        width: 100%;
+        transform: translateX(calc(-2vw - 2px));
+        padding: 0 2vw;
+    }
+}
+@media (max-width: 850px) {
+    .pageRadio {
+        height: 4.5vh;
+    }
+}
+@media (max-width: 700px) {
+    .pageRadio {
+        height: 5vh;
+    }
+}
+@media (max-width: 540px) {
+    .pageRadio {
+        height: 5.5vh;
+    }
+}
+@media (max-width: 440px) {
+    .pageRadio {
+        height: 6vh;
+    }
 }
