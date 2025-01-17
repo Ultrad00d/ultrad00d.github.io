@@ -92,11 +92,11 @@
                     </noscript>
                     
                     <div class="version">
-                        <p id="headerAuthor">by <a href="https://github.com/Ultrad00d/ultrad00d.github.io">Ultrad00d</a></p> v0.9
+                        <p id="headerAuthor">by <a href="https://github.com/Ultrad00d/ultrad00d.github.io">Ultrad00d</a></p> v0.10.0
                     </div>
                 </div>
                 <div class="content" id="content1">
-                    <p class="desc">Повторяем график <a href="https://youtu.be/BcxVhBreOhg"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                    <p class="desc">Повторяем график <a href="https://youtu.be/BcxVhBreOhg" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
                     <pre><code class="python">from itertools import *
 
 s = '457 46 567 12 136 235 13'.split()   # у 1 связи с 457, у 2 с 46 и т.д.
@@ -108,9 +108,75 @@ for p in permutations('ABCDEFG'):
                     <p class="help">
                         В первой строке перечислите все соединения из таблицы, во второй все возможные соединения по графику.
                     </p>
+                    <button class="collapsible-button">Объяснение того, как это всё работает:</button>
+                    <div class="collapsible-content">
+                        <p class="help">
+                            Вспомогательные цифры для сопоставления с графом:
+                        </p>
+                        <pre><code class="python">print(*range(1,8)) 
+# 1 2 3 4 5 6 7</code></pre>
+                        <hr>
+                        <pre><code class="python">for p in permutations('ABCDEFG')</code></pre>
+                        <p class="help">
+                            Выдает:
+                        </p>
+                        <pre><code class="python">A B C D E F G
+A B C D E G F
+A B C D F E G
+A B C D F G E
+A B C D G E F
+A B C D G F E
+A B C E D F G
+A B C E D G F
+A B C E F D G
+A B C E F G D</code></pre>
+                        <pre><code class="python">for a, b in v</code></pre>
+                        <p class="help">
+                            Расщепляет каждое соединение в массиве v на буквы:
+                        </p>
+                        <pre><code class="python">print(v)
+# ['FG', 'GE', 'ED', 'FD', 'DB', 'BA', 'AC', 'CE', 'BC']
+for a, b in v: print(a, b)
+# F G
+# G E
+# E D
+# F D
+# D B
+# B A
+# A C
+# C E
+# B C</code></pre>
+                        <hr>
+                        <p class="help">
+                            Возьмём для примера соединение 'EF' и перестановку 'ABCDEFG', где a = 'E', b = 'F':
+                        </p>
+                        <pre><code class="python">s[p.index(a)]</code></pre>
+                        <p class="help">
+                            Здесь мы ищем среди соединений в таблице колонку соединений номера, равного номеру 'E' в перестановке - это номер 5. То есть мы предполагаем, что колонка 5 - 'E'.
+                        </p>
+                        <pre><code class="python">str(p.index(b) + 1)</code></pre>
+                        <p class="help">
+                            Здесь мы преобразовываем номер 'F' в перестановке в номер столбика таблицы (тк. мы считаем с единицы, а не нуля, +1)<br>
+                            И если такое число там есть, например:
+                        </p>
+                        <pre><code class="python"># str(p.index(b) + 1), p = 'ABCDEFG', b = 'F'
+# '5'
+
+# s[p.index(a)], a = 'E'
+# s[4]
+s = '457 46 567 12 136 235 13'.split()
+# '136'
+
+print('5' in '136')
+# False</code></pre>
+                        <p class="help">
+                            Так перебирается каждая перестановка.<br>
+                            Если хоть одно выражение равно False, то all() выдаст False и будет рассматриваться другая переставновка.
+                        </p>
+                    </div>
                 </div>
                 <div class="content" id="content2">
-                    <p class="desc">Шаблон на одну функцию <a href="https://youtu.be/F35x56KAlVw"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                    <p class="desc">Шаблон на одну функцию <a href="https://youtu.be/F35x56KAlVw" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
                     <div class="task-text">
                         Логическая функция F задаётся выражением: <br>
                         <i>(х &and; &not; y) &or; (x &equiv; z) &or; w</i>, <br>
@@ -158,7 +224,7 @@ for x in range(-60, 60):
         goto(x * m, y * m)
         dot(5)
 done()</code></pre>
-                    <p class="desc">Исполнитель Черепаха<a href="https://youtu.be/qmPgFN-TgPY"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                    <p class="desc">Исполнитель Черепаха<a href="https://youtu.be/qmPgFN-TgPY" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
                     <div class="task-text">
                         Исполнитель Черепаха действует на плоскости с декартовой системой координат. В начальный момент Черепаха находится в начале координат, её голова направлена вдоль положительного направления оси ординат, хвост опущен. <br>
                         Запись Повтори k [Команда1 Команда2 … КомандаS] означает, что последовательность из S команд повторится k раз.<br>
@@ -185,7 +251,7 @@ done()</code></pre>
                     <p class="help">
                         Изменяйте m для изменения масштаба картинки
                     </p>
-                    <p class="desc">Исполнитель Цапля <a href="https://youtu.be/TV47f8VaVlU?&t=665"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p> 
+                    <p class="desc">Исполнитель Цапля <a href="https://youtu.be/TV47f8VaVlU?&t=665" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p> 
                     <div class="task-text">
                         Исполнитель Цапля действует на плоскости с декартовой системой координат. В начальный момент Цапля находится в начале координат, её клюв направлен вдоль положительного направления оси ординат, клюв опущен.<br>
                         Цапле был дан для исполнения следующий алгоритм:<br>
@@ -227,7 +293,7 @@ done()</code></pre>
                     </p>
                     <pre><code class="python">for line in open('file.txt'):
     a = [int(x) for x in line.split()]</code></pre>
-                    <p class="desc">Найдите количество строк <a href="https://youtu.be/2C8ZF8tfM1E"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                    <p class="desc">Найдите количество строк <a href="https://youtu.be/2C8ZF8tfM1E" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
                     <div class="task-text">
                         Откройте файл электронной таблицы, содержащей в каждой строке пять натуральных чисел.<br>
                         Определите количество строк таблицы, содержащих числа, для которых выполнены оба условия:<br>
@@ -334,7 +400,7 @@ for n in range(3, 10_001):
 print(max(res))</code></pre>
                 </div>
                 <div class="content" id="content13">
-                    <p class="desc">Найдите маску <a href="https://youtu.be/lCVRqbo6mck&t=1693"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                    <p class="desc">Найдите маску <a href="https://youtu.be/lCVRqbo6mck&t=1693" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
                     <div class="task-text">
                         Для узла с IP-адресом 145.192.94.230 адрес сети равен 145.192.80.0. Чему равен третий слева байт маски? Ответ запиимте в виде десятичного числа.
                     </div>
@@ -344,7 +410,7 @@ for x in range(33):
     net = ip_network(f'145.192.94.230/{x}', 0)
     if str(net.network_address) == '145.192.80.0':
         print(net.netmask)</code></pre>
-                    <p class="desc">Найдите узлы сети <a href="https://youtu.be/lCVRqbo6mck&t=1280"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                    <p class="desc">Найдите узлы сети <a href="https://youtu.be/lCVRqbo6mck&t=1280" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
                     <div class="task-text">
                         В терминологии сетей TCP/IP маской сети называют двоичное число, которое показывает, какая часть IР-адреса узла сети относится к адресу сети, а какая — к адресу узла в этой сети. Адрес сети получается в результате применения поразрядной конъюнкции к заданному адресу узла и его маске. Сеть задана IР-адресом 112.160.0.0 и сетевой маской 255.240.0.0. <br>
                         Сколько в этой сети узлов, для которых количество единиц в двоичной записи IР-адреса не кратно 5? <br>
@@ -389,7 +455,7 @@ if result_search:
                     </p>
                 </div>
                 <div class="content" id="content15">
-                    <p class="desc">При любых переменных <a href="https://youtu.be/0Nd6ZZ_epsQ&t=2851"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                    <p class="desc">При любых переменных <a href="https://youtu.be/0Nd6ZZ_epsQ&t=2851" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
                     <div class="task-text">
                         Для какого наименьшего целого неотрицательного числа А выражение <br>(3m + 4п > 63) &or; ((m &leq; А) &and; (n &lt; А)) <br>тождественно истинно при любых целых неотрицательных m и n?
                     </div>
@@ -400,7 +466,7 @@ print(min(A for A in range(0,200) if all(f(m, n, A) == 1 for n in range(200) for
                     <p class="help">
                         print(min(..)) если ищем минимальное или max(), если ищем максимальное.
                     </p>
-                    <p class="desc">На числовой прямой даны два отрезка <a href="https://youtu.be/zGNtn1dGc3w"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                    <p class="desc">На числовой прямой даны два отрезка <a href="https://youtu.be/zGNtn1dGc3w" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
                     <div class="task-text">
                         На числовой прямой даны два отрезка: <i>P</i> = [1, 39] и Q = [23, 58]. Какова наибольшая возможная длина интервала <i>A</i>, что логическое выражение<br> <i>((x &isin; P) &rarr; &not;(x &isin; Q)) &rarr; &not;(x &isin; A)</i><br>тождественно истинно, то есть принмает значение при любом значении переменной <i>x</i>.
                     </div>
@@ -418,7 +484,7 @@ print(min(A for A in range(0,200) if all(f(m, n, A) == 1 for n in range(200) for
                         Если обрыв, то это ответ. 
                         Если разрыв и если ищем <u>наибольшее</u>, то ищем наибольший отрезок, иначе берем все числа между крайними.
                     </p>
-                    <p class="desc">Обозначим поразрядную конъюнкцию <a href="https://youtu.be/0Nd6ZZ_epsQ&t=3233"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                    <p class="desc">Обозначим поразрядную конъюнкцию <a href="https://youtu.be/0Nd6ZZ_epsQ&t=3233" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
                     <div class="task-text">
                         Обозначим через <i>m&n</i> поразрядную конъюнкцию неотрицательных целых чисел <i>m</i> и <i>n</i>. Так, например, <i>14&5</i> = <i>1110<sub>2</sub>&0101<sub>2</sub></i> = 0100<sub>2</sub> = 4. Для какого наименьшего натурального числа <i>A</i> формула <br> <i>x&57 = 0 &or; (x&23 = 0 &rarr; &not;(x&A = 0))</i><br>
 истинна при всех натуральных значениях переменной <i>x</i>?
@@ -455,17 +521,21 @@ print(max(A for A in range(1,200) if all(f(x, A) == 1 for x in range(1, 200))))<
     if n > 1:
         return F(n - 1) * (n + 1)
 print(F(4))</code></pre>
-                    <p class="desc">Достигнут лимит рекурсии</p>
-                    <pre><code class="python">import sys
-sys.setrecursionlimi(99_999)</code></pre>
-                    <p class="desc">Слишком много обращений к функции</p>
+                    <p class="desc">Ошибка или числа больше 999</p>
                     <pre><code class="python">from functools import *
 
 @lru_cache(None)
-def f(n): ...</code></pre>
+def f(n): ...
+
+for _ in range(2000): f(n) # чит. ниже - 1
+for _ in range(2000, 1, -1): f(n) # чит. ниже - 2</code></pre>
+                    <p class="help">
+                        1. Если функция убывает (напр., return 1 + f(n - 1) самое первое число функции 1)<br>
+                        2. Если функция возрастает (напр., return 1 + f(n + 1) самое первое число функции 2000)
+                    </p>
                 </div>
                 <div class="content" id="content17">
-                    <p class="desc">Определите количество пар, троек и т.д.</p>
+                    <p class="desc">Определите количество пар, троек и т.д. <a href="https://youtu.be/hCTen-7DzyU&t=275s" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
                     <p class="help">
                         Для удобства переименуем файл c цифрами в <i>file.txt</i><br>
                         Соберем весь файл в одну переменную и пойдем по группам j (двойкам: j = 1, тройкам: j = 2 и т.д.) по нему:
@@ -514,7 +584,7 @@ print(counter, m)</code></pre>
                         Задание выполняется исключительно в Excel.<br>
                         Перед выполнением задания обязательно прочтите как движется робот! Направление по-умолчанию сверху-вправо, но иногда его меняют.
                     </p>
-                    <p class="desc">Робот-сборщик монет <a href="https://youtu.be/MWR7D1PUoY0&t=120s"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                    <p class="desc">Робот-сборщик монет <a href="https://youtu.be/MWR7D1PUoY0&t=120s" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
                     <div class="task-text">Квадрат разлинован на N &times; N клеток (1 &gt; N &gt; 30). Исполнитель Робот может перемещаться по клеткам, выполняя за одно перемещение одну из двух команд: вправо или вниз. По команде вправо Робот перемещается в соседнюю правую клетку, по команде вниз – в соседнюю нижнюю. Квадрат ограничен внешними стенами. Между соседними клетками квадрата также могут быть внутренние стены. Сквозь стену Робот пройти не может.<br>
                         Перед каждым запуском Робота в каждой клетке квадрата лежит монета достоинством от 1 до 100. Посетив клетку, Робот забирает монету с собой; это также относится к начальной и конечной клеткам маршрута Робота.<br>
                         В «угловых» клетках поля – тех, которые справа и снизу ограничены стенами, Робот не может продолжать движение, поэтому накопленная сумма считается итоговой. Таких конечных клеток на поле может быть несколько, включая правую нижнюю клетку поля. При разных запусках итоговые накопленные суммы могут различаться.<br>
@@ -523,14 +593,14 @@ print(counter, m)</code></pre>
                         Исходные данные представляют собой электронную таблицу размером N &times; N, каждая ячейка которой соответствует клетке квадрата. Внутренние и внешние стены обозначены утолщёнными линиями.
                     </div>
                     <p class="help">
-                        Будет дописано в v0.91
+                        Будет дописано в v0.10.1
                     </p>
                 </div>
                 <div class="content" id="content19">
                     <p class="help">
                         Первая часть кода не меняется от задания 19 до 21, <u>КРОМЕ</u> тех случаев, когда в 19м кто-то выигрывает после <u>неудачного</u> хода противника. В таком случае пишем в последнем return .. else any(h), считаем 19й и потом обратно меняем, запоминая значение.
                     </p>
-                    <p class="desc">Простая основа <a href="https://youtu.be/VeKwUhD_xLw"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                    <p class="desc">Простая основа <a href="https://youtu.be/VeKwUhD_xLw" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
                     <div class="task-text">
                         Два игрока, Петя и Ваня, играют в следующую игру. Перед игроками лежит куча камней. Игроки ходят по очереди, первый ход делает Петя. В игре разрешено делать следующие ходы:<br>
                         — добавить в кучу один камень;<br>
@@ -578,7 +648,7 @@ print(counter, m)</code></pre>
     return any(h) if (m - 1) % 2 == 0 else all(h)</code></pre>
                 </div>
                 <div class="content" id="content23">
-                    <p class="desc">Обычное возрастание аргумента <a href="https://youtu.be/7NQ2hpIXvvQ&t=506"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                    <p class="desc">Обычное возрастание аргумента <a href="https://youtu.be/7NQ2hpIXvvQ&t=506" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
                     <div class="task-text">
                         У исполнителя Удвоитель две команды, которым присвоены номера. <br>
                         1. <b>Прибавь 1.</b> <br>
@@ -590,7 +660,7 @@ print(counter, m)</code></pre>
     if x == end: return 1
     return f(x + 1, end) + f(x * 2, end)
 print(f(2,22))</code></pre>
-                    <p class="desc">Содержит число + не содержит число <a href="https://youtu.be/7NQ2hpIXvvQ&t=1831"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                    <p class="desc">Содержит число + не содержит число <a href="https://youtu.be/7NQ2hpIXvvQ&t=1831" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
                     <div class="task-text">
                         Исполнитель преобразует число на экране. У исполнителя есть три команды, которым присвоены номера.<br>
                         1. <b>Прибавь 1.</b> <br>
@@ -649,43 +719,45 @@ print(f(4, 14, 0))</code></pre>
                         Есть 4 метода решения номера 24: разбиением строки, динамическим подсчетом, двумя указателями и подсчет "руками".<br>
                         Каждый способ уникален, каждый способ решает свою задачу лучше другого.
                     </p>
-                    <p class="desc">Метод разбиения строки <a href="https://youtu.be/3brn26Ad-ek&t=317"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
-                    <div class="task-text">
-                        В file.txt находится цепочка из символов латинского алфавита А, В, С. Найдите длину самой длинной подцепочки, состоящей из символов В.
-                    </div>
-                    <pre><code class="python">s = open('file.txt').readline()
+                    <button class="collapsible-button">Способ 1</button>
+                    <div class="collapsible-content">
+                        <p class="desc">Метод разбиения строки <a href="https://youtu.be/3brn26Ad-ek&t=317" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                        <div class="task-text">
+                            В file.txt находится цепочка из символов латинского алфавита А, В, С. Найдите длину самой длинной подцепочки, состоящей из символов В.
+                        </div>
+                        <pre><code class="python">s = open('file.txt').readline()
 s = s.replace('A', ' ').replace('C', ' ')
 print(max(len(i) for i in s.split()))</code></pre>
-                    <div class="task-text">
-                        В file.txt находится цепочка из символов латинского алфавита A, B, C, D, E, F. Найдите длину самой длинной подцепочки, состоящей из символов A, C, D, F (в произвольном порядке).
-                    </div>
-                    <pre><code class="python">s = open('file.txt').readline()
+                        <div class="task-text">
+                            В file.txt находится цепочка из символов латинского алфавита A, B, C, D, E, F. Найдите длину самой длинной подцепочки, состоящей из символов A, C, D, F (в произвольном порядке).
+                        </div>
+                        <pre><code class="python">s = open('file.txt').readline()
 s = s.replace('B', ' ').replace('E', ' ')
 print(max(len(i) for i in s.split()))</code></pre>
-                    <div class="task-text">
-                        Текстовый файл file.txt содержит только заглавные буквы латинского алфавита (ABC..Z). Определите максимальное количество идущих подряд символов, среди которых нет сочетания символов KEGE.
-                    </div>
-                    <pre><code class="python">s = open('file.txt')
+                        <div class="task-text">
+                            Текстовый файл file.txt содержит только заглавные буквы латинского алфавита (ABC..Z). Определите максимальное количество идущих подряд символов, среди которых нет сочетания символов KEGE.
+                        </div>
+                        <pre><code class="python">s = open('file.txt')
 s = s.replace('KEGE', 'KEG EGE')
 print(max(len(i) for i in s.split()))</code></pre>
-                    <p class="help">
-                        Если символы одинаковые нужно разбирать их, пока они есть в строке:
-                    </p>
-                    <pre><code class="python">while 'PP' in s: s = s.replace('PP', 'P P')</code></pre>
-                    <p class="help">
-                        Если даны пары символов, которые должны идти подряд, то их можно заменить на один символ, чтобы легче искать, а остальное заменить на пробелы.
-                    </p>
-                    <pre><code class="python">s = s.replace('AB', '*')</code></pre>
-                    <div class="task-text">
-                        Текстовый файл file.txt содержит строку из символов А, В, С и цифр 1, 2, З, всего не более чем 10<sup>6</sup> символов. Определите максимальное количество идущих подряд троек символов вида «буква + цифра + цифра».
-                    </div>
-                    <pre><code class="python">s = open('file.txt')
+                        <p class="help">
+                            Если символы одинаковые нужно разбирать их, пока они есть в строке:
+                        </p>
+                        <pre><code class="python">while 'PP' in s: s = s.replace('PP', 'P P')</code></pre>
+                        <p class="help">
+                            Если даны пары символов, которые должны идти подряд, то их можно заменить на один символ, чтобы легче искать, а остальное заменить на пробелы.
+                        </p>
+                        <pre><code class="python">s = s.replace('AB', '*')</code></pre>
+                        <div class="task-text">
+                            Текстовый файл file.txt содержит строку из символов А, В, С и цифр 1, 2, З, всего не более чем 10<sup>6</sup> символов. Определите максимальное количество идущих подряд троек символов вида «буква + цифра + цифра».
+                        </div>
+                        <pre><code class="python">s = open('file.txt')
 s = s.replace('B', 'A').replace('C', 'A').replace('2', '1').replace('3', '1')
 s = s.replace('A11', '*').replace('A', ' ').replace('1', ' ')
 print(max(len(i) for i in s.split()))</code></pre>
-                    <div class="task-text">Текстовый файл состоит из символов A, B, C, D и E. Определите максимальное количество идущих подряд символов, среди которых символ A встречается не более 3 раз.
-                    </div>
-                    <pre><code class="python">s = open('file.txt')
+                        <div class="task-text">Текстовый файл состоит из символов A, B, C, D и E. Определите максимальное количество идущих подряд символов, среди которых символ A встречается не более 3 раз.
+                        </div>
+                        <pre><code class="python">s = open('file.txt')
 s = s.split('A')
 m = 0
 for i in range(len(s) - 1):
@@ -694,52 +766,62 @@ for i in range(len(s) - 1):
     # c = 'А'.join(s[i:i+4])
     m = max(m, len(c))
 print(m)</code></pre>
-                    <p class="desc">Метод динамического подсчета <a href="https://youtu.be/sRxnrC9b5Ww&t=70"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
-                    <div class="task-text">
-                        В file.txt находится цепочка из символов латинского алфавита A, B, C, D, E, F. Найдите длину самой длинной подцепочки, состоящей из символов A, C, D, F (в произвольном порядке).
                     </div>
-                    <pre><code class="python">s = open('file.txt').readline()
+                    <button class="collapsible-button">Способ 2</button>
+                    <div class="collapsible-content">
+                        <p class="desc">Метод динамического подсчета <a href="https://youtu.be/sRxnrC9b5Ww&t=70" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                        <div class="task-text">
+                            В file.txt находится цепочка из символов латинского алфавита A, B, C, D, E, F. Найдите длину самой длинной подцепочки, состоящей из символов A, C, D, F (в произвольном порядке).
+                        </div>
+                        <pre><code class="python">s = open('file.txt').readline()
 m = [0]*len(s)
 
 for i in range(1, len(s)):
     if s[i] in 'ACDF':
         m[i] = m[i - 1] + 1
 print(max(m))</code></pre>
-                    <div class="task-text">
-                        Текстовый файл file.txt состоит не более чем из 10<sup>6</sup> символов. Определите максимальное количество идущих подряд символов, среди которых каждые два соседних различны.
-                    </div>
-                    <pre><code class="python">s = open('file.txt').readline()
+                        <div class="task-text">
+                            Текстовый файл file.txt состоит не более чем из 10<sup>6</sup> символов. Определите максимальное количество идущих подряд символов, среди которых каждые два соседних различны.
+                        </div>
+                        <pre><code class="python">s = open('file.txt').readline()
 m = [1]*len(s)
 
 for i in range(1, len(s)):
     if s[i] != s[i - 1]:
         m[i] = m[i - 1] + 1
 print(max(m))</code></pre>
-                    <div class="task-text">
-                        Текстовый файл состоит не более чем из 10<sup>6</sup> симолов арабских цифр (0, 1, .., 9). Определите максимальное количество идущих подряд цифр, расположенных в строгом возрастающем порядке.
-                    </div>
-                    <pre><code class="python">s = open('file.txt').readline()
+                        <div class="task-text">
+                            Текстовый файл состоит не более чем из 10<sup>6</sup> симолов арабских цифр (0, 1, .., 9). Определите максимальное количество идущих подряд цифр, расположенных в строгом возрастающем порядке.
+                        </div>
+                        <pre><code class="python">s = open('file.txt').readline()
 m = [1]*len(s)
 
 for i in range(1, len(s)):
     if s[i] > s[i - 1]:
         m[i] = m[i - 1] + 1
 print(max(m))</code></pre>
-                    <p class="help">Запись s[i] > s[i - 1] верна в силу таблицы кодировки символов ascii:</p>
-                    <img src="assets/task/24/ascii.png" alt="Таблица ascii" class="img ascii">
-                    <div class="desc">Метод двух указателей  <a href="https://youtu.be/lx7FFGuoCjc&t=160"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></div>
-                    <p class="help">
-                        Будет дописано в v0.91
-                    </p>
-                    <p class="desc">Считаем "руками" <a href="https://youtu.be/sRxnrC9b5Ww&t=4968"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
-                    <div class="task-text">В текстовом файле file.txt находится цепочка из символов латинского алфавита A, B, C, D, E. Найдите максимальную длину цепочки вида EABEABEABE... (состоящей из фрагментов EAB, последний фрагмент может быть неполным).</div>
-                    <pre><code class="python">s = open('file.txt').readline()
+                        <p class="help">Запись s[i] > s[i - 1] верна в силу таблицы кодировки символов ascii:</p>
+                        <img src="assets/task/24/ascii.png" alt="Таблица ascii" class="img ascii">
+                    </div>
+                    <button class="collapsible-button">Способ 3</button>
+                    <div class="collapsible-content">
+                        <p class="desc">Метод двух указателей <a href="https://youtu.be/lx7FFGuoCjc&t=160" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                        <p class="help">
+                            Будет дописано в v0.10.1
+                        </p>
+                    </div>
+                    <button class="collapsible-button">Способ 4</button>
+                    <div class="collapsible-content">
+                        <p class="desc">Считаем "руками" <a href="https://youtu.be/sRxnrC9b5Ww&t=4968" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                        <div class="task-text">В текстовом файле file.txt находится цепочка из символов латинского алфавита A, B, C, D, E. Найдите максимальную длину цепочки вида EABEABEABE... (состоящей из фрагментов EAB, последний фрагмент может быть неполным).</div>
+                        <pre><code class="python">s = open('file.txt').readline()
 print('EAB' * 17 in s)
 #False</code></pre>
-                    <p class="help">Можно увеличивать число, пока True, или уменьшать, пока False. На границе будет лежать наше число. Добавьте к нему проверку на остаточные элементы и посчитайте его длину.</p>
+                        <p class="help">Можно увеличивать число, пока True, или уменьшать, пока False. На границе будет лежать наше число. Добавьте к нему проверку на остаточные элементы и посчитайте его длину.</p>
+                    </div>
                 </div>
                 <div class="content" id="content25">
-                    <p class="desc">Шаблон на простой номер <a href="https://youtu.be/LwgnaNR2gHk&t=416s"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                    <p class="desc">Шаблон на простой номер <a href="https://youtu.be/LwgnaNR2gHk&t=416s" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
                     <div class="task-text">
                         Назовём маской числа последовательность цифр, в которой также могут встречаться следующие символы:<br>
                         – символ «?» означает ровно одну произвольную цифру;<br>
@@ -758,7 +840,7 @@ for x in range(2024, 10 ** 10 + 1, 2024):
                     </p>
                 </div>
                 <div class="content" id="content27">
-                    <div class="desc">Кластеры <a href="https://youtu.be/JN6HRU8S9kI&t=398"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></div>
+                    <div class="desc">Кластеры <a href="https://youtu.be/JN6HRU8S9kI&t=398" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></div>
                     <div class="task-text">Учёный решил провести кластеризацию некоторого множества звёзд по их расположению на карте звёздного неба. Кластер звёзд - это набор звёзд (точек) на графике, лежащий внутри прямоугольника высотой H и шириной W. Каждая звезда обязательно принадлежит только одному из кластеров.<br>
                         Истинный центр кластера, или центроид, - это одна из звёзд на графике, сумма расстояний от которой до всех остальных звёзд кластера минимальна.<br>
                         Под расстоянием понимается расстояние Евклида между двумя точками A(x1,y1) и B(x2,y2) на плоскости, которое вычисляется по формуле: d(A,B)= ((x2-x1)<sup>2</sup> + (y2-y1)<sup>2</sup>)<sup>0.5</sup><br>
@@ -822,5 +904,6 @@ print(pxB, pyB)</code></pre>
         </div>
     </main>
     <script src="code/show_page.js"></script>
+    <script src="code/collapse_entry.js"></script>
 </body>
 </html>
