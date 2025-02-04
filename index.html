@@ -7,13 +7,288 @@
     <link rel="stylesheet" href="code/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/go.min.js"></script>
-    <script>hljs.highlightAll();</script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.3.0/highlightjs-line-numbers.min.js"></script>
+    <script>
+    hljs.highlightAll();
+    hljs.initHighlightingOnLoad();
+    hljs.initLineNumbersOnLoad();</script>
 </head>
 <body>
     <main>
         <div class="page-selector">
             <p class="title">Шаблончики для ЕГЭ по Информатике</p>
+            <input type="checkbox" id="table-of-contents-active">
+            <label for="table-of-contents-active" id="nav-overlay"></label>
+            <div class="table-of-contents">
+                <div class="control-table-of-contents">
+                    <label for="table-of-contents-active">&lt; К номерам</label>
+                </div>
+                <div class="summaries-container">
+                    <ul class="summary" id="summary1">
+                        <legend>
+                            <h1 class="summary-heading python">Номер 1</h1>
+                            <p class="synopsis">Лень считать "руками"? Решение есть!</p>
+                            Уроки:
+                            <div class="videos">
+                                <a href="https://youtu.be/BcxVhBreOhg" target="_blank">Решение кодом</a>
+                            </div>
+                        </legend><hr>
+                        <menu>
+                            <li><a href="#Решение_кодом_1">Решение кодом</a></li>
+                            <li><a href="#Объяснение_1">Объяснение</a></li>
+                        </menu>
+                    </ul>
+                    <ul class="summary" id="summary2">
+                        <legend>
+                            <h1 class="summary-heading python">Номер 2</h1>
+                            <p class="synopsis">Вместо долгого перебора возможных подстановок вручную, оптимизируйте это дело кодом.</p>
+                            Уроки:
+                            <div class="videos">
+                                <a href="https://youtu.be/F35x56KAlVw" target="_blank">Готоый код</a>
+                                <a href="https://youtu.be/Uy5sHTFoKIA" target="_blank">Объяснение</a>
+                            </div>
+                        </legend><hr>
+                        <menu>
+                            <li><a href="#Шаблон_на_одну_функцию_2">Шаблон на одну функцию</a></li>
+                            <li><a href="#Если_две_функции_2">Если две функции</a></li>
+                        </menu>
+                    </ul>
+                    <ul class="summary" id="summary6">
+                        <legend>
+                            <h1 class="summary-heading python">Номер 6</h1>
+                            <p class="synopsis">Кумиром ещё нужно научиться пользоваться. А в Python использовать черепах проще.</p>
+                            Уроки:
+                            <div class="videos">
+                                <a href="https://youtu.be/qmPgFN-TgPY" target="_blank">Решение кодом</a>
+                                <a href="https://youtu.be/TV47f8VaVlU?&t=665" target="_blank">Решение цапли</a>
+                            </div>
+                        </legend><hr>
+                        <menu>
+                            <li><a href="#База_6">База номера</a></li>
+                            <li><a href="#Исполнитель_Черепаха_6">Исполнитель Черепаха</a></li>
+                            <li><a href="#Исполнитель_Цапля_6">Исполнитель Цапля</a></li>
+                        </menu>
+                    </ul>
+                    <ul class="summary" id="summary8">
+                        <legend>
+                            <h1 class="summary-heading python">Номер 8</h1>
+                            <p class="synopsis">Кому-то стало скучно и он решил перебрать всевозможные комбинации букв...</p>
+                            Уроки:
+                            <div class="videos">
+                                <a href="https://youtu.be/xIEVAm7BakE" target="_blank">Объяснение itertools</a>
+                            </div>
+                        </legend><hr>
+                        <menu>
+                            <li><a href="#База_8">База номера</a></li>
+                        </menu>
+                    </ul>
+                    <ul class="summary" id="summary9">
+                        <legend>
+                            <h1 class="summary-heading python">Номер 9</h1>
+                            <p class="synopsis">Решение номера 9 в Python гораздо быстрее и надёжнее.</p>
+                            Уроки:
+                            <div class="videos">
+                                <a href="https://youtu.be/2C8ZF8tfM1E" target="_blank">Решение кодом</a>
+                            </div>
+                        </legend><hr>
+                        <menu>
+                            <li><a href="#Перед_началом_9">Перед началом</a></li>
+                            <li><a href="#Найдите_количество_строк_9">Найдите количество строк</a></li>
+                            <li><a href="#Ячейки_в_других_строках_таблицы_9">Ячейки в других строках таблицы</a></li>
+                        </menu>
+                    </ul>
+                    <ul class="summary" id="summary12">
+                        <legend>
+                            <h1 class="summary-heading python">Номер 12</h1>
+                            <p class="synopsis">Вам уже написали, какой алгоритм использовать. Теперь нужно только перевести его на язык кода.</p>
+                            Уроки:
+                            <div class="videos">
+                                <a href="https://youtu.be/r875YTbho4E" target="_blank">Решение кодом</a>
+                            </div>
+                        </legend><hr>
+                        <menu>
+                            <li><a href="#Нашлось_Заменить_12">Нашлось, Заменить</a></li>
+                            <li><a href="#Содержащая_n_цифр_12">Содержащая n цифр</a></li>
+                        </menu>
+                    </ul>
+                    <ul class="summary" id="summary13">
+                        <legend>
+                            <h1 class="summary-heading python">Номер 13</h1>
+                            <p class="synopsis">Все вычисления IP-адресов выполняются библиотекой ip_address.</p>
+                            Уроки:
+                            <div class="videos">
+                                <a href="https://youtu.be/lCVRqbo6mck" target="_blank">Решение кодом</a>
+                            </div>
+                        </legend><hr>
+                        <menu>
+                            <li><a href="#Найдите_маску_13">Найдите маску</a></li>
+                            <li><a href="#Найдите_узлы_сети_13">Найдите узлы сети</a></li>
+                        </menu>
+                    </ul>
+                    <ul class="summary" id="summary14">
+                        <legend>
+                            <h1 class="summary-heading python">Номер 14</h1>
+                            <p class="synopsis">Научитесь переводить числа в разные системы счисления кодом.</p>
+                            Уроки:
+                            <div class="videos">
+                                <a href="https://youtu.be/QbXckvkaBBM" target="_blank">Решение кодом</a>
+                            </div>
+                        </legend><hr>
+                        <menu>
+                            <li><a href="#Выражение_записали_в_системе_счисления_14">Выражение записали в системе счисления</a></li>
+                            <li><a href="#Операнды_записаны_в_системах_счислений_14">Операнды записаны в системах счислений</a></li>
+                        </menu>
+                    </ul>
+                    <ul class="summary" id="summary15">
+                        <legend>
+                            <h1 class="summary-heading python">Номер 15</h1>
+                            <p class="synopsis">Задание №18 с параметром из профильной математики разваливается кодом.</p>
+                            Уроки:
+                            <div class="videos">
+                                <a href="https://youtu.be/0Nd6ZZ_epsQ" target="_blank">Любым переменным</a>
+                                <a href="https://youtu.be/zGNtn1dGc3w" target="_blank">Отрезки</a>
+                            </div>
+                        </legend><hr>
+                        <menu>
+                            <li><a href="#При_любых_переменных_15">При любых переменных</a></li>
+                            <li><a href="#На_числовой_прямой_даны_два_отрезка_15">На числовой прямой даны два отрезка</a></li>
+                            <li><a href="#Обозначим_поразрядную_конъюнкцию_15">Обозначим поразрядную конъюнкцию</a></li>
+                            <li><a href="#Обозначим_через_ДЕЛ_утверждение_15">Обозначим через ДЕЛ утверждение</a></li>
+                        </menu>
+                    </ul>
+                    <ul class="summary" id="summary16">
+                        <legend>
+                            <h1 class="summary-heading python">Номер 16</h1>
+                            <p class="synopsis">Дормаму, я пришел договориться!</p>
+                            Уроки:
+                            <div class="videos">
+                                <a href="https://youtu.be/R5w8IroAWos" target="_blank">Решение кодом</a>
+                            </div>
+                        </legend><hr>
+                        <menu>
+                            <li><a href="#Рекурсия_16">Рекурсия</a></li>
+                            <li><a href="#Ошибка_или_числа_больше_999_16">Если ошибка</a></li>
+                        </menu>
+                    </ul>
+                    <ul class="summary" id="summary17">
+                        <legend>
+                            <h1 class="summary-heading python">Номер 17</h1>
+                            <p class="synopsis">Задание по своей сути похоже на номер 9, за исключением того, что здесь все числа расположены в одну строку.</p>
+                            Уроки:
+                            <div class="videos">
+                                <a href="https://youtu.be/hCTen-7DzyU" target="_blank">Решение кодом</a>
+                            </div>
+                        </legend><hr>
+                        <menu>
+                            <li><a href="#Количество_пар_троек_и_тд_17">Количество пар, троек и т.д.</a></li>
+                        </menu>
+                    </ul>
+                    <ul class="summary" id="summary18">
+                        <legend>
+                            <h1 class="summary-heading excel">Номер 18</h1>
+                            <p class="synopsis">Задание 18 делается в Excel.</p>
+                            Уроки:
+                            <div class="videos">
+                                <a href="https://youtu.be/MWR7D1PUoY0" target="_blank">Решение в Excel</a>
+                            </div>
+                        </legend><hr>
+                        <menu>
+                            <li><a href="#Робот-сборщик_монет_18">Робот-сборщик монет</a></li>
+                        </menu>
+                    </ul>
+                    <ul class="summary" id="summary19">
+                        <legend>
+                            <h1 class="summary-heading python">Номера 19-21</h1>
+                            <p class="synopsis">Петя и Ваня решили поиграть в камешки. Кто победит?</p>
+                            Уроки:
+                            <div class="videos">
+                                <a href="https://youtu.be/VeKwUhD_xLw" target="_blank">Решение кодом</a>
+                            </div>
+                        </legend><hr>
+                        <menu>
+                            <li><a href="#Основа_19">Основа кода</a></li>
+                            <li><a href="#Как_записывать_решение_19">Как записывать решение</a></li>
+                            <li><a href="#Пример_усложненной_основы_19">Пример усложнённой основы</a></li>
+                        </menu>
+                    </ul>
+                    <ul class="summary" id="summary22">
+                        <legend>
+                            <h1 class="summary-heading excel">Номер 22</h1>
+                            <p class="synopsis">Оптимизация процессов неоптимизированным методом.</p>
+                            Уроки:
+                            <div class="videos">
+                                <a href="https://youtu.be/zR3d2Po6Q6k" target="_blank">Способ 1 (Инф. Родя)</a>
+                                <a href="https://youtu.be/V-5BmDuaGLQ" target="_blank">Способ 2 (А. Кабанов)</a>
+                            </div>
+                        </legend><hr>
+                    </ul>
+                    <ul class="summary" id="summary23">
+                        <legend>
+                            <h1 class="summary-heading python">Номер 23</h1>
+                            <p class="synopsis">Определить количество путей, преобразующих число <i>a</i> в число <i>b</i> заданными условиями и ограничениями.</p>
+                            Уроки:
+                            <div class="videos">
+                                <a href="https://youtu.be/7NQ2hpIXvvQ" target="_blank">Решение кодом</a>
+                            </div>
+                        </legend><hr>
+                        <menu>
+                            <li><a href="#Возрастание_аргумента_23">Возрастание аргумента</a></li>
+                            <li><a href="#Содержит_и_не_содержит_число_23">Содержит и не содержит число</a></li>
+                            <li><a href="#Содержит_2_числа_23">Содержит 2 числа</a></li>
+                            <li><a href="#Не_содержит_двух_команд_23">Не содержит двух команд подряд</a></li>
+                        </menu>
+                    </ul>
+                    <ul class="summary" id="summary24">
+                        <legend>
+                            <h1 class="summary-heading python">Номер 24</h1>
+                            <p class="synopsis">В этом задании лютый перебор (и чисел, и сложности).</p>
+                            Уроки:
+                            <div class="videos">
+                                <a href="https://youtu.be/3brn26Ad-ek" target="_blank">Метод разбиения строки</a>
+                                <a href="https://youtu.be/sRxnrC9b5Ww" target="_blank">Метод динамического подсчета</a>
+                                <a href="https://youtu.be/lx7FFGuoCjc" target="_blank">Метод двух указателей</a>
+                            </div>
+                        </legend><hr>
+                        <menu>
+                            <li><a href="#Объяснение_24">Объяснение</a></li>
+                            <li><a href="#Метод_разбиения_строки_24">Метод разбиения строки</a></li>
+                            <li><a href="#Метод_динамического_подсчета_24">Метод динамического подсчета</a></li>
+                            <li><a href="#Метод_двух_указателей_24">Метод двух указателей</a></li>
+                            <li><a href="#Считаем_руками_24">Считаем руками</a></li>
+                        </menu>
+                    </ul>
+                    <ul class="summary" id="summary25">
+                        <legend>
+                            <h1 class="summary-heading python">Номер 25</h1>
+                            <p class="synopsis">Найти числа по маске и/или по количеству делителей с условиями.</p>
+                            Уроки:
+                            <div class="videos">
+                                <a href="https://youtu.be/74JxEWKWdco" target="_blank">Маски числа</a>
+                                <a href="https://youtu.be/MCd4E3wWyaM" target="_blank">Простые числа, делители</a>
+                            </div>
+                        </legend><hr>
+                        <menu>
+                            <li><a href="#Простой_пример_25">Простой пример</a></li>
+                            <li><a href="#Минимальный_максимальный_делители_25">Минимальный максимальный делители</a></li>
+                            <li><a href="#Простое_число_25">Простое число</a></li>
+                        </menu>
+                    </ul>
+                    <ul class="summary" id="summary27">
+                        <legend>
+                            <h1 class="summary-heading python excel">Номер 27</h1>
+                            <p class="synopsis">В этом номере нужно с условиями группировать точки по кластерам и находить центры этих кластеров.</p>
+                            Уроки:
+                            <div class="videos">
+                                <a href="https://youtu.be/JN6HRU8S9kI" target="_blank">Решение кодом + Excel</a>
+                                <a href="https://youtu.be/IGGt9bqi5Ss" target="_blank">Разделение плоскости</a>
+                            </div>
+                        </legend><hr>
+                        <menu>
+                            <li><a href="#Кластеры_по_простейшим_прямым_27">Кластеры по простейшим прямым</a></li>
+                        </menu>
+                    </ul>
+                </div>
+            </div>
             <div class="pages-container">
                 <fieldset id="pageFieldset">
                     <label class="pageRadio python">
@@ -27,6 +302,10 @@
                     <label class="pageRadio python">
                         <span class="page-item" id="span-page6">Номер 6</span>
                         <input type="radio" id="6" name="pageNumber" value="6" />
+                    </label>
+                    <label class="pageRadio python">
+                        <span class="page-item" id="span-page8">Номер 8</span>
+                        <input type="radio" id="8" name="pageNumber" value="8" />
                     </label>
                     <label class="pageRadio python">
                         <span class="page-item" id="span-page9">Номер 9</span>
@@ -64,6 +343,10 @@
                         <span class="page-item" id="span-page19">Номера 19-21</span>
                         <input type="radio" id="19" name="pageNumber" value="19" />
                     </label>
+                    <label class="pageRadio excel">
+                        <span class="page-item" id="span-page22">Номер 22</span>
+                        <input type="radio" id="22" name="pageNumber" value="22" />
+                    </label>
                     <label class="pageRadio python">
                         <span class="page-item" id="span-page23">Номер 23</span>
                         <input type="radio" id="23" name="pageNumber" value="23" />
@@ -92,24 +375,26 @@
                     </noscript>
                     
                     <div class="version">
-                        <p id="headerAuthor">by <a href="https://github.com/Ultrad00d/ultrad00d.github.io">Ultrad00d</a></p> v0.10.0
+                        <p id="headerAuthor">by <a href="https://github.com/Ultrad00d/ultrad00d.github.io">Ultrad00d</a></p> v0.11.0
                     </div>
                 </div>
                 <div class="content" id="content1">
-                    <p class="desc">Повторяем график <a href="https://youtu.be/BcxVhBreOhg" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
-                    <pre><code class="python">from itertools import *
+                    <section id="Решение_кодом_1">
+                        <p class="desc">Решение кодом <a href="https://youtu.be/BcxVhBreOhg" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                        <pre><code class="python">from itertools import *
 
-s = '457 46 567 12 136 235 13'.split()   # у 1 связи с 457, у 2 с 46 и т.д.
-v = 'FE EC CA AB BD DF FG DG GC'.split() # по графику есть связи FE, EC и т.д. 
-print(*range(1, 8))
-for p in permutations('ABCDEFG'):
-    if all(str(p.index(b) + 1) in s[p.index(a)] for a, b in v):
-        print(*p)</code></pre>
-                    <p class="help">
-                        В первой строке перечислите все соединения из таблицы, во второй все возможные соединения по графику.
-                    </p>
-                    <button class="collapsible-button">Объяснение того, как это всё работает:</button>
-                    <div class="collapsible-content">
+    s = '457 46 567 12 136 235 13'.split()   # у 1 связи с 457, у 2 с 46 и т.д.
+    v = 'FE EC CA AB BD DF FG DG GC'.split() # по графику есть связи FE, EC и т.д. 
+    print(*range(1, 8))
+    for p in permutations('ABCDEFG'):
+        if all(str(p.index(b) + 1) in s[p.index(a)] for a, b in v):
+            print(*p)</code></pre>
+                        <p class="help">
+                            В первой строке перечисляем все соединения из таблицы, во второй все возможные соединения по графику.
+                        </p>
+                    </section>
+                    <section id="Объяснение_1">
+                        <p class="desc">Объяснение</p>
                         <p class="help">
                             Вспомогательные цифры для сопоставления с графом:
                         </p>
@@ -173,24 +458,25 @@ print('5' in '136')
                             Так перебирается каждая перестановка.<br>
                             Если хоть одно выражение равно False, то all() выдаст False и будет рассматриваться другая переставновка.
                         </p>
-                    </div>
+                    </section>
                 </div>
                 <div class="content" id="content2">
-                    <p class="desc">Шаблон на одну функцию <a href="https://youtu.be/F35x56KAlVw" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
-                    <div class="task-text">
-                        Логическая функция F задаётся выражением: <br>
-                        <i>(х &and; &not; y) &or; (x &equiv; z) &or; w</i>, <br>
-                        Ниже представлен фрагмент таблицы истинности функции <i>F</i>. Определите, какому столбцу таблицы истинности функции <i>F</i> соответствует каждая переменная <i>w</i>, <i>x</i>, <i>y</i>, <i>z</i>.
-                        <div class="table-wrap">
-                            <table>
-                                <tr> <th>?</th><th>?</th><th>?</th><th>?</th><th><i>F</i></th> </tr>
-                                <tr> <td>0</td><td> </td><td>1</td><td> </td><td>0</td> </tr>
-                                <tr> <td> </td><td>1</td><td>1</td><td>0</td><td>0</td> </tr>
-                            </table>
+                    <section id="Шаблон_на_одну_функцию_2">
+                        <p class="desc">Шаблон на одну функцию <a href="https://youtu.be/F35x56KAlVw" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                        <div class="task-text">
+                            Логическая функция F задаётся выражением: <br>
+                            <i>(х &and; &not; y) &or; (x &equiv; z) &or; w</i>, <br>
+                            Ниже представлен фрагмент таблицы истинности функции <i>F</i>. Определите, какому столбцу таблицы истинности функции <i>F</i> соответствует каждая переменная <i>w</i>, <i>x</i>, <i>y</i>, <i>z</i>.
+                            <div class="table-wrap">
+                                <table>
+                                    <tr> <th>?</th><th>?</th><th>?</th><th>?</th><th><i>F</i></th> </tr>
+                                    <tr> <td>0</td><td> </td><td>1</td><td> </td><td>0</td> </tr>
+                                    <tr> <td> </td><td>1</td><td>1</td><td>0</td><td>0</td> </tr>
+                                </table>
+                            </div>
+                            Укажите, какому столбцу соответствует каждая из переменных.
                         </div>
-                        Укажите, какому столбцу соответствует каждая из переменных.
-                    </div>
-                    <pre><code class="python">from itertools import product, permutations
+                        <pre><code class="python">from itertools import product, permutations
         
 def f(x,y,z,w):
     return (x and (not y)) or (x == z) or w
@@ -205,13 +491,21 @@ for x1, x2, x3, x4 in product([0,1], repeat=4):
         for p in permutations('xyzw', r=4):
             if all(f(**dict(zip(p, line))) == line[-1] for line in t):
                 print(*p)</code></pre>
-                    <p class="help">
-                        Для второй функции просто добавьте еще одно if высказывание после первого.
-                    </p>
+                    </section>
+                    <section id="Если_две_функции_2">
+                        <p class="help">
+                            Для второй функции просто добавьте еще одно if высказывание после первого:
+                        </p>
+                        <pre><code class="python">...
+if all(f1(**dict(zip(p, line))) == line[-1] for line in t):
+    if all(f2(**dict(zip(p, line))) == line[-1] for line in t):
+        print(*p)</code></pre>
+                    </section>
                 </div>
                 <div class="content" id="content6">
-                    <p class="desc">База номера 6</p>
-                    <pre><code class="python">from turtle import *
+                    <section id="База_6">
+                        <p class="desc">База номера 6</p>
+                        <pre><code class="python">from turtle import *
 
 screensize(3000, 3000)
 tracer(0)
@@ -224,14 +518,16 @@ for x in range(-60, 60):
         goto(x * m, y * m)
         dot(5)
 done()</code></pre>
-                    <p class="desc">Исполнитель Черепаха<a href="https://youtu.be/qmPgFN-TgPY" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
-                    <div class="task-text">
-                        Исполнитель Черепаха действует на плоскости с декартовой системой координат. В начальный момент Черепаха находится в начале координат, её голова направлена вдоль положительного направления оси ординат, хвост опущен. <br>
-                        Запись Повтори k [Команда1 Команда2 … КомандаS] означает, что последовательность из S команд повторится k раз.<br>
-                        Черепахе был дан для исполнения следующий алгоритм: Повтори 7 [Вперёд 10 Направо 120].<br>
-                        Определите, сколько точек с целочисленными координатами будут находиться внутри области, ограниченной линией, заданной данным алгоритмом. Точки на линии учитывать не следует.
-                    </div>
-                    <pre><code class="python">from turtle import *
+                    </section>
+                    <section id="Исполнитель_Черепаха_6">
+                        <p class="desc">Исполнитель Черепаха<a href="https://youtu.be/qmPgFN-TgPY" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                        <div class="task-text">
+                            Исполнитель Черепаха действует на плоскости с декартовой системой координат. В начальный момент Черепаха находится в начале координат, её голова направлена вдоль положительного направления оси ординат, хвост опущен. <br>
+                            Запись Повтори k [Команда1 Команда2 … КомандаS] означает, что последовательность из S команд повторится k раз.<br>
+                            Черепахе был дан для исполнения следующий алгоритм: Повтори 7 [Вперёд 10 Направо 120].<br>
+                            Определите, сколько точек с целочисленными координатами будут находиться внутри области, ограниченной линией, заданной данным алгоритмом. Точки на линии учитывать не следует.
+                        </div>
+                        <pre><code class="python">from turtle import *
 
 screensize(3000, 3000)
 tracer(0)
@@ -248,17 +544,19 @@ for x in range(-60, 60):
         goto(x * m, y * m)
         dot(5)
 done()</code></pre>
-                    <p class="help">
-                        Изменяйте m для изменения масштаба картинки
-                    </p>
-                    <p class="desc">Исполнитель Цапля <a href="https://youtu.be/TV47f8VaVlU?&t=665" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p> 
-                    <div class="task-text">
-                        Исполнитель Цапля действует на плоскости с декартовой системой координат. В начальный момент Цапля находится в начале координат, её клюв направлен вдоль положительного направления оси ординат, клюв опущен.<br>
-                        Цапле был дан для исполнения следующий алгоритм:<br>
-                        Повтори 5 [Дуга 5, 0, 5, 180 Дуга 5, 5, 0, 180 Дуга 5, 0, -5, 180 Дуга 5, -5, 0, 180].<br>
-                        Определите, сколько точек с целочисленными координатами будут находиться внутри области, ограниченной линией, заданной данным алгоритмом. Точки на линии учитывать не следует.
-                    </div>
-                    <pre><code class="python">from turtle import *
+                        <p class="help">
+                            Изменяйте m для изменения масштаба картинки
+                        </p>
+                    </section>
+                    <section id="Исполнитель_Цапля_6">
+                        <p class="desc">Исполнитель Цапля <a href="https://youtu.be/TV47f8VaVlU?&t=665" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p> 
+                        <div class="task-text">
+                            Исполнитель Цапля действует на плоскости с декартовой системой координат. В начальный момент Цапля находится в начале координат, её клюв направлен вдоль положительного направления оси ординат, клюв опущен.<br>
+                            Цапле был дан для исполнения следующий алгоритм:<br>
+                            Повтори 5 [Дуга 5, 0, 5, 180 Дуга 5, 5, 0, 180 Дуга 5, 0, -5, 180 Дуга 5, -5, 0, 180].<br>
+                            Определите, сколько точек с целочисленными координатами будут находиться внутри области, ограниченной линией, заданной данным алгоритмом. Точки на линии учитывать не следует.
+                        </div>
+                        <pre><code class="python">from turtle import *
 
 screensize(3000, 3000)
 tracer(0)
@@ -281,27 +579,56 @@ for x in range(-60, 60):
         goto(x * m, y * m)
         dot(5)
 done()</code></pre>
-                    <p class="help">
-                        От функции <i>Дуга 5, 0, 5, 180</i> нас интересует только первое и последнее числа.
-                    </p>
+                        <p class="help">
+                            От функции <i>Дуга 5, 0, 5, 180</i> нас интересует только первое и последнее числа.
+                        </p>
+                    </section>
+                </div>
+                <div class="content" id="content8">
+                    <section id="База_8">
+                        <p class="desc">Слова с повторениями</p>
+                        <p class="task-text">Все пятибуквенные слове, в составе которых могут быть только русские буквы Я, Н, В, А, Р, Ь,записаны в алфавитном порядке и пронумерованы, начиная с 1. Ниже приведено начало списка. <br>
+                            1. ААААА<br>
+                            2. ААААВ<br>
+                            3. ААААН<br>
+                            4. ААААР<br>
+                            5. ААААЬ<br>
+                            6. ААААЯ<br>
+                            7. АААВА<br>
+                            …<br>
+                            Под каким номером в списке идёт последнее слово, которое не начинается с буквы Я, содержит не более одной буквы Ь и не содержит букв Я, стоящих рядом?</p>
+                        <pre><code class="python">from itertools import *
+
+res = []
+counter = 0
+for p in product(sorted('ЯНВАРЬ'), repeat=5):
+    counter += 1
+    s = ''.join(p)
+    if s[0] != 'Я' and s.count('Ь') < 2 and 'ЯЯ' not in s:
+        res.append([counter, s])
+print(max(res))</code></pre>
+                    </section>
                 </div>
                 <div class="content" id="content9">
-                    <p class="help">
-                        Первый шаг к выполнению задания* - скопировать таблицу из экселя в блокнот через <kbd>Ctrl</kbd> + <kbd>C</kbd> <br>
-                        Для удобства назовем файл с цифрами в <i>file.txt</i><br>
-                        Теперь, для перебора по всем строкам используем:
-                    </p>
-                    <pre><code class="python">for line in open('file.txt'):
-    a = [int(x) for x in line.split()]</code></pre>
-                    <p class="desc">Найдите количество строк <a href="https://youtu.be/2C8ZF8tfM1E" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
-                    <div class="task-text">
-                        Откройте файл электронной таблицы, содержащей в каждой строке пять натуральных чисел.<br>
-                        Определите количество строк таблицы, содержащих числа, для которых выполнены оба условия:<br>
-                        — каждое число в строке встречается по одному разу,<br>
-                        — утроенная сумма максимального и минимального значений не превышает удвоенной суммы оставшихся чисел.<br>
-                        В ответе запишите только число.<br>
-                    </div>
-                    <pre><code class="python">count=0
+                    <section id="Перед_началом_9">
+                        <p class="help">
+                            Первый шаг к выполнению задания* - скопировать таблицу из экселя в блокнот через <kbd>Ctrl</kbd> + <kbd>C</kbd> <br>
+                            Для удобства назовем файл с цифрами в <i>file.txt</i><br>
+                            Теперь, для перебора по всем строкам используем:
+                        </p>
+                        <pre><code class="python">for line in open('file.txt'):
+        a = [int(x) for x in line.split()]</code></pre>
+                    </section>
+                    <section id="Найдите_количество_строк_9">
+                        <p class="desc">Найдите количество строк <a href="https://youtu.be/2C8ZF8tfM1E" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                        <div class="task-text">
+                            Откройте файл электронной таблицы, содержащей в каждой строке пять натуральных чисел.<br>
+                            Определите количество строк таблицы, содержащих числа, для которых выполнены оба условия:<br>
+                            — каждое число в строке встречается по одному разу,<br>
+                            — утроенная сумма максимального и минимального значений не превышает удвоенной суммы оставшихся чисел.<br>
+                            В ответе запишите только число.<br>
+                        </div>
+                        <pre><code class="python">count=0
 for line in open('file.txt'):
     a = [int(x) for x in line.split()]
     p1 = [x for x in a if a.count(x) == 1]
@@ -309,30 +636,32 @@ for line in open('file.txt'):
         if 3 * (max(a) + min(a)) <= 2 * (sum(a) - max(a) - min(a)):
             count+=1
 print(count)</code></pre>
-                    <div class="task-text">
-                        Откройте файл электронной таблицы, содержащей в каждой строке шесть натуральных чисел.<br>
-                        Определите количество строк таблицы, для чисел которых одновременно выполнены все следующие условия:<br>
-                        — в строке есть повторяющиеся числа;<br>
-                        — максимальное число в строке не повторяется;<br>
-                        — сумма всех повторяющихся чисел в строке меньше максимального числа этой строки. При подсчёте суммы повторяющихся чисел каждое число учитывается столько раз, сколько оно встречается.<br>
-                        В ответе запишите число — количество строк, удовлетворяющих заданным условиям.<br>
-                    </div>
-                    <pre><code class="python">count=0
+                        <div class="task-text">
+                            Откройте файл электронной таблицы, содержащей в каждой строке шесть натуральных чисел.<br>
+                            Определите количество строк таблицы, для чисел которых одновременно выполнены все следующие условия:<br>
+                            — в строке есть повторяющиеся числа;<br>
+                            — максимальное число в строке не повторяется;<br>
+                            — сумма всех повторяющихся чисел в строке меньше максимального числа этой строки. При подсчёте суммы повторяющихся чисел каждое число учитывается столько раз, сколько оно встречается.<br>
+                            В ответе запишите число — количество строк, удовлетворяющих заданным условиям.<br>
+                        </div>
+                        <pre><code class="python">count=0
 for line in open('file.txt'):
     a = [int(x) for x in line.split()]
     p1 = [x for x in a if a.count(x) > 1]
     if len(p1) > 0 and a.count(max(a)) == 1 and sum(p1) < max(a):
         count+=1
 print(count)</code></pre>
-                    <p class="desc">Ячейки в других строках таблицы</p>
-                    <div class="task-text">
-                        В каждой строке электронной таблицы записаны шесть натуральных чисел.<br>
-                        Назовём ячейку таблицы хорошей, если для неё выполняются следующие условия:<br>
-                        — число в данной ячейке не встречается в других ячейках этой же строки;<br>
-                        — число в данной ячейке ровно 50 раз встречается в других строках таблицы.<br>
-                        Определите количество строк таблицы, содержащих хотя бы одну хорошую ячейку.<br>
-                    </div>
-                    <pre><code class="python">all_numbers = [int(a) for b in open('file.txt') for a in b.split()]
+                    </section>
+                    <section id="Ячейки_в_других_строках_таблицы_9">
+                        <p class="desc">Ячейки в других строках таблицы</p>
+                        <div class="task-text">
+                            В каждой строке электронной таблицы записаны шесть натуральных чисел.<br>
+                            Назовём ячейку таблицы хорошей, если для неё выполняются следующие условия:<br>
+                            — число в данной ячейке не встречается в других ячейках этой же строки;<br>
+                            — число в данной ячейке ровно 50 раз встречается в других строках таблицы.<br>
+                            Определите количество строк таблицы, содержащих хотя бы одну хорошую ячейку.<br>
+                        </div>
+                        <pre><code class="python">all_numbers = [int(a) for b in open('file.txt') for a in b.split()]
 count= 0
 for line in open('file.txt'):
     a = [int(x) for x in line.split()]
@@ -341,54 +670,66 @@ for line in open('file.txt'):
         if all_numbers.count(i) == 50:
             count+=1
 print(count)</code></pre>
+                    </section>
                 </div>
                 <div class="content" id="content12">
-                    <div class="desc">Нашлось, Заменить</div>
-                    <div class="task-text">
-                        Исполнитель Редактор получает на вход строку цифр и преобразует её. Редактор может выполнять две команды, в обеих командах v и w обозначают цепочки цифр. <br>
-                        А) <b>заменить</b> (v, w). <br>
-                        Эта команда заменяет в строке первое слева вхождение цепочки v на цепочку w. <br>
-                        Если в строке нет вхождений цепочки v, то выполнение команды <b>заменить</b> (v, w) не меняет эту строку. <br>
-                        Б) <b>нашлось</b> (v). <br>
-                        Эта команда проверяет, встречается ли цепочка v в строке исполнителя Редактор. Если она встречается, то команда возвращает логическое значение «истина», в противном случае возвращает значение «ложь». Строка исполнителя при этом не изменяется. <br>
-                        выполняется команда1 (если условие истинно) или команда2 (если условие ложно). <br>
-                        Какая строка получится в результате применения приведённой ниже программы к строке, состоящей из 77 единиц? <br>
-                        НАЧАЛО <br>
-                        &emsp;ПОКА нашлось (11) <br>
-                        &emsp;&emsp;ЕСЛИ нашлось (222) <br>
-                        &emsp;&emsp;&emsp;ТО заменить (222, 1) <br>
-                        &emsp;&emsp;&emsp;ИНАЧЕ заменить (11, 2) <br>
-                        &emsp;&emsp;КОНЕЦ ЕСЛИ <br>
-                        &emsp;КОНЕЦ ПОКА <br>
-                        КОНЕЦ
-                    </div>
-                    <pre><code class="python">s = 77 * '1'
+                    <section id="Нашлось_Заменить_12">
+                        <p class="desc">Нашлось, Заменить</p>
+                        <p class="help">
+                            Обязательно читайте задачу! Хитрые составители могут изменить команду "Заменить" на замену всех или только одного вхождения подстроки в строку. В зависимости от количества вхождений изменяется код:
+                        </p>
+                        <pre><code class="python"># если одно вхождение
+s = s.replace('начальная', 'конечная', 1)
+
+# если все вхождения
+s = s.replace('начальная', 'конечная')</code></pre>
+                        <div class="task-text">
+                            Исполнитель Редактор получает на вход строку цифр и преобразует её. Редактор может выполнять две команды, в обеих командах v и w обозначают цепочки цифр. <br>
+                            А) <b>заменить</b> (v, w). <br>
+                            Эта команда заменяет в строке первое слева вхождение цепочки v на цепочку w. <br>
+                            Если в строке нет вхождений цепочки v, то выполнение команды <b>заменить</b> (v, w) не меняет эту строку. <br>
+                            Б) <b>нашлось</b> (v). <br>
+                            Эта команда проверяет, встречается ли цепочка v в строке исполнителя Редактор. Если она встречается, то команда возвращает логическое значение «истина», в противном случае возвращает значение «ложь». Строка исполнителя при этом не изменяется. <br>
+                            выполняется команда1 (если условие истинно) или команда2 (если условие ложно). <br>
+                            Какая строка получится в результате применения приведённой ниже программы к строке, состоящей из 77 единиц? <br>
+                            НАЧАЛО <br>
+                            &emsp;ПОКА нашлось (11) <br>
+                            &emsp;&emsp;ЕСЛИ нашлось (222) <br>
+                            &emsp;&emsp;&emsp;ТО заменить (222, 1) <br>
+                            &emsp;&emsp;&emsp;ИНАЧЕ заменить (11, 2) <br>
+                            &emsp;&emsp;КОНЕЦ ЕСЛИ <br>
+                            &emsp;КОНЕЦ ПОКА <br>
+                            КОНЕЦ
+                        </div>
+                        <pre><code class="python">s = 77 * '1'
 while '11' in s:
     if '222' in s:
         s = s.replace('222', '1', 1)
     else:
         s = s.replace('11', '2', 1)
 print(s)</code></pre>
-                    <div class="desc">Содержащая n цифр </div>
-                    <div class="task-text">
-                        ...<br>
-                        заменить ... команда заменяет в строке первое слева вхождение цепочки v на цепочку w.<br>
-                        ...<br>
-                        Дана программа для Редактора:<br>
-                        НАЧАЛО<br>
-                        ПОКА нашлось (411) ИЛИ нашлось (1111)<br>
-                        &emsp;ЕСЛИ нашлось (411)<br>
-                        &emsp;&emsp;ТО заменить (411, 14)<br>
-                        &emsp;КОНЕЦ ЕСЛИ<br>
-                        &emsp;ЕСЛИ нашлось (1111)<br>
-                        &emsp;&emsp;ТО заменить (1111, 1)<br>
-                        &emsp;КОНЕЦ ЕСЛИ<br>
-                        КОНЕЦ ПОКА<br>
-                        КОНЕЦ<br>
-                        На вход приведённой выше программе поступает строка, начинающаяся с цифры «4», а затем содержащая n цифр «1» (3 < n < 10 000).<br>
-                        Определите наибольшее возможное значение суммы числовых значений цифр в строке, которая может быть результатом выполнения программы.
-                    </div>
-                    <pre><code class="python">res = []
+                    </section>
+                    <section id="Содержащая_n_цифр_12">
+                        <p class="desc">Содержащая n цифр</p>
+                        <div class="task-text">
+                            ...<br>
+                            заменить ... команда заменяет в строке первое слева вхождение цепочки v на цепочку w.<br>
+                            ...<br>
+                            Дана программа для Редактора:<br>
+                            НАЧАЛО<br>
+                            ПОКА нашлось (411) ИЛИ нашлось (1111)<br>
+                            &emsp;ЕСЛИ нашлось (411)<br>
+                            &emsp;&emsp;ТО заменить (411, 14)<br>
+                            &emsp;КОНЕЦ ЕСЛИ<br>
+                            &emsp;ЕСЛИ нашлось (1111)<br>
+                            &emsp;&emsp;ТО заменить (1111, 1)<br>
+                            &emsp;КОНЕЦ ЕСЛИ<br>
+                            КОНЕЦ ПОКА<br>
+                            КОНЕЦ<br>
+                            На вход приведённой выше программе поступает строка, начинающаяся с цифры «4», а затем содержащая n цифр «1» (3 < n < 10 000).<br>
+                            Определите наибольшее возможное значение суммы числовых значений цифр в строке, которая может быть результатом выполнения программы.
+                        </div>
+                        <pre><code class="python">res = []
 for n in range(3, 10_001):
     s = '4' + n * '1'
     while '411' in s or '1111' in s:
@@ -398,51 +739,59 @@ for n in range(3, 10_001):
             s = s.replace('1111', '1')
     res.append(sum(map(int, s)))
 print(max(res))</code></pre>
+                    </section>
                 </div>
                 <div class="content" id="content13">
-                    <p class="desc">Найдите маску <a href="https://youtu.be/lCVRqbo6mck&t=1693" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
-                    <div class="task-text">
-                        Для узла с IP-адресом 145.192.94.230 адрес сети равен 145.192.80.0. Чему равен третий слева байт маски? Ответ запиимте в виде десятичного числа.
-                    </div>
-                    <pre><code class="python">from ipaddress import *
+                    <section id="Найдите_маску_13">
+                        <p class="desc">Найдите маску <a href="https://youtu.be/lCVRqbo6mck&t=1693" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                        <div class="task-text">
+                            Для узла с IP-адресом 145.192.94.230 адрес сети равен 145.192.80.0. Чему равен третий слева байт маски? Ответ запиимте в виде десятичного числа.
+                        </div>
+                        <pre><code class="python">from ipaddress import *
 
 for x in range(33):
     net = ip_network(f'145.192.94.230/{x}', 0)
     if str(net.network_address) == '145.192.80.0':
         print(net.netmask)</code></pre>
-                    <p class="desc">Найдите узлы сети <a href="https://youtu.be/lCVRqbo6mck&t=1280" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
-                    <div class="task-text">
-                        В терминологии сетей TCP/IP маской сети называют двоичное число, которое показывает, какая часть IР-адреса узла сети относится к адресу сети, а какая — к адресу узла в этой сети. Адрес сети получается в результате применения поразрядной конъюнкции к заданному адресу узла и его маске. Сеть задана IР-адресом 112.160.0.0 и сетевой маской 255.240.0.0. <br>
-                        Сколько в этой сети узлов, для которых количество единиц в двоичной записи IР-адреса не кратно 5? <br>
-                        В ответе укажите только число.
-                    </div>
-                    <pre><code class="python">from ipaddress import *
+                    </section>
+                    <section id="Найдите_узлы_сети_13">
+                        <p class="desc">Найдите узлы сети <a href="https://youtu.be/lCVRqbo6mck&t=1280" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                        <div class="task-text">
+                            В терминологии сетей TCP/IP маской сети называют двоичное число, которое показывает, какая часть IР-адреса узла сети относится к адресу сети, а какая — к адресу узла в этой сети. Адрес сети получается в результате применения поразрядной конъюнкции к заданному адресу узла и его маске. Сеть задана IР-адресом 112.160.0.0 и сетевой маской 255.240.0.0. <br>
+                            Сколько в этой сети узлов, для которых количество единиц в двоичной записи IР-адреса не кратно 5? <br>
+                            В ответе укажите только число.
+                        </div>
+                        <pre><code class="python">from ipaddress import *
 net = ip_network('112.160.0.0/255.240.0.0', 0)
 count = 0
 for ip in net:
     if f'{ip:b}'.count('1') % 5 != 0:
         count += 1
 print(count)</code></pre>
+                    </section>
                 </div>
                 <div class="content" id="content14">
-                    <p class="desc">Значение выражения записали в системе счисления</p>
-                    <div class="task-text">
-                        Значение выражения 7 &times; 7<sup>2104</sup> - 6 &times; 7<sup>1270</sup> + 3 &times; 7<sup>57</sup> - 98 записали в системе счисления с основанием 7. Найдите сумму цифр получившегося числа и запишите её в ответе в десятичной системе счисления.
-                    </div>
-                    <pre><code class="python">n = 7 ** 2104 - 6 * 7 ** 1270 + 3 * 7 ** 57 - 98
+                    <section id="Выражение_записали_в_системе_счисления_14">
+                        <p class="desc">Значение выражения записали в системе счисления</p>
+                        <div class="task-text">
+                            Значение выражения 7 &times; 7<sup>2104</sup> - 6 &times; 7<sup>1270</sup> + 3 &times; 7<sup>57</sup> - 98 записали в системе счисления с основанием 7. Найдите сумму цифр получившегося числа и запишите её в ответе в десятичной системе счисления.
+                        </div>
+                        <pre><code class="python">n = 7 ** 2104 - 6 * 7 ** 1270 + 3 * 7 ** 57 - 98
 
 n7 = ''
 while n > 0:
     n, rem = divmod(n, 7)
     n7 = str(rem) + n7
 print(sum(map(int, n7)))</code></pre>
-                    <p class="desc">Операнды выражения записаны в системах счислений</p>
-                    <div class="task-text">
-                        Операнды арифметического выражения записаны в системах счисления с основаниями 12 и 14:<br>
-                        yAAx<sub>12</sub> + x02y<sub>14</sub>.<br>
-                        В записи чисел переменными x и y обозначены допустимые в данных системах счисления неизвестные цифры. Определите значения x и y, при которых значение данного арифметического выражения будет наименьшим и кратно 80. Для найденных значений x и y вычислите частное от деления значения арифметического выражения на 80 и укажите его в ответе в десятичной системе счисления.
-                    </div>
-                    <pre><code class="python">result_search = []
+                    </section>
+                    <section id="Операнды_записаны_в_системах_счислений_14">
+                        <p class="desc">Операнды выражения записаны в системах счислений</p>
+                        <div class="task-text">
+                            Операнды арифметического выражения записаны в системах счисления с основаниями 12 и 14:<br>
+                            yAAx<sub>12</sub> + x02y<sub>14</sub>.<br>
+                            В записи чисел переменными x и y обозначены допустимые в данных системах счисления неизвестные цифры. Определите значения x и y, при которых значение данного арифметического выражения будет наименьшим и кратно 80. Для найденных значений x и y вычислите частное от деления значения арифметического выражения на 80 и укажите его в ответе в десятичной системе счисления.
+                        </div>
+                        <pre><code class="python">result_search = []
 for x in '0123456789AB':
     for y in '0123456789AB':
         ex = int(y + 'AA' + x, 12) + int(x + '02' + y, 14)
@@ -450,108 +799,121 @@ for x in '0123456789AB':
             result_search.append(ex)
 if result_search:
     print(min(result_search) // 80)</code></pre>
-                    <p class="help">
-                        Так как <i>x</i> и <i>y</i> используются в обоих выражениях, то они оба должны удовлетворять максимальному числу в данной системе счисления.
-                    </p>
+                        <p class="help">
+                            Так как <i>x</i> и <i>y</i> используются в обоих выражениях, то они оба должны удовлетворять максимальному числу в данной системе счисления.
+                        </p>
+                    </section>
                 </div>
                 <div class="content" id="content15">
-                    <p class="desc">При любых переменных <a href="https://youtu.be/0Nd6ZZ_epsQ&t=2851" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
-                    <div class="task-text">
-                        Для какого наименьшего целого неотрицательного числа А выражение <br>(3m + 4п > 63) &or; ((m &leq; А) &and; (n &lt; А)) <br>тождественно истинно при любых целых неотрицательных m и n?
-                    </div>
-                    <pre><code class="python">def f(m, n, a):
+                    <section id="При_любых_переменных_15">
+                        <p class="desc">При любых переменных <a href="https://youtu.be/0Nd6ZZ_epsQ&t=2851" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                        <div class="task-text">
+                            Для какого наименьшего целого неотрицательного числа А выражение <br>(3m + 4п > 63) &or; ((m &leq; А) &and; (n &lt; А)) <br>тождественно истинно при любых целых неотрицательных m и n?
+                        </div>
+                        <pre><code class="python">def f(m, n, a):
     return (3 * m + 4 * n > 63) or ((m <= a) and (n < a))
 
 print(min(A for A in range(0,200) if all(f(m, n, A) == 1 for n in range(200) for m in range(200))))</code></pre>
-                    <p class="help">
-                        print(min(..)) если ищем минимальное или max(), если ищем максимальное.
-                    </p>
-                    <p class="desc">На числовой прямой даны два отрезка <a href="https://youtu.be/zGNtn1dGc3w" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
-                    <div class="task-text">
-                        На числовой прямой даны два отрезка: <i>P</i> = [1, 39] и Q = [23, 58]. Какова наибольшая возможная длина интервала <i>A</i>, что логическое выражение<br> <i>((x &isin; P) &rarr; &not;(x &isin; Q)) &rarr; &not;(x &isin; A)</i><br>тождественно истинно, то есть принмает значение при любом значении переменной <i>x</i>.
-                    </div>
-                    <pre><code class="python">for x in [k * 0.25 for k in range(-1000, 1000)]:
+                        <p class="help">
+                            print(min(..)) если ищем минимальное или max(), если ищем максимальное.
+                        </p>
+                    </section>
+                    <section id="На_числовой_прямой_даны_два_отрезка_15">
+                        <p class="desc">На числовой прямой даны два отрезка <a href="https://youtu.be/zGNtn1dGc3w" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                        <div class="task-text">
+                            На числовой прямой даны два отрезка: <i>P</i> = [1, 39] и Q = [23, 58]. Какова наибольшая возможная длина интервала <i>A</i>, что логическое выражение<br> <i>((x &isin; P) &rarr; &not;(x &isin; Q)) &rarr; &not;(x &isin; A)</i><br>тождественно истинно, то есть принмает значение при любом значении переменной <i>x</i>.
+                        </div>
+                        <pre><code class="python">for x in [k * 0.25 for k in range(-1000, 1000)]:
     P = 1 <= x <= 39
     Q = 23 <= x <= 58
     A = 1
     f = (P <= (not Q)) <= (not A)
     if f != 0:
         print(x)</code></pre>
-                    <p class="help">
-                        A = <b>1</b> если ищем <u>наибольшее</u>, = <b>0</b> если наименьшее.<br>
-                        f <b>==</b> если <u>наибольшего</u>, <b>!=</b> если <u>наименьшего</u><br>
-                        f .. <b>1</b> если выражение <u>истинно</u>, .. <b>0</b> если <u>ложно</u>.<br>
-                        Если обрыв, то это ответ. 
-                        Если разрыв и если ищем <u>наибольшее</u>, то ищем наибольший отрезок, иначе берем все числа между крайними.
-                    </p>
-                    <p class="desc">Обозначим поразрядную конъюнкцию <a href="https://youtu.be/0Nd6ZZ_epsQ&t=3233" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
-                    <div class="task-text">
-                        Обозначим через <i>m&n</i> поразрядную конъюнкцию неотрицательных целых чисел <i>m</i> и <i>n</i>. Так, например, <i>14&5</i> = <i>1110<sub>2</sub>&0101<sub>2</sub></i> = 0100<sub>2</sub> = 4. Для какого наименьшего натурального числа <i>A</i> формула <br> <i>x&57 = 0 &or; (x&23 = 0 &rarr; &not;(x&A = 0))</i><br>
-истинна при всех натуральных значениях переменной <i>x</i>?
-                    </div>
-                    <pre><code class="python">def f(x, a):
+                        <p class="help">
+                            A = <b>1</b> если ищем <u>наибольшее</u>, = <b>0</b> если наименьшее.<br>
+                            f <b>==</b> если <u>наибольшего</u>, <b>!=</b> если <u>наименьшего</u><br>
+                            f .. <b>1</b> если выражение <u>истинно</u>, .. <b>0</b> если <u>ложно</u>.<br>
+                            Если обрыв, то это ответ. 
+                            Если разрыв и если ищем <u>наибольшее</u>, то ищем наибольший отрезок, иначе берем все числа между крайними.
+                        </p>
+                    </section>
+                    <section id="Обозначим_поразрядную_конъюнкцию_15">
+                        <p class="desc">Обозначим поразрядную конъюнкцию <a href="https://youtu.be/0Nd6ZZ_epsQ&t=3233" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                        <div class="task-text">
+                            Обозначим через <i>m&n</i> поразрядную конъюнкцию неотрицательных целых чисел <i>m</i> и <i>n</i>. Так, например, <i>14&5</i> = <i>1110<sub>2</sub>&0101<sub>2</sub></i> = 0100<sub>2</sub> = 4. Для какого наименьшего натурального числа <i>A</i> формула <br> <i>x&57 = 0 &or; (x&23 = 0 &rarr; &not;(x&A = 0))</i><br>
+        истинна при всех натуральных значениях переменной <i>x</i>?
+                        </div>
+                        <pre><code class="python">def f(x, a):
     return (x & 57) == 0 or ((x & 23 == 0) <= (not ((x & a) == 0)))
 print(min(a for a in range(1, 200) if all(f(x, a) for x in range(1, 2000))))</code></pre>
-                    <p class="help">
-                        Все действия над числами записать в скобки!<br>
-                        range(0 или 1, 200) в зависимости от искомого числа - натурального или неотрицательного
-                    </p>
-                    <p class="desc">Обозначим через ДЕЛ утверждение</p>
-                    <div class="task-text">
-                        Обозначим через ДЕЛ(x, y) утверждение &laquo;натуральное число x делится без остатка на натуральное число y&raquo;. Для какого наибольшего натурального числа A логическое выражение <br><i>(&not;ДЕЛ(x,7) &and; ДЕЛ(x,13)) &rarr;(x&gt;A&minus;40)</i><br> истинно (т.е. принимает значение 1) при любом натуральном значении переменной <i>х</i>?
-                    </div>
-                    <pre><code class="python">def d(x, a): return x % a == 0
+                        <p class="help">
+                            Все действия над числами записать в скобки!<br>
+                            range(0 или 1, 200) в зависимости от искомого числа - натурального или неотрицательного
+                        </p>
+                    </section>
+                    <section id="Обозначим_через_ДЕЛ_утверждение_15">
+                        <p class="desc">Обозначим через ДЕЛ утверждение</p>
+                        <div class="task-text">
+                            Обозначим через ДЕЛ(x, y) утверждение &laquo;натуральное число x делится без остатка на натуральное число y&raquo;. Для какого наибольшего натурального числа A логическое выражение <br><i>(&not;ДЕЛ(x,7) &and; ДЕЛ(x,13)) &rarr;(x&gt;A&minus;40)</i><br> истинно (т.е. принимает значение 1) при любом натуральном значении переменной <i>х</i>?
+                        </div>
+                        <pre><code class="python">def d(x, a): return x % a == 0
         
 def f(x, a):
     return ((not d(x, 7)) and d(x, 13)) <= (x > (a - 40))
 
 print(max(A for A in range(1,200) if all(f(x, A) == 1 for x in range(1, 200))))</code></pre>
+                    </section>
                 </div>
                 <div class="content" id="content16">
-                    <p class="desc">Рекурсия</p>
-                    <div class="task-text">
-                        Алгоритм вычисления значения функции F(n), где n — натуральное число, задан следующими соотношениями:<br>
-                        F(1) = 1;<br>
-                        F(n) = F(n - 1) &times; (n + 1) при n &gt; 1.<br>
-                        Чему равно значение функции F(4)? В ответе запишите только натуральное число.
-                    </div>
-                    <pre><code class="python">def F(n):
+                    <section id="Рекурсия_16">
+                        <p class="desc">Рекурсия</p>
+                        <div class="task-text">
+                            Алгоритм вычисления значения функции F(n), где n — натуральное число, задан следующими соотношениями:<br>
+                            F(1) = 1;<br>
+                            F(n) = F(n - 1) &times; (n + 1) при n &gt; 1.<br>
+                            Чему равно значение функции F(4)? В ответе запишите только натуральное число.
+                        </div>
+                        <pre><code class="python">def F(n):
     if n == 1:
         return 1
     if n > 1:
         return F(n - 1) * (n + 1)
 print(F(4))</code></pre>
-                    <p class="desc">Ошибка или числа больше 999</p>
-                    <pre><code class="python">from functools import *
-
+                    </section>
+                    <section id="Ошибка_или_числа_больше_999_16">
+                        <p class="desc">Ошибка или числа больше 999</p>
+                        <pre><code class="python">from functools import *
+    
 @lru_cache(None)
 def f(n): ...
 
 for _ in range(2000): f(n) # чит. ниже - 1
 for _ in range(2000, 1, -1): f(n) # чит. ниже - 2</code></pre>
-                    <p class="help">
-                        1. Если функция убывает (напр., return 1 + f(n - 1) самое первое число функции 1)<br>
-                        2. Если функция возрастает (напр., return 1 + f(n + 1) самое первое число функции 2000)
-                    </p>
+                        <p class="help">
+                            1. Если функция убывает (напр., return 1 + f(n - 1) самое первое число функции 1)<br>
+                            2. Если функция возрастает (напр., return 1 + f(n + 1) самое первое число функции 2000)
+                        </p>
+                    </section>
                 </div>
                 <div class="content" id="content17">
-                    <p class="desc">Определите количество пар, троек и т.д. <a href="https://youtu.be/hCTen-7DzyU&t=275s" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
-                    <p class="help">
-                        Для удобства переименуем файл c цифрами в <i>file.txt</i><br>
-                        Соберем весь файл в одну переменную и пойдем по группам j (двойкам: j = 1, тройкам: j = 2 и т.д.) по нему:
-                    </p>
-                    <pre><code class="python">s = [int(k) for k in open('file.txt').readlines()]
+                    <section id="Количество_пар_троек_и_тд_17">
+                        <p class="desc">Определите количество пар, троек и т.д. <a href="https://youtu.be/hCTen-7DzyU&t=275s" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                        <p class="help">
+                            Для удобства переименуем файл c цифрами в <i>file.txt</i><br>
+                            Соберем весь файл в одну переменную и пойдем по группам j (двойкам: j = 1, тройкам: j = 2 и т.д.) по нему:
+                        </p>
+                        <pre><code class="python">s = [int(k) for k in open('file.txt').readlines()]
 
 for i in range(j, len(s)):
-    a = [x for x in s[(i - j):(i + 1)]] # i + 1 потому что нам нужен i-ый элемент включительно
-                    </code></pre>
-                    <div class="task-text">
-                        Файл содержит последовательность натуральных чисел, не превышающих 100 000. Назовём парой два идущих подряд элемента последовательности. Определите количество пар, для которых выполняются следующие условия:<br>
-                        – остаток от деления на 3 хотя бы одного числа из пары равен остатку от деления на 3 максимального элемента всей последовательности;<br>
-                        – остаток от деления на 7 хотя бы одного числа из пары равен остатку от деления на 7 минимального элемента всей последовательности.<br>
-                        В ответе запишите два числа: сначала количество найденных пар, затем максимальную величину суммы элементов этих пар.
-                    </div>
-                    <pre><code class="python">s = [int(k) for k in open('Ex17/дек-21-1/17.txt').readlines()]
+    a = [x for x in s[(i - j):(i + 1)]] # i + 1 потому что нам нужен i-ый элемент включительно</code></pre>
+                        <div class="task-text">
+                            Файл содержит последовательность натуральных чисел, не превышающих 100 000. Назовём парой два идущих подряд элемента последовательности. Определите количество пар, для которых выполняются следующие условия:<br>
+                            – остаток от деления на 3 хотя бы одного числа из пары равен остатку от деления на 3 максимального элемента всей последовательности;<br>
+                            – остаток от деления на 7 хотя бы одного числа из пары равен остатку от деления на 7 минимального элемента всей последовательности.<br>
+                            В ответе запишите два числа: сначала количество найденных пар, затем максимальную величину суммы элементов этих пар.
+                        </div>
+                        <pre><code class="python">s = [int(k) for k in open('17.txt').readlines()]
 mini = min(s)
 maxi = max(s)
 
@@ -563,10 +925,10 @@ for i in range(1, len(s)):
         counter += 1
         m = max(m, sum(a))
 print(counter, m)</code></pre>
-                    <div class="task-text">
-                        В файле содержится последовательность натуральных чисел, которые нумеруются, начиная с единицы. Определите количество пар элементов последовательности, сумма номеров которых оканчивается на ту же цифру, что и максимальный элемент последовательности. В ответе запишите количество найденных пар, затем минимальное значение среди модулей разностей суммы элементов и суммы номеров таких пар. В данной задаче под парой подразумевается два идущих подряд элемента последовательности.
-                    </div>
-                    <pre><code class="python">s = [int(k) for k in open('Ex17/дек-21-2/17.txt').readlines()]
+                        <div class="task-text">
+                            В файле содержится последовательность натуральных чисел, которые нумеруются, начиная с единицы. Определите количество пар элементов последовательности, сумма номеров которых оканчивается на ту же цифру, что и максимальный элемент последовательности. В ответе запишите количество найденных пар, затем минимальное значение среди модулей разностей суммы элементов и суммы номеров таких пар. В данной задаче под парой подразумевается два идущих подряд элемента последовательности.
+                        </div>
+                        <pre><code class="python">s = [int(k) for k in open('17.txt').readlines()]
 maxi = max(s)
 
 counter= 0
@@ -578,64 +940,72 @@ for i in range(len(s) + 1):
         counter += 1
         m = min(m, abs(sum(a) - (2*i + 3)))
 print(counter, m)</code></pre>
+                    </section>
                 </div>
                 <div class="content" id="content18">
                     <p class="help">
                         Задание выполняется исключительно в Excel.<br>
                         Перед выполнением задания обязательно прочтите как движется робот! Направление по-умолчанию сверху-вправо, но иногда его меняют.
                     </p>
-                    <p class="desc">Робот-сборщик монет <a href="https://youtu.be/MWR7D1PUoY0&t=120s" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
-                    <div class="task-text">Квадрат разлинован на N &times; N клеток (1 &gt; N &gt; 30). Исполнитель Робот может перемещаться по клеткам, выполняя за одно перемещение одну из двух команд: вправо или вниз. По команде вправо Робот перемещается в соседнюю правую клетку, по команде вниз – в соседнюю нижнюю. Квадрат ограничен внешними стенами. Между соседними клетками квадрата также могут быть внутренние стены. Сквозь стену Робот пройти не может.<br>
-                        Перед каждым запуском Робота в каждой клетке квадрата лежит монета достоинством от 1 до 100. Посетив клетку, Робот забирает монету с собой; это также относится к начальной и конечной клеткам маршрута Робота.<br>
-                        В «угловых» клетках поля – тех, которые справа и снизу ограничены стенами, Робот не может продолжать движение, поэтому накопленная сумма считается итоговой. Таких конечных клеток на поле может быть несколько, включая правую нижнюю клетку поля. При разных запусках итоговые накопленные суммы могут различаться.<br>
-                        Определите максимальную и минимальную денежные суммы, среди всех возможных итоговых сумм, которые может собрать Робот, пройдя из левой верхней клетки в конечную клетку маршрута.<br>
-                        В ответе укажите два числа - сначала максимальную сумму, затем минимальную.<br>
-                        Исходные данные представляют собой электронную таблицу размером N &times; N, каждая ячейка которой соответствует клетке квадрата. Внутренние и внешние стены обозначены утолщёнными линиями.
-                    </div>
-                    <p class="help">
-                        Будет дописано в v0.10.1
-                    </p>
+                    <section id="Робот-сборщик_монет_18">
+                        <p class="desc">Робот-сборщик монет <a href="https://youtu.be/MWR7D1PUoY0&t=120s" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                        <div class="task-text">Квадрат разлинован на N &times; N клеток (1 &gt; N &gt; 30). Исполнитель Робот может перемещаться по клеткам, выполняя за одно перемещение одну из двух команд: вправо или вниз. По команде вправо Робот перемещается в соседнюю правую клетку, по команде вниз – в соседнюю нижнюю. Квадрат ограничен внешними стенами. Между соседними клетками квадрата также могут быть внутренние стены. Сквозь стену Робот пройти не может.<br>
+                            Перед каждым запуском Робота в каждой клетке квадрата лежит монета достоинством от 1 до 100. Посетив клетку, Робот забирает монету с собой; это также относится к начальной и конечной клеткам маршрута Робота.<br>
+                            В «угловых» клетках поля – тех, которые справа и снизу ограничены стенами, Робот не может продолжать движение, поэтому накопленная сумма считается итоговой. Таких конечных клеток на поле может быть несколько, включая правую нижнюю клетку поля. При разных запусках итоговые накопленные суммы могут различаться.<br>
+                            Определите максимальную и минимальную денежные суммы, среди всех возможных итоговых сумм, которые может собрать Робот, пройдя из левой верхней клетки в конечную клетку маршрута.<br>
+                            В ответе укажите два числа - сначала максимальную сумму, затем минимальную.<br>
+                            Исходные данные представляют собой электронную таблицу размером N &times; N, каждая ячейка которой соответствует клетке квадрата. Внутренние и внешние стены обозначены утолщёнными линиями.
+                        </div>
+                        <p class="help">
+                            Будет дописано в v0.10.1
+                        </p>
+                    </section>
                 </div>
                 <div class="content" id="content19">
-                    <p class="help">
-                        Первая часть кода не меняется от задания 19 до 21, <u>КРОМЕ</u> тех случаев, когда в 19м кто-то выигрывает после <u>неудачного</u> хода противника. В таком случае пишем в последнем return .. else any(h), считаем 19й и потом обратно меняем, запоминая значение.
-                    </p>
-                    <p class="desc">Простая основа <a href="https://youtu.be/VeKwUhD_xLw" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
-                    <div class="task-text">
-                        Два игрока, Петя и Ваня, играют в следующую игру. Перед игроками лежит куча камней. Игроки ходят по очереди, первый ход делает Петя. В игре разрешено делать следующие ходы:<br>
-                        — добавить в кучу один камень;<br>
-                        — если количество камней в куче чётно, добавить половину имеющегося количества;<br>
-                        — если количество камней в куче кратно трём, добавить треть имеющегося количества;<br>
-                        — если количество камней в куче не кратно ни двум, ни трём, удвоить кучу.<br>
-                        Например, если в куче 5 камней, то за один ход можно получить 6 или 10 камней, а если в куче 6 камней, то за один ход можно получить 7, или 8, или 9 камней.<br>
-                        Игра завершается, когда количество камней в куче достигает 96.<br>
-                        Победителем считается игрок, сделавший последний ход, то есть первым получивший кучу, в которой будет 96 или больше камней.<br>
-                        В начале игры в куче было S камней, 1 &leq; S &leq; 95.
-                    </div>
-                    <pre><code class="python">def f(s, m):
+                    <section id="Основа_19">
+                        <p class="help">
+                            Первая часть кода не меняется от задания 19 до 21, <u>КРОМЕ</u> тех случаев, когда в 19м кто-то выигрывает после <u>неудачного</u> хода противника. В таком случае пишем в последнем return .. else any(h), считаем 19й и потом обратно меняем, запоминая значение.
+                        </p>
+                        <p class="desc">Основа кода <a href="https://youtu.be/VeKwUhD_xLw" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                        <div class="task-text">
+                            Два игрока, Петя и Ваня, играют в следующую игру. Перед игроками лежит куча камней. Игроки ходят по очереди, первый ход делает Петя. В игре разрешено делать следующие ходы:<br>
+                            — добавить в кучу один камень;<br>
+                            — если количество камней в куче чётно, добавить половину имеющегося количества;<br>
+                            — если количество камней в куче кратно трём, добавить треть имеющегося количества;<br>
+                            — если количество камней в куче не кратно ни двум, ни трём, удвоить кучу.<br>
+                            Например, если в куче 5 камней, то за один ход можно получить 6 или 10 камней, а если в куче 6 камней, то за один ход можно получить 7, или 8, или 9 камней.<br>
+                            Игра завершается, когда количество камней в куче достигает 96.<br>
+                            Победителем считается игрок, сделавший последний ход, то есть первым получивший кучу, в которой будет 96 или больше камней.<br>
+                            В начале игры в куче было S камней, 1 &leq; S &leq; 95.
+                        </div>
+                        <pre><code class="python">def f(s, m):
     if s >= 33: return m % 2 == 0
     if m == 0: return 0
     h = [f(s + 1, m - 1), f(s + 3, m - 1), f(s * 2, m - 1)]
     return any(h) if (m - 1) % 2 == 0 else all(h)</code></pre>
-                    <p class="help">
-                        Меняются только строки 2 и 4 - во второй строке число и направление, в четвертой возможные шаги.
-                    </p>
-                    <p class="desc">Решение 19, 20, 21</p>
-                    <div class="task-text">
-                        Укажите <b>минимальное</b> значение <i>S</i>, при котором Петя не может выиграть первым ходом, но при любом первом ходе Пети Ваня может выиграть своим первым ходом.
-                    </div>
-                    <pre><code class="python">print('19)', [s for s in range(1, 33) if f(s, 2)])</code></pre>
-                    <p class="help">
-                        В range() пишем возможные в задачи s. Далее в зависимости от того, кто должен закончить игру, пишем для него if (..). Если кто-то должен не закончить игру на каком-то ходе, то not if (..). <br>
-                        Для каждого номера прописываем свое решение через отдельные print().
-                    </p>
-                    <p class="desc">Усложнённая основа</p>
-                    <div class="task-text">
-                        Два игрока, Петя и Ваня, играют в следующую игру. Перед игроками лежит куча камней. Игроки ходят по очереди, первый ход делает Петя. За один ход игрок может добавить в кучу один или три камня или увеличить количество камней в куче в два раза. Например, имея кучу из 15 камней, за один ход можно получить кучу из 16, 18 или 30 камней. У каждого игрока, чтобы делать ходы, есть неограниченное количество камней. <br>
-                        Игра завершается в тот момент, когда количество камней в куче становится не менее 33. Победителем считается игрок, сделавший последний ход, то есть первым получивший кучу, в которой будет 33 или больше камней. В начальный момент в куче было <i>S</i> камней, 1 &leq; S &leq; 32. <br>
-                        Будем говорить, что игрок имеет выигрышную стратегию, если он может выиграть при любых ходах противника. Описать стратегию игрока — значит, описать, какой ход он должен сделать в любой ситуации, которая ему может встретиться при различной игре противника.
-                    </div>
-                    <pre><code class="python">def f(s, m):
+                        <p class="help">
+                            Меняются только строки 2 и 4 - во второй строке число и направление, в четвертой возможные шаги.
+                        </p>
+                    </section>
+                    <section id="Как_записывать_решение_19">
+                        <p class="desc">Решение 19, 20, 21</p>
+                        <div class="task-text">
+                            Укажите <b>минимальное</b> значение <i>S</i>, при котором Петя не может выиграть первым ходом, но при любом первом ходе Пети Ваня может выиграть своим первым ходом.
+                        </div>
+                        <pre><code class="python">print('19)', [s for s in range(1, 33) if f(s, 2)])</code></pre>
+                        <p class="help">
+                            В range() пишем возможные в задачи s. Далее в зависимости от того, кто должен закончить игру, пишем для него if (..). Если кто-то должен не закончить игру на каком-то ходе, то not if (..). <br>
+                            Для каждого номера прописываем свое решение через отдельные print().
+                        </p>
+                    </section>
+                    <section id="Пример_усложненной_основы_19">
+                        <p class="desc">Усложнённая основа</p>
+                        <div class="task-text">
+                            Два игрока, Петя и Ваня, играют в следующую игру. Перед игроками лежит куча камней. Игроки ходят по очереди, первый ход делает Петя. За один ход игрок может добавить в кучу один или три камня или увеличить количество камней в куче в два раза. Например, имея кучу из 15 камней, за один ход можно получить кучу из 16, 18 или 30 камней. У каждого игрока, чтобы делать ходы, есть неограниченное количество камней. <br>
+                            Игра завершается в тот момент, когда количество камней в куче становится не менее 33. Победителем считается игрок, сделавший последний ход, то есть первым получивший кучу, в которой будет 33 или больше камней. В начальный момент в куче было <i>S</i> камней, 1 &leq; S &leq; 32. <br>
+                            Будем говорить, что игрок имеет выигрышную стратегию, если он может выиграть при любых ходах противника. Описать стратегию игрока — значит, описать, какой ход он должен сделать в любой ситуации, которая ему может встретиться при различной игре противника.
+                        </div>
+                        <pre><code class="python">def f(s, m):
     if s >= 96: return m % 2 == 0
     if m == 0: return 0
     h = [f(s + 1, m - 1)]
@@ -646,81 +1016,98 @@ print(counter, m)</code></pre>
     else:
         h.append(f(s * 2, m - 1))
     return any(h) if (m - 1) % 2 == 0 else all(h)</code></pre>
+                    </section>
+                </div>
+                <div class="content" id="content22">
+                    <section id="Строим_модель_22">
+                        <p class="help">Визуально решение задачи представлено в следующих видеороликах (YouTube):</p>
+                        <p class="desc">Способ 1. Строим модель для задачи <a href="https://youtu.be/zR3d2Po6Q6k&t=2694" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                        <p class="desc">Решаем задачу по модели <a href="https://youtu.be/zR3d2Po6Q6k&t=305" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                        <hr>
+                        <p class="desc">Способ 2. Работа с Excel <a href="https://youtu.be/V-5BmDuaGLQ" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                    </section>
                 </div>
                 <div class="content" id="content23">
-                    <p class="desc">Обычное возрастание аргумента <a href="https://youtu.be/7NQ2hpIXvvQ&t=506" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
-                    <div class="task-text">
-                        У исполнителя Удвоитель две команды, которым присвоены номера. <br>
-                        1. <b>Прибавь 1.</b> <br>
-                        2. <b>Умножь на 2.</b> <br>
-                        Первая из них увеличивает число на экране на 1, вторая удваивает его. Программа для Удвоителя — это последовательность команд. Сколько есть программ, которые число 2 преобразуют в число 22?
-                    </div>
-                    <pre><code class="python">def f(x, end):
+                    <section id="Возрастание_аргумента_23">
+                        <p class="desc">Обычное возрастание аргумента <a href="https://youtu.be/7NQ2hpIXvvQ&t=506" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                        <div class="task-text">
+                            У исполнителя Удвоитель две команды, которым присвоены номера. <br>
+                            1. <b>Прибавь 1.</b> <br>
+                            2. <b>Умножь на 2.</b> <br>
+                            Первая из них увеличивает число на экране на 1, вторая удваивает его. Программа для Удвоителя — это последовательность команд. Сколько есть программ, которые число 2 преобразуют в число 22?
+                        </div>
+                        <pre><code class="python">def f(x, end):
     if x > end: return 0
     if x == end: return 1
     return f(x + 1, end) + f(x * 2, end)
 print(f(2,22))</code></pre>
-                    <p class="desc">Содержит число + не содержит число <a href="https://youtu.be/7NQ2hpIXvvQ&t=1831" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
-                    <div class="task-text">
-                        Исполнитель преобразует число на экране. У исполнителя есть три команды, которым присвоены номера.<br>
-                        1. <b>Прибавь 1.</b> <br>
-                        2. <b>Прибавить 2.</b> <br>
-                        3. <b>Умножь на 2.</b> <br>
-                        Программа для исполнителя — это последовательность команд. Сколько существует программ, для которых при исходном числе 3 результатом является число 18 и при этом траектория вычислений содержит число 14 и не содержит число 8?
-                    </div>
-                    <pre><code class="python">def f(x, end):
+                    </section>
+                    <section id="Содержит_и_не_содержит_число_23">
+                        <p class="desc">Содержит число + не содержит число <a href="https://youtu.be/7NQ2hpIXvvQ&t=1831" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                        <div class="task-text">
+                            Исполнитель преобразует число на экране. У исполнителя есть три команды, которым присвоены номера.<br>
+                            1. <b>Прибавь 1.</b> <br>
+                            2. <b>Прибавить 2.</b> <br>
+                            3. <b>Умножь на 2.</b> <br>
+                            Программа для исполнителя — это последовательность команд. Сколько существует программ, для которых при исходном числе 3 результатом является число 18 и при этом траектория вычислений содержит число 14 и не содержит число 8?
+                        </div>
+                        <pre><code class="python">def f(x, end):
     if x > end: return 0
     if x == end: return 1
     if x == 8: return 0
     return f(x + 1, end) + f(x + 2, end) + f(x * 2, end)
 
 print(f(3, 14) * f(14, 18))</code></pre>
-                    <p class="help">
-                        Содержит число в тракетории значит, что мы идем до этого числа, а потом до конечного. <br>
-                        Не содержит число значит, что если мы встретим это число, то путей дальше нет, вернем 0.
-                    </p>
-                    <p class="desc">Содержит 2 числа</p>
-                    <div class="task-text">
-                        Исполнитель М17 преобразует число, записанное на экране. У исполнителя есть три команды, которым присвоены номера:<br>
-                        1. <b>Прибавить 1.</b><br>
-                        2. <b>Прибавить 2.</b><br>
-                        3. <b>Умножить на 3.</b><br>
-                        Первая из них увеличивает число на экране на 1, вторая увеличивает его на 2, третья умножает на 3. Программа для исполнителя М17 — это последовательность команд. Сколько существует таких программ, которые преобразуют исходное число 2 в число 12 и при этом траектория вычислений программы содержит числа 8 и 10? Траектория должна содержать оба указанных числа. 
-                    </div>
-                    <pre><code class="python">def f(x, end):
+                        <p class="help">
+                            Содержит число в тракетории значит, что мы идем до этого числа, а потом до конечного. <br>
+                            Не содержит число значит, что если мы встретим это число, то путей дальше нет, вернем 0.
+                        </p>
+                    </section>
+                    <section id="Содержит_2_числа_23">
+                        <p class="desc">Содержит 2 числа</p>
+                        <div class="task-text">
+                            Исполнитель М17 преобразует число, записанное на экране. У исполнителя есть три команды, которым присвоены номера:<br>
+                            1. <b>Прибавить 1.</b><br>
+                            2. <b>Прибавить 2.</b><br>
+                            3. <b>Умножить на 3.</b><br>
+                            Первая из них увеличивает число на экране на 1, вторая увеличивает его на 2, третья умножает на 3. Программа для исполнителя М17 — это последовательность команд. Сколько существует таких программ, которые преобразуют исходное число 2 в число 12 и при этом траектория вычислений программы содержит числа 8 и 10? Траектория должна содержать оба указанных числа. 
+                        </div>
+                        <pre><code class="python">def f(x, end):
     if x > end: return 0
     if x == end: return 1
     return f(x + 1, end) + f(x + 2, end) + f(x * 3, end)
 
 print(f(2, 8) * f(8, 10) * f(10, 12))</code></pre>
-                    <p class="desc">Не содержит двух команд</p>
-                    <div class="task-text">
-                        Исполнитель преобразует число на экране.<br>
-                        У исполнителя есть три команды, которые обозначены буквами.<br>
-                        A. <b>Вычесть 1.</b><br>
-                        B. <b>Прибавить 3.</b><br>
-                        C. <b>Умножить на 2.</b><br>
-                        Программа для исполнителя — это последовательность команд. Например, программа BAC при исходном числе 2 последовательно получит числа 5, 4, 8.<br>
-                        Сколько существует программ, которые преобразуют исходное число 4 в число 14 и при этом не содержат двух команд A подряд?
-                    </div>
-                    <pre><code class="python">def f(x, end, c):
+                    </section>
+                    <section id="Не_содержит_двух_команд_23">
+                        <p class="desc">Не содержит двух команд</p>
+                        <div class="task-text">
+                            Исполнитель преобразует число на экране.<br>
+                            У исполнителя есть три команды, которые обозначены буквами.<br>
+                            A. <b>Вычесть 1.</b><br>
+                            B. <b>Прибавить 3.</b><br>
+                            C. <b>Умножить на 2.</b><br>
+                            Программа для исполнителя — это последовательность команд. Например, программа BAC при исходном числе 2 последовательно получит числа 5, 4, 8.<br>
+                            Сколько существует программ, которые преобразуют исходное число 4 в число 14 и при этом не содержат двух команд A подряд?
+                        </div>
+                        <pre><code class="python">def f(x, end, c):
     if x > end + 1: return 0
     if x == end: return 1
     
     return f(x + 3, end, 2) + f(x * 2, end, 3) + (f(x - 1, end, 1) if c != 1 else 0)
 
 print(f(4, 14, 0))</code></pre>
-                    <p class="help">
-                        Чтобы удостовериться, что мы не используем одинаковые команды A подряд, нам нужно будет на каждом шаге сохранять использованную команду. Если эта команда A, то мы не можем использовать команду A повторно.
-                    </p>
+                        <p class="help">
+                            Чтобы удостовериться, что мы не используем одинаковые команды A подряд, нам нужно будет на каждом шаге сохранять использованную команду. Если эта команда A, то мы не можем использовать команду A повторно.
+                        </p>
+                    </section>
                 </div>
                 <div class="content" id="content24">
-                    <p class="help">
+                    <p class="help" id="Объяснение_24">
                         Есть 4 метода решения номера 24: разбиением строки, динамическим подсчетом, двумя указателями и подсчет "руками".<br>
                         Каждый способ уникален, каждый способ решает свою задачу лучше другого.
                     </p>
-                    <button class="collapsible-button">Способ 1</button>
-                    <div class="collapsible-content">
+                    <section id="Метод_разбиения_строки_24">
                         <p class="desc">Метод разбиения строки <a href="https://youtu.be/3brn26Ad-ek&t=317" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
                         <div class="task-text">
                             В file.txt находится цепочка из символов латинского алфавита А, В, С. Найдите длину самой длинной подцепочки, состоящей из символов В.
@@ -766,9 +1153,8 @@ for i in range(len(s) - 1):
     # c = 'А'.join(s[i:i+4])
     m = max(m, len(c))
 print(m)</code></pre>
-                    </div>
-                    <button class="collapsible-button">Способ 2</button>
-                    <div class="collapsible-content">
+                    </section>
+                    <section id="Метод_динамического_подсчета_24">
                         <p class="desc">Метод динамического подсчета <a href="https://youtu.be/sRxnrC9b5Ww&t=70" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
                         <div class="task-text">
                             В file.txt находится цепочка из символов латинского алфавита A, B, C, D, E, F. Найдите длину самой длинной подцепочки, состоящей из символов A, C, D, F (в произвольном порядке).
@@ -802,65 +1188,130 @@ for i in range(1, len(s)):
 print(max(m))</code></pre>
                         <p class="help">Запись s[i] > s[i - 1] верна в силу таблицы кодировки символов ascii:</p>
                         <img src="assets/task/24/ascii.png" alt="Таблица ascii" class="img ascii">
-                    </div>
-                    <button class="collapsible-button">Способ 3</button>
-                    <div class="collapsible-content">
+                    </section>
+                    <section id="Метод_двух_указателей_24">
                         <p class="desc">Метод двух указателей <a href="https://youtu.be/lx7FFGuoCjc&t=160" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
-                        <p class="help">
-                            Будет дописано в v0.10.1
+                        <p class="task-text">
+                            Текстовый файт состоит не более чем из 10<sup>6</sup> символов и содержит только заглавные буквы латинского алфавита. Определите максимальное количество идущих подряд символов, среди которых буквы X и Y встречаются ровно по одному разу.
                         </p>
-                    </div>
-                    <button class="collapsible-button">Способ 4</button>
-                    <div class="collapsible-content">
+                        <pre><code class="python">s = open('24.txt').readline()
+l = 0
+m = 0
+count_x = count_y = 0
+
+for r in range(len(s)):
+    if s[r] == 'X': count_x += 1
+    if s[r] == 'Y': count_y += 1
+    while count_x > 1 or count_y > 1:
+        if s[l] == 'X': count_x -= 1
+        if s[l] == 'Y': count_y -= 1
+        l += 1
+    if count_x == 1 and count_y == 1: m = max(m, r - l + 1)
+print(m)</code></pre>
+                    </section>
+                    <section id="Считаем_руками_24">
                         <p class="desc">Считаем "руками" <a href="https://youtu.be/sRxnrC9b5Ww&t=4968" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
                         <div class="task-text">В текстовом файле file.txt находится цепочка из символов латинского алфавита A, B, C, D, E. Найдите максимальную длину цепочки вида EABEABEABE... (состоящей из фрагментов EAB, последний фрагмент может быть неполным).</div>
                         <pre><code class="python">s = open('file.txt').readline()
 print('EAB' * 17 in s)
 #False</code></pre>
                         <p class="help">Можно увеличивать число, пока True, или уменьшать, пока False. На границе будет лежать наше число. Добавьте к нему проверку на остаточные элементы и посчитайте его длину.</p>
-                    </div>
+                    </section>
                 </div>
                 <div class="content" id="content25">
-                    <p class="desc">Шаблон на простой номер <a href="https://youtu.be/LwgnaNR2gHk&t=416s" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
-                    <div class="task-text">
-                        Назовём маской числа последовательность цифр, в которой также могут встречаться следующие символы:<br>
-                        – символ «?» означает ровно одну произвольную цифру;<br>
-                        – символ «*» означает любую последовательность цифр произвольной длины; в том числе «*» может задавать и пустую последовательность.<br>
-                        Например, маске <i>123*4?5</i> соответствуют числа 123405 и 12300405.<br>
-                        Среди натуральных чисел, не превышающих 10<sup>10</sup>, найдите все числа, соответствующие маске <i>1?2157*4</i>, делящиеся на 2024 без остатка.<br>
-                        В ответе запишите в первом столбце таблицы все найденные числа в порядке возрастания, а во втором столбце – соответствующие им результаты деления этих чисел на 2024.<br>
-                    </div>
-                    <pre><code class="python">from fnmatch import fnmatch
+                    <section id="Простой_пример_25">
+                        <p class="desc">Самый простой пример <a href="https://youtu.be/LwgnaNR2gHk&t=416s" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                        <div class="task-text">
+                            Назовём маской числа последовательность цифр, в которой также могут встречаться следующие символы:<br>
+                            – символ «?» означает ровно одну произвольную цифру;<br>
+                            – символ «*» означает любую последовательность цифр произвольной длины; в том числе «*» может задавать и пустую последовательность.<br>
+                            Например, маске <i>123*4?5</i> соответствуют числа 123405 и 12300405.<br>
+                            Среди натуральных чисел, не превышающих 10<sup>10</sup>, найдите все числа, соответствующие маске <i>1?2157*4</i>, делящиеся на 2024 без остатка.<br>
+                            В ответе запишите в первом столбце таблицы все найденные числа в порядке возрастания, а во втором столбце – соответствующие им результаты деления этих чисел на 2024.<br>
+                        </div>
+                        <pre><code class="python">from fnmatch import fnmatch
         
 for x in range(2024, 10 ** 10 + 1, 2024):
     if fnmatch(str(x), '1?2157*4'):
         print(x, x // 2024)</code></pre>
-                    <p class="help">
-                        range() и шаг по числу, которому должно быть кратно конечное число
-                    </p>
+                        <p class="help">
+                            range() и шаг по числу, которому должно быть кратно конечное число
+                        </p>
+                    </section>
+                    <section id="Минимальный_максимальный_делители_25">
+                        <p class="desc">Минимальный, максимальный делители</p>
+                        <div class="task-text">
+                            Пусть М – сумма минимального и максимального натуральных делителей целого числа, не считая единицы и самого числа. Если таких делителей у числа нет, то считаем значение М равным нулю.<br>
+                            Напишите программу, которая перебирает целые числа, большие 700 000, в порядке возрастания и ищет среди них такие, для которых  М оканчивается на 4. В ответе запишите в первом столбце таблицы первые пять найденных чисел в порядке возрастания, а во втором  столбце - соответствующие им значения М.<br>
+                            Например, для числа 20 М = 2 + 10 = 12.
+                        </div>
+                        <pre><code class="python">def dividers(n):
+    m = 0
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            return i + n // i
+    return 0
+
+count = 0
+for k in range(700_000, 10 ** 10):
+    M = min_div(k) + max_div(k)
+    if M % 10 == 4:
+        print(k, M)
+        count += 1
+    if count == 5:
+        break</code></pre>
+                        <p class="help">
+                            Искать минимальный и максимальный делитель удобнее всего одной функцией. Если мы найдем минимальный делитель, то одновременно найдем и максимальный. Если ничего не будет найдено, вернем 0.
+                        </p>
+                    </section>
+                    <section id="Простое_число_25">
+                        <p class="desc">Простое число</p>
+                        <div class="task-text">
+                            Напишите программу, которая ищет среди целых чисел, принадлежащих числовому отрезку [25317; 51237], числа, которые имеют хотя бы 6 различных простых делителей. Делители 1 и само число не учитываются. <br>
+                            Для каждого найденного числа запишите найденное число и максимальный простой делитель этого числа.
+                        </div>
+                        <pre><code class="python">def is_prime(n):
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0: return 0
+    return 1
+
+def dividers(n):
+    m = []
+    for i in range(2, int(n ** 0.5) + 1):
+        if n % i == 0:
+            if is_prime(i):
+                m.append(i)
+    return m
+
+for i in range(25317, 51237 + 1):
+    d = dividers(i)
+    if len(d) >= 6:
+        print(i, max(d))</code></pre>
+                    </section>
                 </div>
                 <div class="content" id="content27">
-                    <div class="desc">Кластеры <a href="https://youtu.be/JN6HRU8S9kI&t=398" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></div>
-                    <div class="task-text">Учёный решил провести кластеризацию некоторого множества звёзд по их расположению на карте звёздного неба. Кластер звёзд - это набор звёзд (точек) на графике, лежащий внутри прямоугольника высотой H и шириной W. Каждая звезда обязательно принадлежит только одному из кластеров.<br>
-                        Истинный центр кластера, или центроид, - это одна из звёзд на графике, сумма расстояний от которой до всех остальных звёзд кластера минимальна.<br>
-                        Под расстоянием понимается расстояние Евклида между двумя точками A(x1,y1) и B(x2,y2) на плоскости, которое вычисляется по формуле: d(A,B)= ((x2-x1)<sup>2</sup> + (y2-y1)<sup>2</sup>)<sup>0.5</sup><br>
-                        В файле A хранятся данные о звёздах двух кластеров, где H=3, W=3 для каждого кластера. В каждой строке записана информация о расположении на карте одной звезды: сначала координата x, затем координата y. Значения даны в условных единицах. Известно, что количество звёзд не превышает 1000.<br>
-                        В файле B хранятся данные о звёздах трёх кластеров, где H=3, W=3 для каждого кластера. Известно, что количество звёзд не превышает 10 000. Структура хранения информации о звездах в файле B аналогична файлу А.<br>
-                        Для каждого файла определите координаты центра каждого кластера, затем вычислите два числа:  Px​ – среднее арифметическое абсцисс центров кластеров, и  Py – среднее арифметическое ординат центров кластеров.<br>
-                        В ответе запишите четыре числа: в первой строке сначала целую часть произведения  Px×1000, затем целую часть произведения  Py×1000 для файла А, во второй строке – аналогичные данные для файла B.<br>
-                        Возможные данные одного из файлов иллюстрированы графиком.<br>
-                        Внимание! График приведён в иллюстративных целях для произвольных значений, не имеющих отношения к заданию.<br>
-                        Для выполнения задания используйте данные из прилагаемого файла.<br>
-                        <img src="assets/task/27/cluster.png" alt="Кластер" class="img cluster">
-                    </div>
-                    <p class="help">Определим кластеры при помощи Excel:</p>
-                    <img src="assets/task/27/clusters_A.jpg" alt="Кластеры A" class="img clusters A">
-                    <img src="assets/task/27/clusters_B.jpg" alt="Кластеры B" class="img clusters B">
-                    <p class="help">
-                        Файл A: кластеры разделены прямой y = x. 0-й кластер лежит в <b>x &lt; 0</b>, 1-й в <b>x &gt; 0</b>.<br>
-                        Файл B: кластеры разделены прямой y = x. 0-й кластер лежит в <b>x &lt; 0</b>, 1-й и 2-й в <b>x &gt; 0</b>. 1-й кластер лежит в <b>y &gt; 3</b>, 2-й в <b>y &lt; 3</b>.
-                    </p>
-                    <pre><code class="python">clustersA = [[], []] # <-- в условии сказано, что в файле A 2 кластера 
+                    <section id="Кластеры_по_простейшим_прямым_27">
+                        <p class="desc">Кластеры по прострейшим прямым <a href="https://youtu.be/JN6HRU8S9kI&t=398" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
+                        <div class="task-text">Учёный решил провести кластеризацию некоторого множества звёзд по их расположению на карте звёздного неба. Кластер звёзд - это набор звёзд (точек) на графике, лежащий внутри прямоугольника высотой H и шириной W. Каждая звезда обязательно принадлежит только одному из кластеров.<br>
+                            Истинный центр кластера, или центроид, - это одна из звёзд на графике, сумма расстояний от которой до всех остальных звёзд кластера минимальна.<br>
+                            Под расстоянием понимается расстояние Евклида между двумя точками A(x1,y1) и B(x2,y2) на плоскости, которое вычисляется по формуле: d(A,B)= ((x2-x1)<sup>2</sup> + (y2-y1)<sup>2</sup>)<sup>0.5</sup><br>
+                            В файле A хранятся данные о звёздах двух кластеров, где H=3, W=3 для каждого кластера. В каждой строке записана информация о расположении на карте одной звезды: сначала координата x, затем координата y. Значения даны в условных единицах. Известно, что количество звёзд не превышает 1000.<br>
+                            В файле B хранятся данные о звёздах трёх кластеров, где H=3, W=3 для каждого кластера. Известно, что количество звёзд не превышает 10 000. Структура хранения информации о звездах в файле B аналогична файлу А.<br>
+                            Для каждого файла определите координаты центра каждого кластера, затем вычислите два числа:  Px​ – среднее арифметическое абсцисс центров кластеров, и  Py – среднее арифметическое ординат центров кластеров.<br>
+                            В ответе запишите четыре числа: в первой строке сначала целую часть произведения  Px×1000, затем целую часть произведения  Py×1000 для файла А, во второй строке – аналогичные данные для файла B.<br>
+                            Возможные данные одного из файлов иллюстрированы графиком.<br>
+                            Внимание! График приведён в иллюстративных целях для произвольных значений, не имеющих отношения к заданию.<br>
+                            Для выполнения задания используйте данные из прилагаемого файла.<br>
+                            <img src="assets/task/27/cluster.png" alt="Кластер" class="img cluster">
+                        </div>
+                        <p class="help">Определим кластеры при помощи Excel:</p>
+                        <img src="assets/task/27/clusters_A.jpg" alt="Кластеры A" class="img clusters A">
+                        <img src="assets/task/27/clusters_B.jpg" alt="Кластеры B" class="img clusters B">
+                        <p class="help">
+                            Файл A: кластеры разделены прямой y = x. 0-й кластер лежит в <b>x &lt; 0</b>, 1-й в <b>x &gt; 0</b>.<br>
+                            Файл B: кластеры разделены прямой y = x. 0-й кластер лежит в <b>x &lt; 0</b>, 1-й и 2-й в <b>x &gt; 0</b>. 1-й кластер лежит в <b>y &gt; 3</b>, 2-й в <b>y &lt; 3</b>.
+                        </p>
+                        <pre><code class="python">clustersA = [[], []] # <-- в условии сказано, что в файле A 2 кластера 
 clustersB = [[], [], []] # <-- в условии сказано, что в файле B 3 кластера
 
 for line in open('fileA.txt'):
@@ -899,6 +1350,7 @@ pxB = int(sum(x for x, y in centersB) / 3 * 1000)
 pyB = int(sum(y for x, y in centersB) / 3 * 1000)
 print(pxA, pyA)
 print(pxB, pyB)</code></pre>
+                    </section>
                 </div>
             </div>
         </div>
