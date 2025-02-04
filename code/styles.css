@@ -804,7 +804,7 @@ menu.narrow-screen {
         top:0;
         left:0;
         width: calc(80% + 1rem);
-        height: 100vh;
+        height: 100%;
         padding-right:1rem;
         z-index: 10;
         box-shadow: 5px 0px 10px 5px rgba(0,0,0,0.4);
