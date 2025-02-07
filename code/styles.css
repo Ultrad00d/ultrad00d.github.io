@@ -10,14 +10,15 @@
 :target {
     scroll-margin-top: 1rem;
 }
-
+* {
+    scroll-behavior: smooth !important;
+}
 html, body {
     margin:0;
     padding:0;
     color:aliceblue;
     scrollbar-color: #44449d #333;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    scroll-behavior: smooth !important;
 }
 body {
     background-color:  #2e2e3f;
