@@ -17,7 +17,7 @@ html, body {
     color:aliceblue;
     scrollbar-color: #44449d #333;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
-    scroll-behavior: smooth;
+    scroll-behavior: smooth !important;
 }
 body {
     background-color:  #2e2e3f;
