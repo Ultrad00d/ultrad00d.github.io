@@ -1148,10 +1148,19 @@ print(max(len(i) for i in s.split()))</code></pre>
                         <pre><code class="python">s = open('file.txt')
 s = s.split('A')
 m = 0
-for i in range(len(s) - 1):
+for i in range(len(s) - 3):
     c = s[i] + 'A' + s[i + 1] + 'A' + s[i + 2] + 'A' + s[i + 3]
     # если букв МНОГО
-    # c = 'А'.join(s[i:i+4])
+    # c = 'А'.join(s[i:i+3 +1]) # +3 = 3 шт в задаче, +1 для работы среза
+    m = max(m, len(c))
+print(m)</code></pre>
+                        <div class="task-text">Текстовый файл состоит из символов A, B, C, D и E. Определите максимальное количество идущих подряд символов, среди которых символы DEC встречается ровно 75 раз.
+                        </div>
+                        <pre><code class="python">s = open('24.txt').readline()
+s = s.split('DEC')
+m = 0
+for i in range(len(s) - 75):
+    c = 'EC' + 'DEC'.join(s[i:i+75 + 1]) + 'DE'
     m = max(m, len(c))
 print(m)</code></pre>
                     </section>
