@@ -1148,7 +1148,7 @@ print(max(len(i) for i in s.split()))</code></pre>
                         <pre><code class="python">s = open('file.txt')
 s = s.split('A')
 m = 0
-for i in range(len(s) - 3 + 1): # -3 = в задаче тройки, +1 для работы range 
+for i in range(len(s) - 3):
     c = s[i] + 'A' + s[i + 1] + 'A' + s[i + 2] + 'A' + s[i + 3]
     # если букв МНОГО
     # c = 'А'.join(s[i:i+3 +1]) # +3 = 3 шт в задаче, +1 для работы среза
