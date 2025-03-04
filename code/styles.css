@@ -308,7 +308,7 @@ td.hljs-ln-code {
     }
 }
 .attention {
-    color: hsl(0, 60%, 70%);
+    color: hsl(0, 60%, 70%) !important;
 }
 .table-of-contents {
     position: fixed;
