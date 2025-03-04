@@ -285,6 +285,10 @@
                             </div>
                         </legend><hr>
                         <menu>
+                            <li><a href="#Алгоритм_кластеризации_27">Алгоритм кластеризации</a></li>
+                            <li><a href="#Разбор_кода_27">Разбор кода</a></li>
+                            <li><a href="#Модули_заданий_27">Модули заданий</a></li>
+                            <li><a href="#Вывод_27">Вывод</a></li>
                             <li><a href="#Кластеры_по_простейшим_прямым_27">Кластеры по простейшим прямым</a></li>
                         </menu>
                     </ul>
@@ -376,7 +380,7 @@
                     </noscript>
                     
                     <div class="version">
-                        <p id="headerAuthor">by <a href="https://github.com/Ultrad00d/ultrad00d.github.io">Ultrad00d</a></p> v0.11.3
+                        <p id="headerAuthor">by <a href="https://github.com/Ultrad00d/ultrad00d.github.io">Ultrad00d</a></p> v0.12
                     </div>
                 </div>
                 <div class="content" id="content1">
@@ -384,12 +388,12 @@
                         <p class="desc">Решение кодом <a href="https://youtu.be/BcxVhBreOhg" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
                         <pre><code class="python">from itertools import *
 
-s = '457 46 567 12 136 235 13'.split()   # у 1 связи с 457, у 2 с 46 и т.д.
-v = 'FE EC CA AB BD DF FG DG GC'.split() # по графику есть связи FE, EC и т.д. 
-print(*range(1, 8))
-for p in permutations('ABCDEFG'):
-    if all(str(p.index(b) + 1) in s[p.index(a)] for a, b in v):
-        print(*p)</code></pre>
+    s = '457 46 567 12 136 235 13'.split()   # у 1 связи с 457, у 2 с 46 и т.д.
+    v = 'FE EC CA AB BD DF FG DG GC'.split() # по графику есть связи FE, EC и т.д. 
+    print(*range(1, 8))
+    for p in permutations('ABCDEFG'):
+        if all(str(p.index(b) + 1) in s[p.index(a)] for a, b in v):
+            print(*p)</code></pre>
                         <p class="help">
                             В первой строке перечисляем все соединения из таблицы, во второй все возможные соединения по графику.
                         </p>
@@ -618,7 +622,7 @@ print(max(res))</code></pre>
                             Теперь, для перебора по всем строкам используем:
                         </p>
                         <pre><code class="python">for line in open('file.txt'):
-    a = [int(x) for x in line.split()]</code></pre>
+        a = [int(x) for x in line.split()]</code></pre>
                     </section>
                     <section id="Найдите_количество_строк_9">
                         <p class="desc">Найдите количество строк <a href="https://youtu.be/2C8ZF8tfM1E" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
@@ -829,7 +833,7 @@ print(min(A for A in range(0,200) if all(f(m, n, A) == 1 for n in range(200) for
     Q = 23 <= x <= 58
     A = 1
     f = (P <= (not Q)) <= (not A)
-    if f == 0:
+    if f != 0:
         print(x)</code></pre>
                         <p class="help">
                             A = <b>1</b> если ищем <u>наибольшее</u>, = <b>0</b> если наименьшее.<br>
@@ -1148,19 +1152,10 @@ print(max(len(i) for i in s.split()))</code></pre>
                         <pre><code class="python">s = open('file.txt')
 s = s.split('A')
 m = 0
-for i in range(len(s) - 3):
+for i in range(len(s) - 1):
     c = s[i] + 'A' + s[i + 1] + 'A' + s[i + 2] + 'A' + s[i + 3]
     # если букв МНОГО
-    # c = 'А'.join(s[i:i+3 +1]) # +3 = 3 шт в задаче, +1 для работы среза
-    m = max(m, len(c))
-print(m)</code></pre>
-                        <div class="task-text">Текстовый файл состоит из символов A, B, C, D и E. Определите максимальное количество идущих подряд символов, среди которых символы DEC встречается ровно 75 раз.
-                        </div>
-                        <pre><code class="python">s = open('24.txt').readline()
-s = s.split('DEC')
-m = 0
-for i in range(len(s) - 75):
-    c = 'EC' + 'DEC'.join(s[i:i+75 + 1]) + 'DE'
+    # c = 'А'.join(s[i:i+4])
     m = max(m, len(c))
 print(m)</code></pre>
                     </section>
@@ -1300,6 +1295,93 @@ for i in range(25317, 51237 + 1):
                     </section>
                 </div>
                 <div class="content" id="content27">
+                    <section id="Алгоритм_кластеризации_27">
+                        <p class="desc">Алгоритм кластеризации</p>
+                        <p class="help">1&#41; Самым первым шагом следует разделить файлы для работы в Excel и Python. Если таковые имеются, -> 2&#41;, если нет, то замените в файлах точки на запятые, а в решении программой далее заменяйте запятые на точки. Это нужно для корректной работы диаграмм Excel (он принимает только запятые в русской версии).</p>
+                        <p class="help">2&#41; Определим кластеры при помощи Excel. Выделите два столбца и вставьте по ним точечную диаграмму:</p>
+                        <img src="assets/task/27/clusters_A.jpg" alt="Кластеры A" class="img clusters A">
+                        <img src="assets/task/27/clusters_B.jpg" alt="Кластеры B" class="img clusters B">
+                        <p class="help">
+                            Файл A: кластеры разделены прямой y = x. 0-й кластер лежит в <b>x &lt; 0</b>, 1-й в <b>x &gt; 0</b>.<br>
+                            Файл B: кластеры разделены прямой y = x. 0-й кластер лежит в <b>x &lt; 0</b>, 1-й и 2-й в <b>x &gt; 0</b>. 1-й кластер лежит в <b>y &gt; 3</b>, 2-й в <b>y &lt; 3</b>.
+                        </p>
+                        <p class="help">Аналитическое решение закончено, приступаем к разбору программной части.</p>
+                    </section>
+                    <section id="Разбор_кода_27">
+                        <p class="desc">Разбор Кода</p>
+                        <pre><code class="python">clustersA = [[] for _ in range(2)] # <-- в условии сказано, что в файле A 2 кластера 
+clustersB = [[] for _ in range(3)] # <-- в условии сказано, что в файле B 3 кластера</code></pre>
+                        <p class="help">Запишем длинну наших файлов: файл A 2 кластера, и файл B 3 кластера.</p>
+                        <pre><code class="python">for line in open('fileA.txt'):
+    x, y = [float(k) for k in line.replace(',', '.').split()]
+    if x < 0: # <-- отбираем кластеры файла A уравнением через Excel (см. выше)
+        clustersA[0].append([x, y])
+    else:
+        clustersA[1].append([x, y])
+
+for line in open('fileB.txt'):
+    x, y = [float(k) for k in line.replace(',', '.').split()]
+    if x < 0:                       # <-- отбираем кластеры файла B
+        clustersB[0].append([x, y]) #     уравнением через Excel 
+    elif y > 4:                     # <-- (см. выше)
+        clustersB[1].append([x, y])
+    else:
+        clustersB[2].append([x, y])</code></pre>
+                        <p class="help">
+                            Здесь мы используем наше аналитическое решение по построению прямых для разбиения файлов на кластеры. Проходясь построчно по файлам, превращая их в читабельные и разделяя x и y на тип float в соответстветнные переменные, мы можем использовать эти значения для разделения кластеров используя уравнение y = kx + b.<br>
+                            Весь вышеуказанный код - это шаблон, применимый для любых задач. Единственным отличием будут уравнения прямой, которые могут стать усложненными.
+                        </p>
+                    </section>
+                    <section id="Модули_заданий_27">
+                        <p class="desc">Модули заданий</p>
+                        <p class="help">
+                            В этом задании, важны две части: как разделить файлы на кластеры, и что потом делать с этими кластерами.<br>
+                            В зависимости от задачи у вас могут спрашивать разные данные: центры кластеров, их плотность, антицентр кластеров, изолированную точку, точку наведения и т.д.<br>
+                            Структурно код от этих изменений не меняется: мы проводим кластеризацию, обрабатываем по запросу, и выводим ответ.<br>
+                            Ниже представлены примеры модулей таких задач. 
+                        </p>
+                        <p class="help">Плотностью кластера назовём среднее арифметическое количества точек в единичной окрестности для каждой точки кластера (включая эту точку).</p>
+                        <pre><code class="python">from math import dist
+                            
+def density(cl):
+    m = []
+    for p in cl:
+        k = len([p1 for p1 in cl if dist(p, p1) <= 1])
+        m.append(k)
+    return sum(m)/len(m)</code></pre>
+                        <p class="help">Изолированной точкой назовём точку, в единичном окрестности от которой находится наименьшее количество точек кластера. Если таких точек несколько, то выбирается точка с наибольшей координатой y.</p>
+                        <pre><code class="python">from math import dist
+
+def isolated(cl):
+    m = []
+    for p in cl:
+        k = len([p1 for p1 in cl if dist(p, p1) <= 1])
+        m.append([k, p[1], p])
+    return min(m)[2]</code></pre>
+                        <p class="help">Точкой наведения назовём точку, в единичном окрестности от которой находится наибольшее количество точек кластера. Если таких точек несколько, то выбирается точка с наибольшей координатой x.</p>
+                        <pre><code class="python">from math import dist
+
+def aim(cl):
+    m = []
+    for p in cl:
+        k = len([p1 for p1 in cl if dist(p, p1) <= 1])
+        m.append([k, p[0], p])
+    return max(m)[2]</code></pre>
+                    </section>
+                    <section id="Вывод_27">
+                        <p class="desc">Вывод информации</p>
+                        <p class="help">
+                            Вывод делится на сбор информации и ее расчет. Пример вывода на центрах кластеров:
+                        </p>
+                        <pre><code class="python">dataA = [center(cl) for cl in clustersA] # все центры кластеров файла A
+dataB = [center(cl) for cl in clustersB] # все центры кластеров файла B
+pxA = int(sum(x for x, y in dataA) / 2 * 1000) # в задании было сказано найти ср. арифм.
+pyA = int(sum(y for x, y in dataA) / 2 * 1000) # коориднат центров кластеров,
+pxB = int(sum(x for x, y in dataB) / 3 * 1000) # умножить результат на 1000,
+pyB = int(sum(y for x, y in dataB) / 3 * 1000) # и взять целую часть
+print(pxA, pyA)
+print(pxB, pyB)</code></pre>
+                    </section>
                     <section id="Кластеры_по_простейшим_прямым_27">
                         <p class="desc">Кластеры по прострейшим прямым <a href="https://youtu.be/JN6HRU8S9kI&t=398" target="_blank"><img src="assets/misc/up_right_arrow.svg" draggable="false" class="show-link"></a></p>
                         <div class="task-text">Учёный решил провести кластеризацию некоторого множества звёзд по их расположению на карте звёздного неба. Кластер звёзд - это набор звёзд (точек) на графике, лежащий внутри прямоугольника высотой H и шириной W. Каждая звезда обязательно принадлежит только одному из кластеров.<br>
@@ -1318,8 +1400,8 @@ for i in range(25317, 51237 + 1):
                         <img src="assets/task/27/clusters_A.jpg" alt="Кластеры A" class="img clusters A">
                         <img src="assets/task/27/clusters_B.jpg" alt="Кластеры B" class="img clusters B">
                         <p class="help">
-                            Файл A: кластеры разделены прямой y = 0. 0-й кластер лежит в <b>x &lt; 0</b>, 1-й в <b>x &gt; 0</b>.<br>
-                            Файл B: кластеры разделены прямой y = 0. 0-й кластер лежит в <b>x &lt; 0</b>, 1-й и 2-й в <b>x &gt; 0</b>. 1-й кластер лежит в <b>y &gt; 3</b>, 2-й в <b>y &lt; 3</b>.
+                            Файл A: кластеры разделены прямой y = x. 0-й кластер лежит в <b>x &lt; 0</b>, 1-й в <b>x &gt; 0</b>.<br>
+                            Файл B: кластеры разделены прямой y = x. 0-й кластер лежит в <b>x &lt; 0</b>, 1-й и 2-й в <b>x &gt; 0</b>. 1-й кластер лежит в <b>y &gt; 3</b>, 2-й в <b>y &lt; 3</b>.
                         </p>
                         <pre><code class="python">clustersA = [[], []] # <-- в условии сказано, что в файле A 2 кластера 
 clustersB = [[], [], []] # <-- в условии сказано, что в файле B 3 кластера
