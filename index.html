@@ -588,11 +588,11 @@ print(max(m))</code></pre>
                             Укажите наибольшее число N, не превышающее 1000, после обработки которого с помощью этого алгоритма получается число R содержащее ровно 4 значащих разряда в семеричной записи.
                         </div>
                         <pre><code class="python">def convert(n):
-    s = ''
-    while n != 0:
-        s = str(n % 7) + s
-        n //= 7
-    return s
+    n7 = ''
+    while n > 0:
+        n, rem = divmod(n, 7)
+        n7 = str(rem) + n7
+    return n7
 def f(n):
     s = convert(n)
     if n % 2 == 0:
