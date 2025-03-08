@@ -219,6 +219,78 @@ code::after{
     align-items:center;
     gap:1.5vw;
 }
+#new-version-container {
+    font-family:'Courier New', Courier, monospace;
+    position: absolute;
+    bottom: 15%;
+    font-size:1.4rem;
+    color:aliceblue;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    border-radius: 4px;
+    box-shadow: 16px 16px var(--color-shadow);
+    background-color:var(--color-bg-lighter);
+    opacity: 1;
+    transition: opacity 0.3s ease;
+}
+#new-version-container.hidden {
+    animation: splash 0.3s forwards;
+}
+@keyframes splash {
+    0% {
+        transform: scale(1);
+    }
+    20% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+#new-version {
+    position:relative;
+    padding:1rem 3rem;
+    .version-note {
+        margin:1rem 0 0 0;
+        font-family:Verdana, Geneva, Tahoma, sans-serif;
+        font-size:1rem;
+        padding:0 1rem;
+    }
+}
+#hideUpdate {
+    width: 3rem;
+    aspect-ratio: 1/1;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    cursor: pointer;
+    border: none;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color:transparent;
+    transition: background-color 0.15s ease-in-out;
+    border-radius:35%;
+}
+.close-X {
+    width: 1rem;
+    aspect-ratio: 1/1;
+    background-color: aliceblue;
+    transition: width 0.15s ease-in-out;
+    clip-path: polygon(5% 0%, 0% 5%, 45% 50%, 0% 95%, 5% 100%, 50% 55%, 95% 100%, 100% 95%, 55% 50%, 100% 5%, 95% 0%, 50% 45%);
+}
+#hideUpdate:hover {
+    background-color: hsla(208, 100%, 97%, 15%);
+    .close-X {
+        width: 1.35rem;
+    }
+}
+.versjs {
+    margin: 0;
+    padding: 0;
+}
 .content {
     position:absolute;
     top:0;
@@ -307,8 +379,11 @@ td.hljs-ln-code {
         transform: translateX(0);
     }
 }
+.inline_link {
+    color: aliceblue;
+}
 .attention {
-    color: hsl(0, 60%, 70%) !important;
+    color: hsl(0, 60%, 70%);
 }
 .table-of-contents {
     position: fixed;
@@ -808,6 +883,22 @@ menu.narrow-screen {
         flex-direction: column-reverse;
         font-size: 1.2rem;
         line-height: 0.5rem;
+    }
+    #new-version-container {
+        max-width:90vw;
+        bottom:10%;
+    }
+    #new-version {
+        padding:1rem 0rem;
+        .version-note {
+            margin:1rem 0 0 0;
+            font-size:1.75vh;
+            padding:0 1rem;
+        }
+    }
+    #hideUpdate {
+        top: 5px;
+        right: 5px;
     }
     #headerAuthor{
         font-size: 0.6rem;
