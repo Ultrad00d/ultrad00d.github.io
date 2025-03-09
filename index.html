@@ -1362,6 +1362,16 @@ s = open('24.txt').readline()
 a = findall(r'(?:0|[789][0789]*)(?:[-*](?:0|[789][0789]*))*', s)
 res = max(a, key=len)
 print(len(res))</code></pre>
+                        <p class="help">Альтернативное решение:</p>
+                        <pre><code class="python">from re import *
+
+s = open('24.txt').readline()
+
+num = r'([789][0789]*|0)'
+a = [x.group() for x in finditer(rf'{num}([-*]{num})*', s)]
+
+res = max(a, key=len)
+print(len(res))</code></pre>
                         <p class="help">
                             В первой скобке выражение ищет (цифру 0 или [цифру не ноль] и [* раз последовательность цифр из задачи])<br>
                             Во второй скобке выражение ищет * раз последовательность, начинающуюся со знака (- или * и (нуля или [цифры задачи] и [последовательности цифры задачи * раз])), где *&isin;[0; +&infin;&#41;.
