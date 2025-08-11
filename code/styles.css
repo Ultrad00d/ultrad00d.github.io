@@ -1270,11 +1270,12 @@ main.inactive * {
     }
     #new-version {
         padding:1rem 0rem;
-        .version-note {
-            margin:1rem 0 0 0;
-            font-size:1.75vh;
-            padding:0 1rem;
-        }
+    }
+    #version-note {
+        margin:1rem 0 0 0;
+        font-size:1.75vh;
+        padding:0 1rem;
+        max-height:24vh;
     }
     #hideUpdate {
         top: 5px;
