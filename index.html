@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Шаблоны для ЕГЭ</title>
+    <link rel="icon" href="./assets/misc/code.svg" type="image/svg+xml">
+    <link rel="stylesheet" href="./code/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlightjs-line-numbers.js/2.3.0/highlightjs-line-numbers.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pako/2.1.0/pako.min.js"></script>
+</head>
+<body>
+    <div class="mobile-header">
+        <div class="smart-select-container">
+            <div id="selected-page-container">
+                <span id="default-page">Не выбрано</span>
+                <span id="selected-page"></span>
+            </div>
+            <div id="mobile-pages-container-overlay"></div>
+            <div id="mobile-pages-container"></div>
+        </div>
+        <div id="chapters-container">
+            <span id="chapter-inner"></span>
+        </div>
+    </div>
+    <main>
+        <div class="page-selector">
+            <p class="title">Шаблончики для ЕГЭ по Информатике</p>
+            <input type="checkbox" id="table-of-contents-active">
+            <label for="table-of-contents-active" id="nav-overlay"></label>
+            <div id="table-of-contents">
+                <div class="control-table-of-contents">
+                    <label for="table-of-contents-active" id="lv-table-controller">◄ К номерам</label>
+                </div>
+                <div id="summaries-container">
+                </div>
+                <label for="table-of-contents-active" id="hide-empty-space"></label>
+            </div>
+            <div id="pages-container">
+                <fieldset id="pageFieldset">
+                </fieldset>
+            </div>
+        </div>
+        <div class="page-container">
+            <div id="page-frame">
+                <div class="tutor-container visible" id="tutorContainer">
+                    <p class="page-tutor">Выберите страницу с Номером задания</p>
+                    <noscript>
+                        ⚠ Для работы страницы необходим JavaScript, но он выключён ⚠
+                    </noscript>
+                    <div class="version">
+                        <a href="https://github.com/Ultrad00d/ultrad00d.github.io" id="headerAuthor">by <p>Ultrad00d</p></a>
+                        <span>v<span class="version-js"></span></span>
+                    </div>
+                    <div id="new-version-container" class="">
+                        <div id="new-version">
+                            <span class="version-js"></span>
+                            <p id="version-note"></p>
+                            <button id="hideUpdate" title="Спрятать изменения этого обновления">
+                                <div class="close-X"></div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="./code/show_page.js"></script>
+    <script src="./code/section_check.js"></script>
+    <script src="./code/version_check.js"></script>
+    <script src="./code/smart_selector.js"></script>
+    <script src="./code/code_action_buttons.js"></script>
+    <script src="./code/load_content.js"></script>
+</body>
+</html>

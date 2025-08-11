@@ -1,0 +1,3 @@
+function checkVisibleChapter(){let currentSection=null;const scrollPosition=window.scrollY+(window.innerHeight/3);const sections=document.querySelectorAll(`#content${currentPageInt} section`);sections.forEach(section=>{const sectionTop=section.offsetTop;const sectionBottom=sectionTop+section.offsetHeight;if(scrollPosition>=sectionTop&&scrollPosition<sectionBottom){currentSection=section;}});return currentSection;}
+function applyChapterTopic(){const activeSection=checkVisibleChapter();if(activeSection){const chapterInner=document.getElementById('chapter-inner');chapterInner.textContent=activeSection.id.split('_').slice(0,-1).join(' ');}}
+window.addEventListener('scroll',()=>{if(isMobile()){applyChapterTopic();}});

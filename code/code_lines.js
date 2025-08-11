@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",function(){const codeBlocks=document.querySelectorAll('pre code.hljs');codeBlocks.forEach((block)=>{hljs.highlightBlock(block);const lines=block.innerText.split('\n');block.innerHTML=lines.map(line=>`<span class="line">${line}</span>`).join('');});});

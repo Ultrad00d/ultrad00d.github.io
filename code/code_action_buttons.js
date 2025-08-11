@@ -1,0 +1,2 @@
+function commentToggle(){if(isMobile()){this.addEventListener('click',()=>{this.classList.add('animate');this.addEventListener('animationend',()=>{this.classList.remove('animate');},{once:true});});}
+const codeContainer=this.closest('.code-container');const codeCommentLines=codeContainer.querySelectorAll('span.hljs-comment');this.classList.toggle('active');codeCommentLines.forEach(line=>{line.classList.toggle('hidden');});}
